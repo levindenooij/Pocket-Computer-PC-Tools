@@ -2,7 +2,7 @@ The 80's SHARP and CASIO Pocketcomputers  used FSK Modulation for saving and loa
 
 Alternatively with modern micro controllers you can simplify the process and convert a basic file into machine readable tokens and simulate the tapeformat converted into pulse. This github directory contains a couple of Arduino INO files for your use. You will need some additional hardware like a breadboard, some components as well as a connector to the 11 pin socket on the pocket PC.
 
-**SHARP 11-PIN connector type for FSK interface**
+**SHARP 11-PIN connector type for CE-26P cassette interface**
 
 For cassette interface hardware guidelines please have a look at: http://www.cavefischer.at/spc/html/PC-1401Key_Arduino.html. Don't use the source code mentioned there!
 For this purpose you only need the upper part of the breadboard with push button, led and resistor.
