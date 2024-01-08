@@ -1,6 +1,9 @@
 This repository contains tools and programs for interfacing vintage SHARP pocketcomputers to your PC as an alternative to what is already offered by Peil & Partners https://www.peil-partner.de/ifhe.de/sharp/.
 Also for CASIO some interfacing options are available.
 
+** SHARP 11-PIN CE-126P HW replacements **
+I have add two schematics as an alternative for a real CE-126P one with passive and one with active components.
+
 **SHARP 11-PIN connector type for CE-26P cassette interface**
 
 The 80's SHARP and CASIO Pocketcomputers  used FSK Modulation for saving and loading basic programs to a cassette recorder. When you have the proper interface peripherals this is still a good way to archive your programs. Instead of a cassette recorder you can also use a pc with a mediaplayer like Audacity as a replacement. With software on the PC like Pocket Tools for SHARP Pocket Computers you can convert basic txt files into wav files for loading into to the SHARP pocket computer and vice versa. Troublesome is still getting the right audio levels and sampling rates to get it to work.
@@ -10,7 +13,7 @@ Alternatively with modern micro controllers you can simplify the process and con
 For cassette interface hardware guidelines please have a look at: http://www.cavefischer.at/spc/html/PC-1401Key_Arduino.html. Don't use the source code mentioned there as it is not fit for purpose!
 For cassette interface you only need the upper part of the breadboard with push button, led and resistor.
 
-**SHARP 11-PIN connector type for CE-126 printer interface**
+**SHARP 11-PIN connector type for CE-126P printer interface**
 
 I have also added a SHARP CE-126P printer emulator that sends LLIST or LPRINT commands to a serial interface for for further processing e.g a serial printer. For the printer emulator hardware please have look here: http://www.cavefischer.at/spc/html/CE-126P_Emulator.html
 I build a permanent board with a Arduino Nano, pull down resistors and a 11 pin-connector. Be aware different source listings for 14xx vs 12xx types. As there a limited memory requirements a NANO is sufficient.
