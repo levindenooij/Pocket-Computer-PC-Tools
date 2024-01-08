@@ -1,4 +1,4 @@
-This repository contains tools and programs for interfacing vintage SHARP pocketcomputers to your PC as an alternative to what is already offered by Peil & Partners https://www.peil-partner.de/ifhe.de/sharp/.
+This repository contains tools and programs for interfacing vintage SHARP pocketcomputers to your PC as an alternative to what is already offered by Peil & Partners https://www.peil-partner.de/ifhe.de/sharp/ in combination with a vintage CE-126P printer cassette interface.
 Also for CASIO some interfacing options are available.
 
 ** SHARP Interfacing to a PC ** 
