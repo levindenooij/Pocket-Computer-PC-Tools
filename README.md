@@ -2,9 +2,11 @@ This repository contains tools and programs for interfacing vintage SHARP pocket
 Also for CASIO some interfacing options are available.
 
 ** SHARP Interfacing to a PC ** 
+
 The 80's SHARP and CASIO Pocketcomputers  used FSK Modulation for saving and loading basic programs to a cassette recorder. When you have the proper interface peripherals this is still a good way to archive your programs. Instead of a cassette recorder you can also use a pc with a mediaplayer like Audacity as a replacement. With software on the PC like Pocket Tools for SHARP Pocket Computers you can convert basic txt files into wav files for loading into to the SHARP pocket computer and vice versa. Troublesome is still getting the right audio levels and sampling rates to get it to work.
 
 ** SHARP 11-PIN HW replacement for CE-126P **
+
 I have added two schematics as an alternative for a real CE-126P one with passive and one with active components. Just link with ear and mic cables to a USB audio interface to your computer and use e.g Audacity in combination with Pocket Tools for SHARP Pocket Computers. Audiolevels are much better than the real CE-126P.
 
 **SHARP 11-PIN Arduino as Emulator for the CE-26P cassette interface **
