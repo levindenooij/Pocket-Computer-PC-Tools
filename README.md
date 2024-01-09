@@ -13,7 +13,7 @@ I have added two schematics as an alternative for a real CE-126P one with passiv
 
 Alternatively with modern micro controllers you can simplify the process and convert a basic file into machine readable tokens and simulate the tapeformat converted into pulse. This github directory contains a couple of Arduino INO files for your use. Next to an ARDUINO MEGA (due to memory requirements) you will need some additional hardware like a breadboard, some components as well as a connector to the 11 pin socket on the pocket PC.
 
-For cassette interface breadboard guidelines please have a look at: http://www.cavefischer.at/spc/html/PC-1401Key_Arduino.html. Don't use the source code mentioned there as it is not fit for purpose!
+For cassette interface breadboard wiring guidance please have a look at: http://www.cavefischer.at/spc/html/PC-1401Key_Arduino.html. Don't use the source code mentioned there as it is not fit for purpose!
 For this cassette interface you only need the upper part of the breadboard with push button, led and resistor.
 
 ** SHARP 11-PIN Arduino as Emulator for the CE-26P printer interface **
