@@ -18,7 +18,7 @@ For this cassette interface you only need the upper part of the breadboard with 
 
 ** SHARP 11-PIN Arduino as Emulator for the CE-26P printer interface **
 
-I have also added a SHARP CE-126P printer emulator that sends LLIST or LPRINT commands to a serial interface for for further processing e.g a serial printer. For the printer emulator hardware please have look here: http://www.cavefischer.at/spc/html/CE-126P_Emulator.html
+I have also added a SHARP CE-126P printer emulator that sends LLIST or LPRINT commands to a serial interface for for further processing e.g a serial printer. For the printer emulator breadboard wiring guidance please have look here: http://www.cavefischer.at/spc/html/CE-126P_Emulator.html
 I build a permanent board with a Arduino Nano, pull down resistors and a 11 pin-connector. Be aware different source listings for 14xx vs 12xx types. As there a limited memory requirements a NANO is sufficient.
 
 **SHARP 11 Pin & 15 pin SIO Interface**
