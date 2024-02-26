@@ -21,19 +21,19 @@ For this cassette interface you only need the upper part of the breadboard with 
 I have also added a SHARP CE-126P printer emulator that sends LLIST or LPRINT commands to a serial interface for for further processing e.g a serial printer. For the printer emulator breadboard wiring guidance please have look here: http://www.cavefischer.at/spc/html/CE-126P_Emulator.html
 I build a permanent board with a Arduino Nano, pull down resistors and a 11 pin-connector. Be aware different source listings for 14xx vs 12xx types. As there a limited memory requirements a NANO is sufficient.
 
-**SHARP 11 Pin & 15 pin SIO Interface**
+** SHARP 11 Pin & 15 pin SIO Interface **
 
 Some machines like PC-1350, E-500, G850, etc,have a SIO interface on either the 11 pin or 15 pin socket. Much more convenient!
 I have included a GUI programs (Java or Python) for managing the transfer between a serial FTDI USB interface and the machine. I have built a permanent board with a cheap FTDI clone and a inverter chip Sn74ls04n (the original FTDI can  be programmed to invert, the cheap ones not). Both for 11 as well 15 pin (different pin configuration)
 Please have a look here for connector guidance : http://www.silicium.org/forum/viewtopic.php?t=42285
 
-**CASIO 30 Pin connector for serial interface (FX850P, FX880P, VX4, ..)**
+** CASIO 30 Pin connector for serial interface (FX850P, FX880P, VX4, ..) **
 
 Some CASIO machines with a 30 pin connector have TTL level serial communication built in. 
 Pin 9 RX, P14 TX, Pin30 GND (count top row, 1,3,5,7,9 and bottom row 2,4,6,8,10,14,...30
 I have included a CASIOtransfer program in Python. Easy to use with CASIO commands like SAVE "COM0:4,N,8,1" or LOAD "COM0,4,N.8.1". For more info on  serial connections, see the respective manuals.
 
-**CASIO FX 702P, FX-700/PB-100, PB-700 and the like**
+** CASIO FX 702P, FX-700/PB-100, PB-700 and the like **
 There are multiple cassette interfaces available 
 FA-1 : FX-502P, FX-602P
 FA-2 : FX 602P, FX702p
