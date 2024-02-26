@@ -33,5 +33,40 @@ Some CASIO machines with a 30 pin connector have TTL level serial communication 
 Pin 9 RX, P14 TX, Pin30 GND (count top row, 1,3,5,7,9 and bottom row 2,4,6,8,10,14,...30
 I have included a CASIOtransfer program in Python. Easy to use with CASIO commands like SAVE "COM0:4,N,8,1" or LOAD "COM0,4,N.8.1". For more info on  serial connections, see the respective manuals.
 
+**CASIO FX 702P, FX-700/PB-100, PB-700 and the like**
+There are multiple cassette interfaces available 
+FA-1 : FX-502P, FX-602P
+FA-2 : FX 602P, FX702p
+FA-3 : FX 702P/PB-100
+FA-4 : PB-700
+
+I own the FA-2 and FA-3 but was missing an interface for the PB-700. After some search on the internet I came accross the following website from Piotr Piatek, http://www.pisi.com.pl/piotr433/index.htm. A great source for knowledge on CASIO machines, data representation, basic program structures as well as alternative self built interfaces. As I was missing an interface for the PB-700 I replicated the circuit http://www.pisi.com.pl/piotr433/pb700tae.htm. It uses an old micro controller and has connections for RS-232 and I2C. A warning is in place the whole exercise is not for the faint-hearted 
+- you need to program an old controller
+- somewhat more complicated signal path than the SHARP one.
+- the fact that the source code is all in assembler
+- the wiring and soldering on a board could become messy and confusing
+- quite a few points of failure possible in the process
+- 
+Nevertheless I sourced the components and built the circuit and with some further guidance from Piotr I got it to work. The big tip was to omit RS-232 overall and link a terminal program (9600,8,1) and USB serial interface's TXD to PD1 and RXD to PD0 directly. The interface will create a ASCII file that can be stored on the PC and can also be used as input via terminal program for a LOAD command on the PB-100 If you only want to SAVE and LOAD programs, this will suffice. Example is:
+
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooo@bPn0i0i0i0i0i0i0i0i
+0i0i0ingngngngngngngng0`0`0`0`0`0`T`0`0`0`0`0`lcRo0`oooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooo8bPh0`6eBjjiRiVmXilo8mBjng0i0`0e
+RiPangPg
+
+
+The are additional tools available (similar to pocket tools for the SHARP) that allow you to create ASCII files from a basic file or vice versa. So you can write a basic source file on the computer and make it available to the CASIO. A good thing is that f you have the original cassette interfaces you can also use the WAV file to create a basic file or the other way around.
+See https://www.mvcsys.de/doc/casioutil.html?fbclid=IwAR3BQInIuff2lOjGMDEnFQwnSZRRsfY0eNkHBMZhDxatF_floZaMOhNQ3fk
+
+
+
 
 
