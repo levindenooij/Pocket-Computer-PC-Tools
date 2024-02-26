@@ -46,8 +46,13 @@ I own the FA-2 and FA-3 but was missing an interface for the PB-700. After some 
 - the fact that the source code is all in assembler
 - the wiring and soldering on a board could become messy and confusing
 - quite a few points of failure possible in the process
+
 - 
-Nevertheless I sourced the components and built the circuit and with some further guidance from Piotr I got it to work. The big tip was to omit RS-232 overall and link a terminal program (9600,8,1) and USB serial interface's TXD to PD1 and RXD to PD0 directly. The interface will create a ASCII file that can be stored on the PC and can also be used as input via terminal program for a LOAD command on the PB-100 If you only want to SAVE and LOAD programs, this will suffice. Example is:
+- ![PB-700 serial intarface](https://github.com/levindenooij/Sharp-Casio-PC-Tools/assets/24826034/5f023e9a-035c-4e1b-ba44-00fcbf3ee9df)
+
+Nevertheless I sourced the components and built the circuit and with some further guidance from Piotr I got it to work. The big tip was to omit RS-232 overall and link a terminal program (9600,8,1) and USB serial interface's TXD to PD1 and RXD to PD0 directly. You can simplify the the curcuit by omitting the RS-232 part in the schematic as well as the I2C (but leave pull up resistors for PD4 and PD5)
+
+The interface will create a ASCII file that can be stored on the PC and can also be used as input via terminal program for a LOAD command on the PB-100 If you only want to SAVE and LOAD programs, this will suffice. Example output ASCII is:
 
 oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
@@ -63,7 +68,7 @@ oooooooooooooooooooooooooooooooo8bPh0`6eBjjiRiVmXilo8mBjng0i0`0e
 RiPangPg
 
 
-The are additional tools available (similar to pocket tools for the SHARP) that allow you to create ASCII files from a basic file or vice versa. So you can write a basic source file on the computer and make it available to the CASIO. A good thing is that f you have the original cassette interfaces you can also use the WAV file to create a basic file or the other way around.
+The are additional tools available (similar to pocket tools for the SHARP) that allow you to create ASCII files from a basic file or vice versa. So you can write a basic source file on the computer and make it available to the CASIO. A good thing is that if you have the original cassette interfaces you can also use the WAV file to create a basic file or the other way around.
 See https://www.mvcsys.de/doc/casioutil.html?fbclid=IwAR3BQInIuff2lOjGMDEnFQwnSZRRsfY0eNkHBMZhDxatF_floZaMOhNQ3fk
 
 
