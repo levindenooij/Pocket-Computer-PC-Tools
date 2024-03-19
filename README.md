@@ -1,4 +1,5 @@
 This repository contains tools and programs for interfacing vintage SHARP pocketcomputers to your PC as an alternative to what is already offered by Peil & Partners https://www.peil-partner.de/ifhe.de/sharp/ in combination with a vintage CE-126P printer cassette interface.
+
 Also for CASIO some interfacing options are available.
 
 ** SHARP Interfacing to a PC ** 
@@ -9,7 +10,7 @@ The 80's SHARP and CASIO Pocketcomputers  used FSK Modulation for saving and loa
 
 I have added two schematics as an alternative for a real CE-126P one with passive and one with active components. Just link with ear and mic cables to a USB audio interface to your computer and use e.g Audacity in combination with Pocket Tools for SHARP Pocket Computers. Audiolevels are much better than the real CE-126P.
 
-**SHARP 11-PIN Arduino as Emulator for the CE-26P cassette interface **
+**SHARP 11-PIN Arduino as Emulator for the CE-126P cassette interface **
 
 Alternatively with modern micro controllers you can simplify the process and convert a basic file into machine readable tokens and simulate the tapeformat converted into pulse. This github directory contains a couple of Arduino INO files for your use. Next to an ARDUINO MEGA (due to memory requirements) you will need some additional hardware like a breadboard, some components as well as a connector to the 11 pin socket on the pocket PC.
 
