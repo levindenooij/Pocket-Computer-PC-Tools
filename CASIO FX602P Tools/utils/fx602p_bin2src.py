@@ -23,6 +23,7 @@
 #  General Usage 
 #  fx602p_src2bin.py arg=filename.
 #  Required directory structure in woking directory (for convenience)
+#  utils: where the python programs are stored
 #  src: for fx602p source files
 #  bin: for fx602p token files
 #  resources: for with alpa and code text files for token translation in alpha or code mode
