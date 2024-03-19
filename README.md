@@ -69,6 +69,7 @@ The are additional tools available (similar to pocket tools for the SHARP) that 
 See https://www.mvcsys.de/doc/casioutil.html?fbclid=IwAR3BQInIuff2lOjGMDEnFQwnSZRRsfY0eNkHBMZhDxatF_floZaMOhNQ3fk
 
 ** CASIO FX 602P **
+
 I own a FA-2 cassette interface and was looking for tools to convert a keystroke source into a wav file and vice versa. The only tool I could find was a Delphi7 built program running on Windows. http://frickelfritze.bplaced.net/casio/wavetobin/index.html. I have used the insights from this program as well the generic source code for KCS encoding and decoding built by David Beazly https://www.dabeaz.com/py-kcs/.
 
 There are four python programs with general usage python3 fx602pxxx2xxx.py arg=filename without extension. It assumes the following subdirectories in you working directory 
