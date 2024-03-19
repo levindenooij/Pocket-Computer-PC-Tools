@@ -47,9 +47,6 @@ I own the FA-2 and FA-3 but was missing an interface for the PB-700. After some 
 - the wiring and soldering on a board could become messy and confusing
 - quite a few points of failure possible in the process
 
-- 
-- ![PB-700 serial intarface](https://github.com/levindenooij/Sharp-Casio-PC-Tools/assets/24826034/5f023e9a-035c-4e1b-ba44-00fcbf3ee9df)
-
 Nevertheless I sourced the components and built the circuit and with some further guidance from Piotr I got it to work. The big tip was to omit RS-232 overall and link a terminal program (9600,8,1) and USB serial interface's TXD to PD1 and RXD to PD0 directly. You can simplify the the curcuit by omitting the RS-232 part in the schematic as well as the I2C (but leave pull up resistors for PD4 and PD5)
 
 The interface will create a ASCII file that can be stored on the PC and can also be used as input via terminal program for a LOAD command on the PB-100 If you only want to SAVE and LOAD programs, this will suffice. Example output ASCII is:
@@ -71,7 +68,17 @@ RiPangPg
 The are additional tools available (similar to pocket tools for the SHARP) that allow you to create ASCII files from a basic file or vice versa. So you can write a basic source file on the computer and make it available to the CASIO. A good thing is that if you have the original cassette interfaces you can also use the WAV file to create a basic file or the other way around.
 See https://www.mvcsys.de/doc/casioutil.html?fbclid=IwAR3BQInIuff2lOjGMDEnFQwnSZRRsfY0eNkHBMZhDxatF_floZaMOhNQ3fk
 
+** CASIO FX 602P **
 
+I own a FA-2 cassette interface and was looking for tools to convert a keystroke source into a wav file and vice versa. The only tool I could find was a Delphi7 built program running on Windows. http://frickelfritze.bplaced.net/casio/wavetobin/index.html. I have used the insights from this program as well the generic source code for KCS encoding and decoding built by David Beazly https://www.dabeaz.com/py-kcs/.
 
+There are four python programs with general usage python3 fx602pxxx2xxx.py arg=filename without extension. It assumes the following subdirectories in you working directory 
+- utils: where the four programs are located
+- resources: token translation tables for alpha and code mode
+- src: your keystroke source program
+- bin: the tokenized programs
+- wav: the wav file generated or recorded.
+
+Enjoy!
 
 
