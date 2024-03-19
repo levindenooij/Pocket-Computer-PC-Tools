@@ -39,7 +39,7 @@ I have included a CASIO transfer program in Python. Easy to use with CASIO comma
 ** CASIO FX 702P, FX-700/PB-100, PB-700 and similar BASIC machines **
 
 Cassete interfaces you will find are ( there are also printer/cassette interfaces like FA-10)
-- FA-22: FX702p
+- FA-2: FX702p
 - FA-3 : FX 702P/PB-100
 - FA-4 : PB-700
 
