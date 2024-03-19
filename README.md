@@ -21,17 +21,57 @@ For this cassette interface you only need the upper part of the breadboard with 
 I have also added a SHARP CE-126P printer emulator that sends LLIST or LPRINT commands to a serial interface for for further processing e.g a serial printer. For the printer emulator breadboard wiring guidance please have look here: http://www.cavefischer.at/spc/html/CE-126P_Emulator.html
 I build a permanent board with a Arduino Nano, pull down resistors and a 11 pin-connector. Be aware different source listings for 14xx vs 12xx types. As there a limited memory requirements a NANO is sufficient.
 
-**SHARP 11 Pin & 15 pin SIO Interface**
+** SHARP 11 Pin & 15 pin SIO Interface **
 
 Some machines like PC-1350, E-500, G850, etc,have a SIO interface on either the 11 pin or 15 pin socket. Much more convenient!
 I have included a GUI programs (Java or Python) for managing the transfer between a serial FTDI USB interface and the machine. I have built a permanent board with a cheap FTDI clone and a inverter chip Sn74ls04n (the original FTDI can  be programmed to invert, the cheap ones not). Both for 11 as well 15 pin (different pin configuration)
 Please have a look here for connector guidance : http://www.silicium.org/forum/viewtopic.php?t=42285
 
-**CASIO 30 Pin connector for serial interface (FX850P, FX880P, VX4, ..)**
+** CASIO 30 Pin connector for serial interface (FX850P, FX880P, VX4, ..) **
 
 Some CASIO machines with a 30 pin connector have TTL level serial communication built in. 
 Pin 9 RX, P14 TX, Pin30 GND (count top row, 1,3,5,7,9 and bottom row 2,4,6,8,10,14,...30
 I have included a CASIOtransfer program in Python. Easy to use with CASIO commands like SAVE "COM0:4,N,8,1" or LOAD "COM0,4,N.8.1". For more info on  serial connections, see the respective manuals.
+
+** CASIO FX 702P, FX-700/PB-100, PB-700 and the like **
+There are multiple cassette interfaces available 
+FA-1 : FX-502P, FX-602P
+FA-2 : FX 602P, FX702p
+FA-3 : FX 702P/PB-100
+FA-4 : PB-700
+
+I own the FA-2 and FA-3 but was missing an interface for the PB-700. After some search on the internet I came accross the following website from Piotr Piatek, http://www.pisi.com.pl/piotr433/index.htm. A great source for knowledge on CASIO machines, data representation, basic program structures as well as alternative self built interfaces. As I was missing an interface for the PB-700 I replicated the circuit http://www.pisi.com.pl/piotr433/pb700tae.htm. It uses an old micro controller and has connections for RS-232 and I2C. A warning is in place the whole exercise is not for the faint-hearted 
+- you need to program an old controller
+- somewhat more complicated signal path than the SHARP one.
+- the fact that the source code is all in assembler
+- the wiring and soldering on a board could become messy and confusing
+- quite a few points of failure possible in the process
+
+- 
+- ![PB-700 serial intarface](https://github.com/levindenooij/Sharp-Casio-PC-Tools/assets/24826034/5f023e9a-035c-4e1b-ba44-00fcbf3ee9df)
+
+Nevertheless I sourced the components and built the circuit and with some further guidance from Piotr I got it to work. The big tip was to omit RS-232 overall and link a terminal program (9600,8,1) and USB serial interface's TXD to PD1 and RXD to PD0 directly. You can simplify the the curcuit by omitting the RS-232 part in the schematic as well as the I2C (but leave pull up resistors for PD4 and PD5)
+
+The interface will create a ASCII file that can be stored on the PC and can also be used as input via terminal program for a LOAD command on the PB-100 If you only want to SAVE and LOAD programs, this will suffice. Example output ASCII is:
+
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooo@bPn0i0i0i0i0i0i0i0i
+0i0i0ingngngngngngngng0`0`0`0`0`0`T`0`0`0`0`0`lcRo0`oooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooo8bPh0`6eBjjiRiVmXilo8mBjng0i0`0e
+RiPangPg
+
+
+The are additional tools available (similar to pocket tools for the SHARP) that allow you to create ASCII files from a basic file or vice versa. So you can write a basic source file on the computer and make it available to the CASIO. A good thing is that if you have the original cassette interfaces you can also use the WAV file to create a basic file or the other way around.
+See https://www.mvcsys.de/doc/casioutil.html?fbclid=IwAR3BQInIuff2lOjGMDEnFQwnSZRRsfY0eNkHBMZhDxatF_floZaMOhNQ3fk
+
+
 
 
 
