@@ -71,7 +71,16 @@ RiPangPg
 The are additional tools available (similar to pocket tools for the SHARP) that allow you to create ASCII files from a basic file or vice versa. So you can write a basic source file on the computer and make it available to the CASIO. A good thing is that if you have the original cassette interfaces you can also use the WAV file to create a basic file or the other way around.
 See https://www.mvcsys.de/doc/casioutil.html?fbclid=IwAR3BQInIuff2lOjGMDEnFQwnSZRRsfY0eNkHBMZhDxatF_floZaMOhNQ3fk
 
+** CASIO FX 602P **
+I own a FA-2 cassette interface and was looking for tools to convert a keystroke source into a wav file and vice versa. The only tool I could find was a Delphi7 built program running on Windows. http://frickelfritze.bplaced.net/casio/wavetobin/index.html. I have used the insights from this program as well the generic source code for KCS encoding and decoding built by David Beazly https://www.dabeaz.com/py-kcs/.
 
+There are four python programs with general usage python3 fx602pxxx2xxx.py arg=filename without extension. It assumes the following subdirectories in you working directory 
+utils: where the four programs are located
+resources: token translation tables for alpha and code mode
+src: your keystroke source program
+bin: the tokenized programs
+wav: the wav file generated or recorded.
 
+Enjoy!
 
 
