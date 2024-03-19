@@ -37,6 +37,7 @@ Pin 9 RX, P14 TX, Pin30 GND (count top row, 1,3,5,7,9 and bottom row 2,4,6,8,10,
 I have included a CASIO transfer program in Python. Easy to use with CASIO commands like SAVE "COM0:4,N,8,1" or LOAD "COM0,4,N.8.1". For more info on  serial connections, see the respective manuals. Also here the output is readable ASCII
 
 ** CASIO FX 702P, FX-700/PB-100, PB-700 and similar BASIC machines **
+
 Cassete interfaces you will find are ( there are also printer/cassette interfaces like FA-10)
 - FA-22: FX702p
 - FA-3 : FX 702P/PB-100
