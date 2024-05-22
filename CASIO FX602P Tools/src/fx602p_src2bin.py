@@ -22,8 +22,8 @@
 #  General Usage 
 #  fx602p_src2bin.py arg=filename.
 #  Required directory structure in woking directory (for convenience)
-#  utils: where the python programs are stored
-#  src: for fx602p source files
+#  src: where the python programs are stored
+#  list: for fx602p source files
 #  bin: for fx602p token files
 #  resources: for with alpa and code text files for token translation in alpha or code mode
 #  wav: for generate wav files
@@ -42,8 +42,6 @@
 
 	
 
-def main(args):
-    return 0
 
 if __name__ == '__main__':
 	import sys
@@ -69,11 +67,11 @@ if __name__ == '__main__':
 
 
 	alphaMode=False
-	with open('src/'+argFileName +'.txt', mode='r') as srcFile:
+	with open('list/'+argFileName +'.txt', mode='r') as listFile:
 		
 		with open('bin/'+argFileName +'.bin', mode='wb') as binFile: 
 			
-			fileName=srcFile.readline()
+			fileName=listFile.readline()
 			
 			fileBytes=[]
 			
@@ -113,7 +111,7 @@ if __name__ == '__main__':
 		
 		
 		
-			keyValue=srcFile.readline()
+			keyValue=listFile.readline()
 			
 			
 
@@ -145,7 +143,7 @@ if __name__ == '__main__':
 							if keyValueStrip=='"':
 								alphaMode=True
 							
-				keyValue=srcFile.readline()
+				keyValue=listFile.readline()
 			
 			for i in range(9):
 				binFile.write(bytearray.fromhex('FF'))
@@ -153,11 +151,12 @@ if __name__ == '__main__':
 			binFile.write(bytearray.fromhex('00'))
 			
 	
+	Alpha.close()
 	Code.close()
-	srcFile.close()
+	listFile.close()
 	binFile.close()
 
-	sys.exit(main(sys.argv))		
+	sys.exit()		
 
 
 		

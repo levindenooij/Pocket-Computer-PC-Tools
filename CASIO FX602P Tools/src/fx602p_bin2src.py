@@ -23,8 +23,8 @@
 #  General Usage 
 #  fx602p_src2bin.py arg=filename.
 #  Required directory structure in woking directory (for convenience)
-#  utils: where the python programs are stored
-#  src: for fx602p source files
+#  src: where the python programs are stored
+#  list: for fx602p source files
 #  bin: for fx602p token files
 #  resources: for with alpa and code text files for token translation in alpha or code mode
 #  wav: for generate wav files
@@ -41,8 +41,7 @@
 
 	
 
-def main(args):
-    return 0
+
 
 if __name__ == '__main__':
 	import sys
@@ -67,7 +66,7 @@ if __name__ == '__main__':
 		
 	with open('bin/'+ argFileName +'.bin', mode='rb') as binFile: 
 		
-		with open('src/' + argFileName+'.txt', mode='w') as srcFile:	
+		with open('list/' + argFileName+'.txt', mode='w') as listFile:	
 		
 			fileBytes=binFile.read();
 
@@ -99,9 +98,9 @@ if __name__ == '__main__':
 
 					if sub['hexValue'] == keyString:
 						res = sub
-						srcFile.write(res['alphaValue'])
+						listFile.write(res['alphaValue'])
 						
-			srcFile.write('\n')
+			listFile.write('\n')
 			
 			alphaMode=False
 			for keyValue in fileBytes[8:]:
@@ -119,8 +118,8 @@ if __name__ == '__main__':
 						if sub['hexValue'] == keyString:
 							res = sub
 							
-							srcFile.write(res['alphaValue'])
-							srcFile.write('\n')
+							listFile.write(res['alphaValue'])
+							listFile.write('\n')
 							if (keyString == '0x2B'): 
 								print('\n')
 								alphaMode=False
@@ -132,8 +131,8 @@ if __name__ == '__main__':
 						if sub['hexValue'] == keyString:
 							res = sub
 							
-							srcFile.write(res['codeValue'])
-							srcFile.write('\n')
+							listFile.write(res['codeValue'])
+							listFile.write('\n')
 							if (keyString == '0x2B'): 
 								print('\n')
 								alphaMode=False
@@ -143,7 +142,7 @@ if __name__ == '__main__':
 						alphaMode=True
 	Alpha.close()
 	Code.close()
-	srcFile.close()
+	listFile.close()
 	binFile.close()
 
-	sys.exit(main(sys.argv))
+	sys.exit()
