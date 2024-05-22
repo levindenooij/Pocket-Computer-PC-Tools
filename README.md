@@ -87,6 +87,9 @@ There are four python programs with general usage python3 fx602pxxx2xxx.py arg=f
 - bin: the tokenized programs
 - wav: the wav file generated or recorded.
 
+Known issues:
+x is sometimes duplicated as the letter x and the multiply sign look similar but do have a different binary value in the look up tables. 
+
 Enjoy!
 
 Next probably a TI-74 on the bench
