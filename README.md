@@ -90,7 +90,7 @@ There are four python programs with general usage python3 fx602pxxx2xxx.py arg=f
 Known issues:
 x is sometimes duplicated as the letter x and the multiply sign look similar but do have a different binary value in the look up tables. 
 
-** T-74 **
+** TI-74 **
 
 I have made a attempte to provide some wav2bin and bin2src tools for the TI-74. The latter is no joke to figure out. I had a look at some work from .. 
 https://www.mvcsys.de/doc/casioutil.html#mozTocId818664 but found it hard to digest. The wav2bin program is a simplified version of earlier work by Abraham Moller. # CIduino7: TI-95 Arduino Replacement Cassette Interface. Watch the demo here! https://www.youtube.com/watch?v=DMReYWH7o-4. The Arduino sends data to serial interface and the file will be stored as bin file. The bin2src python program is built from scratch uses the bin file along with a token conversion table to generate the original source code. The program provide good results with a simple factorial program but is no way extensively tested. I the near future I might spend some more time on it but I had the thrill of getting it to work to a certain extent. 
