@@ -1,4 +1,4 @@
-** Introduction **
+o** Introduction **
 
 This repository contains tools and programs for interfacing vintage SHARP and Casio pocketcomputers to your PC. If you have a vintage cassette interface compatible with the machine, you can load and store programs on a cassetterecorder using FSK modulation. Basically converting a bit patterns into audio wave patterns e.g 2400 HZ for a 1 and 1200 HZ for a 0.  Instead of a cassette recorder, nowadays, you can also use a PC with a mediaplayer like Audacity. In the latter the programs are stored as WAV files. In the early days of the PC, efforts have been made by several hobbyists or commercial parties to offer programs to generate WAV files from a source file and vice versa. 
 
@@ -90,8 +90,6 @@ There are four python programs with general usage python3 fx602pxxx2xxx.py arg=f
 Known issues:
 x is sometimes duplicated as the letter x and the multiply sign look similar but do have a different binary value in the look up tables. 
 
-Enjoy!
-
 ** T-74 **
 
 I have made a attempte to provide some wav2bin and bin2src tools for the TI-74. The latter is no joke to figure out. I had a look at some work from .. 
@@ -99,6 +97,7 @@ https://www.mvcsys.de/doc/casioutil.html#mozTocId818664 but found it hard to dig
 
 Known issues: Variable names are reissued starting with A. I could't figure out how variable names are dealt with in the bin file. 
 
+Enjoy!
 
 
 
