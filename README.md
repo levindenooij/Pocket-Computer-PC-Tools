@@ -1,6 +1,6 @@
 o** Introduction **
 
-This repository contains tools and programs for interfacing vintage SHARP and Casio pocketcomputers to your PC. If you have a vintage cassette interface compatible with the machine, you can load and store programs on a cassetterecorder using FSK modulation. Basically converting a bit patterns into audio wave patterns e.g 2400 HZ for a 1 and 1200 HZ for a 0.  Instead of a cassette recorder, nowadays, you can also use a PC with a mediaplayer like Audacity. In the latter the programs are stored as WAV files. In the early days of the PC, efforts have been made by several hobbyists or commercial parties to offer programs to generate WAV files from a source file and vice versa. 
+This repository contains tools and programs for interfacing vintage SHARP Casio and TI pocketcomputers to your PC. If you have a vintage cassette interface compatible with the machine, you can load and store programs on a cassetterecorder using FSK modulation. Basically converting a bit patterns into audio wave patterns e.g 2400 HZ for a 1 and 1200 HZ for a 0.  Instead of a cassette recorder, nowadays, you can also use a PC with a mediaplayer like Audacity. In the latter the programs are stored as WAV files. In the early days of the PC, efforts have been made by several hobbyists or commercial parties to offer programs to generate WAV files from a source file and vice versa. 
 
 
 ** SHARP Interfacing to a PC ** 
