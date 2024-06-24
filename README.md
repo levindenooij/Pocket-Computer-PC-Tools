@@ -1,11 +1,11 @@
-o** Introduction **
+** Introduction **
 
 This repository contains tools and programs for interfacing vintage SHARP Casio and TI pocketcomputers to your PC. If you have a vintage cassette interface compatible with the machine, you can load and store programs on a cassetterecorder using FSK modulation. Basically converting a bit patterns into audio wave patterns e.g 2400 HZ for a 1 and 1200 HZ for a 0.  Instead of a cassette recorder, nowadays, you can also use a PC with a mediaplayer like Audacity. In the latter the programs are stored as WAV files. In the early days of the PC, efforts have been made by several hobbyists or commercial parties to offer programs to generate WAV files from a source file and vice versa. 
 
 
 ** SHARP Interfacing to a PC ** 
 
-The 80's SHAR Pocketcomputers used FSK Modulation for saving and loading basic programs to a cassette recorder. When you have the proper interface peripherals this is still a good way to archive your programs. Most models can use the CE-126P printer/cassette interface. When connecting the CE-126P to the PC and using e.g. Audacity you can save programs to the PC and load to the pocket computer from the PC. . With software on the PC like Pocket Tools for SHARP Pocket Computers offered by Peil & Partners https://www.peil-partner.de/ifhe.de/sharp/, you can convert basic txt files into wav files for loading into to the SHARP pocket computer and vice versa. Troublesome with the CE-126P is to get the right audio levels and sampling rates to get it to work.
+The 80's SHARP Pocketcomputers used FSK Modulation for saving and loading basic programs to a cassette recorder. When you have the proper interface peripherals this is still a good way to archive your programs. Most models can use the CE-126P printer/cassette interface. When connecting the CE-126P to the PC and using e.g. Audacity you can save programs to the PC and load to the pocket computer from the PC. . With software on the PC like Pocket Tools for SHARP Pocket Computers offered by Peil & Partners https://www.peil-partner.de/ifhe.de/sharp/, you can convert basic txt files into wav files for loading into to the SHARP pocket computer and vice versa. Troublesome with the CE-126P is to get the right audio levels and sampling rates to get it to work.
 
 ** SHARP 11-PIN HW replacement for CE-126P **
 
@@ -39,7 +39,7 @@ I have included a CASIO transfer program in Python. Easy to use with CASIO comma
 ** CASIO FX 702P, FX-700/PB-100, PB-700 and similar BASIC machines **
 
 Cassete interfaces you will find are ( there are also printer/cassette interfaces like FA-10)
-- FA-2: FX702p
+- FA-2 : FX702p
 - FA-3 : FX 702P/PB-100
 - FA-4 : PB-700
 
