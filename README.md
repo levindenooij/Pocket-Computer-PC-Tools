@@ -1,11 +1,11 @@
-o** Introduction **
+** Introduction **
 
 This repository contains tools and programs for interfacing vintage SHARP Casio and TI pocketcomputers to your PC. If you have a vintage cassette interface compatible with the machine, you can load and store programs on a cassetterecorder using FSK modulation. Basically converting a bit patterns into audio wave patterns e.g 2400 HZ for a 1 and 1200 HZ for a 0.  Instead of a cassette recorder, nowadays, you can also use a PC with a mediaplayer like Audacity. In the latter the programs are stored as WAV files. In the early days of the PC, efforts have been made by several hobbyists or commercial parties to offer programs to generate WAV files from a source file and vice versa. 
 
 
 ** SHARP Interfacing to a PC ** 
 
-The 80's SHAR Pocketcomputers used FSK Modulation for saving and loading basic programs to a cassette recorder. When you have the proper interface peripherals this is still a good way to archive your programs. Most models can use the CE-126P printer/cassette interface. When connecting the CE-126P to the PC and using e.g. Audacity you can save programs to the PC and load to the pocket computer from the PC. . With software on the PC like Pocket Tools for SHARP Pocket Computers offered by Peil & Partners https://www.peil-partner.de/ifhe.de/sharp/, you can convert basic txt files into wav files for loading into to the SHARP pocket computer and vice versa. Troublesome with the CE-126P is to get the right audio levels and sampling rates to get it to work.
+The 80's SHARP Pocketcomputers used FSK Modulation for saving and loading basic programs to a cassette recorder. When you have the proper interface peripherals this is still a good way to archive your programs. Most models can use the CE-126P printer/cassette interface. When connecting the CE-126P to the PC and using e.g. Audacity you can save programs to the PC and load to the pocket computer from the PC. . With software on the PC like Pocket Tools for SHARP Pocket Computers offered by Peil & Partners https://www.peil-partner.de/ifhe.de/sharp/, you can convert basic txt files into wav files for loading into to the SHARP pocket computer and vice versa. Troublesome with the CE-126P is to get the right audio levels and sampling rates to get it to work.
 
 ** SHARP 11-PIN HW replacement for CE-126P **
 
@@ -39,7 +39,7 @@ I have included a CASIO transfer program in Python. Easy to use with CASIO comma
 ** CASIO FX 702P, FX-700/PB-100, PB-700 and similar BASIC machines **
 
 Cassete interfaces you will find are ( there are also printer/cassette interfaces like FA-10)
-- FA-2: FX702p
+- FA-2 : FX702p
 - FA-3 : FX 702P/PB-100
 - FA-4 : PB-700
 
@@ -92,10 +92,12 @@ x is sometimes duplicated as the letter x and the multiply sign look similar but
 
 ** TI-74 **
 
-I have made a attempte to provide some wav2bin and bin2src tools for the TI-74. The latter is no joke to figure out. I had a look at some work from .. 
-https://www.mvcsys.de/doc/casioutil.html#mozTocId818664 but found it hard to digest. The wav2bin program is a simplified version of earlier work by Abraham Moller. # CIduino7: TI-95 Arduino Replacement Cassette Interface. Watch the demo here! https://www.youtube.com/watch?v=DMReYWH7o-4. The Arduino sends data to serial interface and the file will be stored as bin file. The bin2src python program is built from scratch uses the bin file along with a token conversion table to generate the original source code. The program provide good results with a simple factorial program but is no way extensively tested. I the near future I might spend some more time on it but I had the thrill of getting it to work to a certain extent. 
+I have made a attempt to provide some wav2bin and bin2src tools for the TI-74. The latter is no joke to figure out. I had a look at some work from .. 
+https://www.mvcsys.de/doc/casioutil.html#mozTocId818664 but found it hard to digest. The wav2bin program is a simplified version of earlier work by Abraham Moller. # CIduino7: TI-95 Arduino Replacement Cassette Interface. Watch the demo here! https://www.youtube.com/watch?v=DMReYWH7o-4. The Arduino sends data to serial interface and the file will be stored as bin file. The bin2src python program is built from scratch uses the bin file along with a token conversion table to generate the original source code. The program provide good results with a simple factorial program but is in no way extensively tested. I the near future I might spend some more time on it but I passed the initial thrill of getting it to work to some extent.  
 
 Known issues: Variable names are reissued starting with A. I could't figure out how variable names are dealt with in the bin file. 
+
+Next on the bench maybe a CASIO FX-502P.
 
 Enjoy!
 
