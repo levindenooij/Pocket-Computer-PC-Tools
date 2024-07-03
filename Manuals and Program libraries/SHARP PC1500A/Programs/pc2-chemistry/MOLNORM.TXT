@@ -1,0 +1,47 @@
+1 REM v0.2
+10 " "LOCK :CLEAR :USING "#####.###":WAIT 90:ON ERROR GOTO 990
+20 PRINT "    MOLARITY/NORMALITY":PRINT "  Copr. 1982 Tandy Corp.":WAIT 
+100 CLS :A$="":INPUT "Find (C)onc or (W)t? ";A$:GOTO 120
+110 UNLOCK :END
+120 IF A$="W"THEN 500
+130 IF A$<>"C"THEN 100
+200 W=0:INPUT "Mol wt of solute? ";W
+210 IF W<1THEN 200
+220 A=0:INPUT "Solute wt? (gms) ";A
+230 IF A<=0THEN 220
+240 S=A/W
+250 V=0:INPUT "Solution volume? (l) ";V
+260 IF V<=0THEN 250
+270 M=S/V:PRINT "Molarity =";M
+280 P=0:INPUT "Total ionized + charge? ";P
+290 IF P<=0THEN 280
+300 N=M*P:PRINT "Normality =";N:GOSUB 900:IF P$<>"P"THEN 100
+310 LPRINT "Solute mol wt =";W:LPRINT "Solute weight =";A;" gms"
+320 LPRINT "Solute volume =";V;" liters":LPRINT "Total ionized + charge =";P
+330 LF 1:LPRINT "MOLARITY =";M:LPRINT "NORMALITY =";N:GOTO 100
+500 A$="":INPUT "(M)olarity, (N)ormality? ";A$
+510 IF A$="N"THEN 800
+520 IF A$<>"M"THEN 500
+600 M=0:INPUT "Solution molarity? ";M
+610 IF M<=0THEN 600
+620 V=0:INPUT "Solution volume? (l) ";V
+630 IF V<=0THEN 620
+640 W=0:INPUT "Solute molecular wt? ";W
+650 IF W<1THEN 640
+660 A=M*V*W:PRINT "Solute weight =";A:GOSUB 900:IF P$<>"P"THEN 100
+670 LPRINT "Molarity =";M:LPRINT "Solution vol =";V;" L"
+680 LPRINT "Solute molucular wt =";W:LF 1:LPRINT "SOLUTE WT =";A:GOTO 100
+800 N=0:INPUT "Normality? ";N
+810 IF N<=0THEN 800
+820 I=0:INPUT "Ion factor? ";I
+830 IF I<=0THEN 820
+832 V=0:INPUT "Solution volume? (l) ";V
+834 IF V<=0THEN 832
+836 W=0:INPUT "Solute mol. wt.? ";W
+838 IF W<=0THEN 836
+840 A=V*N*W/I:PRINT "Solute weight =";A:GOSUB 900:IF P$<>"P"THEN 100
+850 LPRINT "Normality =";N:LPRINT "Ion factor =";I:LF 1:LPRINT "SOLUTE WT =";A:GOTO 100
+900 WAIT 0:PRINT CHR$ 34;"P";CHR$ 34;:WAIT :P$="":INPUT " to print, ENTER ";P$:IF P$="P"TEXT :CSIZE 1
+910 RETURN 
+990 USING :PRINT "*** ERROR";PEEK &789B;" in";STATUS 4;" ***":USING "#####.###":GOTO 100
+999 END

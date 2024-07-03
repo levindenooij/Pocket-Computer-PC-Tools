@@ -1,0 +1,238 @@
+PC-2 Games: (c) 1982 Tandy Corporation. All rights reserved.
+
+"Games" consists of :
+
+1. TWISTER - Exercise your logic. Juggle the nine letters or numbers into their proper sequence, in as few moves as possible.
+
+2. LANDER - Can you safely pilot a landing module to the surface of the Moon? You will need skill and vigilance to succeed.
+
+3. BLACKJACK - Return to the days of the Alaskan gold rush as you wager against the wiley, notorious Yukon Jacques (alias PC-2).
+
+4. SKETCH - More than a game. Sketch turns your PC-2 into a four color, programmable sketchpad.
+
+5. SOUNDOFF - Test your memory. Try to match the computer's "music".
+
+6. FOOTBALL - Why settle for being an armchair quarterback? Be an armchair coach with Football. Lead your team to victory against the computer's team.
+
+7. TASK FORCE - Command your own flotilla. Don't let the enemy sink your ships!
+
+8. HANGMAN - Play this classic word-guessing game with a friend, or against the computer.
+
+9. TIC-TAC-TOE - An old favorite enters the computer age.
+
+---------------
+TWISTER
+
+CLOAD "TWISTER"
+DEF SPACE
+Twister is a game of logic. The computer will display nine characters, either letters or numbers. In as few moves as possible, you must arrange them into numeric or alphabetical order by reversing groups of characters.
+
+Keys:
+. L / N - choose letters or numbers.
+. Press a first numeric key to enter the "rank" of the character that begins the group you want reversed.
+. Press a second numeric key to enter the number of characters to be reversed.
+. CL - cancel previous key
+. ENTER - reverse the characters.
+. Q - exit the game
+
+---------------
+LANDER
+
+CLOAD "LANDER"
+DEF SPACE
+You are orbiting the moon, 25 miles above the surface. You must pilot your landing module to a safe landing on Luna. The program for this simulation is based on actual orbital mechanics.
+
+At the start of the simulation, the computer will ask you for the apparent speed. Apparent speed controls the speed of the game and determines the level of difficulty.
+Choose an apparent speed, from 1/10 the speed of real time to 10 times faster than real time. Slower speeds are easiest. A speed of about 2 to 3 results in a good combination of realism and speed. Type a number from 0.1 to 10, then press ENTER to set the apparent speed.
+After you enter the apparent speed, the computer will place the lander in a low, stable Lunar orbit at 132000 feet (25 miles high) at a speed of 7572 feet/second, 100 miles away from the landing site.
+
+As you start the landing, the display will be:
+7572 132000 359.9 99 100
+7572 - The lander's speed in feet/second.
+132000 - The lander's distance, in feet, from the surface of Luna.
+359.9 - The angle of descent, in degrees. For example: 180.0 or 0.0 degrees (no angle) is horizontal (straight across). 45.0 degrees is an angle halfway between no descent and straight down. 90.0 degrees is a vertical line (straight up or down).
+99 - The amount of fuel, in percent. 100 would be a full tank.; 0 is an empty tank.
+100 - The horizontal distance to the landing site in miles. This distance is not affected by your distance from the Lunar surface. For example: if the landing site is 10 miles ahead, the horizontal distance will show as 10, whether you are 10000, 100, or 10 miles above the site.
+The horizontal distance decreases as you approach the site. If the number of miles on the display is increasing, you are backing away from the site. If the number of miles is negative, you have passed the site.
+
+The computer will update the display about once per second.
+To land successfully you must:
+. Slow the lander so it drops out the Lunar orbit.
+. Move across 100 miles.
+. Descend 25 miles.
+. Control the angle and speed of your descent.
+
+Your lander is equipped with retrorockets. They slow your acceleration by firing in the direction opposite the direction in which you are moving. In fact, if you apply too much retrofire, you may stop the lander or propel it backwards, away from your goal.
+Your manipulation of the lander's retrorockets determines the angle and speed of your landing. Retrofire is measured in Earth gravities of deceleration (backwards thrust). Number keys <1> to <9> represent 1-9 Earth gravities of deceleration.
+
+First, you must slow the lander enough to drop out the Lunar orbit. Hold down a key fro <1> to <9> to control the retrorockets. Retrofire will continue as long as you hold the key.
+
+When you need to let the lander coast to maintain a smooth descent, do not press a key. While you coast, Luna's gravity will gradually increase your speed.
+
+As the retrorockets slow the lander in its orbit, it will arc down toward the moon. The lander tilts at the same angle as its descent angle, because the retrorockets always fire straight ahead. You must control the lander's arc so that it arrives at the landing site upright.
+
+To land successfully, you must touch down at a speed of less than 20 feet/second, with a descent angle between 70 and 110 degrees.
+
+If the landing descent speed is over 100 feet/second, the landing is fatal. Running out of fuel is fatal. A landing slower than 100 feet/second, but faster than 20 feet/second is merely painful. A landing with a tilt greater than 20 degrees off the vertical will tip the lander and result in a rolling, bouncing arrival. A good landing is a crowning achievement in the career of any Moon Pilot.
+
+---------------
+BLACKJACK
+
+CLOAD "BLACKJACK"
+DEF SPACE
+The object of the game is to get 21, or close to 21 points, without going over 21 ("busting"). Another rewarding goal can be winning large sums of money.
+
+At the start of the game you have a bankroll of $100. Yukon Jacques (PC-2) will ask for your wager. You can bet any amount, up to your entire bankroll. Use the number keys to type your wager, then press ENTER.
+Yukon Jacques will deal you (and himself) two cards; the first face-down and the second face-up. These are called the down-card and the up-card. You will be shown both of your cards and the dealer's up-card. These cards will show for about 4 seconds.
+Each card has a point value; cards 2 though 9 are worth 2 trough 9 points; tens and face cards are worth 10 points. Aces are worth one or eleven points; the computer will decide the value of aces.
+If your first two cards total 21 points, you "Blackjack". You win the hand and get 3:2 odds on your wager. If Jacques gets 21.he wins. If neither you or Jacques Blackjacks, you will be asked:
+(S)tand (H)it or (D)ouble?
+Press <S> to Stand, <H> to take a Hit (another card), or <D> to Double.
+
+Stand when you are satisfied with your hand. The dealer will take hits or stand, then show his down-card. The high score will win the pot, then the next hand will start.
+Take a Hit to get another card and raise your points (hopefully without busting).
+Press <D> to double the stakes and get one more card. You may double only before hits are taken. Jacques will take hits or stand. The high score wins, then the next hand will start. "Push" means tie. When you and Jacques tie, neither wager is win or lost.
+
+The games ends when you run out of money.
+
+---------------
+SKETCH
+
+CLOAD "SKETCH"
+DEF SPACE
+Sketch lets you use the PC-2 with attached printer/plotter as a 4-color programmable sketchpad.
+
+Basic commands:
+
+up/down/left/right arrows - Moves the pen in the indicated direction.
+0,1,2,3 - Selects color. 0 is black, 1 is blue, 2 is green, and 3 is red.
+P - Changes pen status from UP to DN (down), from DN to UP.
+O - Draws a circle or arc.
+I - Draws a straight line.
+R - Sets text rotation.
+S - Sets text size.
+T - Prints a text label.
+Q - Exits the program.
+CL - sets the current pen location as coordinates (0 0).
+
+Moving the pen:
+Press any of the four arrow keys to move the pen. The pen moves in steps of 1 millimeter (about .05 of an inch), four steps/second, as long as you hold down the key. As the pen moves, the X and Y coordinate display changes to show the current pen coordinates. The coordinates increase or decrease, depending on the pen's direction, by fives, for example: 0...5...10, or -15...-20...-25. The pen will draw as it moves if its position is down.
+
+(...)
+Drawing a circle or an arc:
+Sketch can draw an arc (or full circle) over any circular curve you can define with three points. The shape and size of the arc or circle is determined by three entries: start point, mid-arc, and end point. As you enter the coordinates for your start, mid-arc, and end points, keep your eye on the pen, and imagine what size the circle must be to encompass all three points.
+Press <O> to start defining your arc. The right side of the display will clear, leaving the coordinate display intact.
+The display will show: Start, ENTER. Use the arrow keys to place the pen over the arc's starting point, then press <ENTER>. The coordinate display will be updated continuously, and the pen will not draw. The PC-2 will beep to acknowledge your entry.
+The display will show: Mid-arc, ENTER. Use the arrow keys to place the pen over any point which lies on the desired arc, between the start and the end points. Press <ENTER>. The PC-2 will beep to acknowledge your entry.
+The display will show: End, ENTER. Use the arrow keys to place the pen over the point at which you want the arc to end, and press <ENTER>. The PC-2 will beep to acknowledge your entry. The computer will take about a second to compute an equation for your arc, then it will draw the arc.
+If any of the three points lies on the same vertical or horizontal coordinates as any other point, the computer may not be able to solve the equation for the arc. When this happens, the computer will beep once sharply, then jump directly back to the menu.
+However, to form a circle, you will want your arc to meet at the start and end points. You cannot enter exactly the same point for both start and end, so vary your start and end point by one coordinate. For example: if your start point is 0 0, your end point should be 5 5 or -5 -5. There is a tiny gap (1 "step" of the pen) in your circle.
+(...)
+
+---------------
+SOUNDOFF
+
+CLOAD "SOUNDOFF"
+DEF SPACE
+In Soundoff, the computer will produce a series of beep notes which you must match by pressing function keys in the correct order. Each key, when pressed, makes a different beep. Each beep, when produced, has its own symbol on the display, directly above the keys which makes the beep.
+
+You will be given a choice of 5 levels of difficulty (speeds) from beginner to expert. 1 is easiest; 5 is hardest. Press a key <1>-<5> then <ENTER> to set the level of play.
+The computer will display: Ready to Play?. Press <Y> or <N>, then <ENTER>.
+The game starts with a single note. If you match it, the computer will add another beep to the sequence, until you miss or until you match 16 consecutive notes.
+
+---------------
+FOOTBALL
+
+CLOAD "FOOTBALL"
+DEF SPACE
+You will be coaching your team against coach PC2's MicroMashers. Both teams are equally skillful, so your coaching ability will determine the outcome of the game.
+The game is played almost exactly like conventional football, with a few simplifications. The game is not run by quarters. The goal lines do not change; your goal is always at the 0 yard line and the computer's is always at 100.
+ The game runs for a simulated hour by its own measurement, then ends. And, unfortunately, there is no half-time entertainment.
+
+First, the winner of the coin flip is announced. If the computer wins, it will receive; if you win, you get a choice. Press <K> for Kick or <R> for Receive, then <ENTER>.
+Each down, a summary of the field position is shown, for example:
+   Your ball at 37
+   Down 2: 8 yds to go
+When the computer has the ball, it will choose a play, then show the result. When you have the ball, the computer will display this menu:
+S-R   F-R   S-P   L-P   F-G   Punt
+<F1>  <F2>  <F3>  <F4>  <F5>  <F6>
+The abbreviations stand for Simple Run, Fancy Run, Short Pass, Long Pass, Field Goal attempt, and Punt. To choose a play, press the F-key under the play's abbreviation.
+
+The 4 offensive tactics offer different chances of success. The Simple Run is the most likely to succeed and the Long Pass is the least likely. The riskier plays usually gain the most yards. The usual fumbles, interceptions, tackles, etc. can occur at random, and will affect the course of the game.
+As your play begins, the computer will be displayed as the play progresses. At the end of the play, the display will return to the summary of the field position.
+After each touchdown, the scoring team will be given a chance to try for the extra point. The computer automatically determines if the point is gained. the computer will display the score each time it changes, and at the end of the game.
+
+---------------
+TASK FORCE
+
+CLOAD "TASKFORCE"
+DEF SPACE
+You battle the computer for control of the sea. Each of your commands a naval flotilla on a 9x9 playing area. You will direct your artillery fire at the enemy's flotilla. To win, you must sink all the enemy's ships.
+
+First, you will be asked to set up your flotilla. The computer arranges its own flotilla at the start of the game.
+
+Each flotilla has 4 ships:
+. One submarine - Occupies 2 squares; takes 2 hints to sink.
+. One destroyer - Occupies 3 squares; takes 3 hints to sink.
+. One cruiser - Occupies 4 squares; takes 4 hints to sink.
+. One battleship - Occupies 5 squares; takes 5 hints to sink.
+
+Each square of a play area has a 2-digit coordinate from 00 to 88. The first digit, from 0 to 8, numbers the horizontal row counting down from the top. The second coordinate numbers the vertical column counting left-to-right. Each play area looks like this:
+00 01 02 03 04 05 06 07 08
+10 11 12 13 14 15 16 17 18
+20 21 22 23 24 25 26 27 28
+30 31 32 33 34 35 36 37 38
+40 41 42 43 44 45 46 47 48
+50 51 52 53 54 55 56 57 58
+60 61 62 63 64 65 66 67 68
+70 71 72 73 74 75 76 77 78
+80 81 82 83 84 85 86 87 88
+
+For each of your 4 ships, you will enter the row, column, and direction. For example, suppose you want your submarine at coordinates 63 and 64, from left to right (horizontal):
+The computer will display:   You type:
+Submarine row? (0-8)         <6><ENTER>
+Submarine col? (0-8)         <3><ENTER>
+(H)orz or (V)ert?            <H><ENTER>
+
+If you try to put one ship on top of another, your entries will be rejected, and the computer will repeat its requests for coordinates and position.
+
+You and the computer will take turns trying to sink each other's ships. You get 4 shots per turn. Before each shot, the computer will ask for a row coordinate and a column coordinate for your target. The computer will reject repeat coordinates.
+
+The computer will display the result of your shot: SPLASH! for a miss, or Hit a ...(type of ship) for a hit. If you hit and sink a ship, the computer will display: IT SANK! When you finish your 4 shots, the computer will take its turn.,
+
+The game ends when all the ships in one of the flotillas have been sunk. The computer will ask if you want to play again. Press <Y> for Yes or <N> for No.
+
+---------------
+HANGMAN
+
+CLOAD "HANGMAN"
+DEF SPACE
+Hangman can be played by one player against the computer, or by two player against each other.
+
+If two people are playing, each will take turns supplying a word to be guessed. The word should contain only capital letters.
+
+Once the word is entered, the computer will display a row of blank lines. There is one blank for each letter in the word. The guessing player chooses a letter and presses the key for that letter.
+Each time a letter is guessed correctly, the letter will fill the blank. If the letter is not in the word, the guess is counted as a miss. If the guesser misses 7 times, he loses.
+
+Press <*> to end the game.
+
+---------------
+TIC-TAC-TOE
+
+CLOAD "TICTACTOE"
+DEF SPACE
+The squares, like the PC-2's numeric keyboard, are numbered in this order:
+   7 8 9
+   4 5 6
+   1 2 3
+Keys <1>-<9> represent the 9 squares. When the grid has been drawn, the computer feeds enough paper to place the entire grid within view. The computer will display:
+   Do you want the first move?
+Press <Y> for Yes or <N> for No, then <ENTER>.
+
+In Tic-Tac-Toe you are "X" and the computer is "O".
+
+Once a move is entered, the computer will withdraw the paper, print the move, then return the grid to view.
+
+The game ends when you or the computer gets 3 squares in a row, or when all 9 spaces are filled (a draw). The computer will ask you if you want to play again. Press <Y> or <N>.
+
+

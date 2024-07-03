@@ -1,0 +1,25 @@
+1 REM v0.1
+10 " "LOCK :CLEAR :WAIT 90:ON ERROR GOTO 900
+20 PRINT "     ACID EQUILIBRIA":PRINT "  Copr. 1982 Tandy Corp."
+100 P$="":WAIT 0:PRINT CHR$ 34;"P";CHR$ 34;:WAIT 
+110 INPUT " to print, ENTER ";P$:IF P$="P"TEXT :CSIZE 2
+120 CLS :C=0:INPUT "Weak acid molarity? ";C:GOTO 140
+130 UNLOCK :END
+140 IF C<=0THEN 120
+150 A$="":INPUT "Calculate (P)h or (K)a? ";A$
+160 IF A$="P"THEN 300
+170 IF A$<>"K"THEN 150
+200 P=0:INPUT "PH of solution? ";P
+210 IF P<=0OR P>=14THEN 200
+220 X=10^-P:V=X^2/(C-X):PRINT USING "###.##^";"Ka =";V
+230 IF P$<>"P"THEN 100
+240 USING :LPRINT "Molarity =";C:LPRINT "PH =";P:LF 1:LPRINT USING "###.##^";"Ka =";V:GOTO 100
+300 K=0:INPUT "Value of Ka? ";K
+310 IF K<=0THEN 300
+320 X=SQR (K*C):PRINT USING "###.##^";"(H3O)+ conc =";X
+330 P=-LOG X:PRINT USING "###.##";"PH =";P
+340 IF P$<>"P"THEN 100
+350 USING :LPRINT "Molarity =";C:LPRINT "Ka =";USING "###.##^";K:LF 1
+360 LPRINT USING "###.##^";"(H3O)+ conc =";X:LPRINT USING "###.##";"PH =";P:GOTO 100
+900 USING :PRINT "*** ERROR";PEEK &789B;" in";STATUS 4;" ***":GOTO 100
+999 END

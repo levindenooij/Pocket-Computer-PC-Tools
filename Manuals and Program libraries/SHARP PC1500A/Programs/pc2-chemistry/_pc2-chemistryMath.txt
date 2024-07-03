@@ -1,0 +1,34 @@
+Chemistry Math Program: (c) 1982 Tandy Corporation. All rights reserved.
+
+INTRODUCTION
+
+The CHEMISTRY MATH(tm) package is a valuable tool for students who are familiar with the fundamentals of chemistry. Beginners can use the programs to practice the application of essential concepts and principles of chemistry. More advanced students will enjoy the convenience of this package that solves chemistry problems as rapidly as a calculator solves math problems.
+
+The first eight programs perform basic chemistry calculations. The last
+two programs are handy references; one converts English units of
+measure to metric units, one is a periodic table of the elements.
+CHEMISTRY MATH consists of:
+
+WTWTVOL	 - Solves weight-weight and weight-volume problems.
+
+EQUILIB	 - Calculates acid equilibria.
+
+IDEALGAS - Performs ideal gas calculations.
+
+MOLNORM	 - Calculates molarity/normality of solutions.
+
+BPFP     - Calculates boiling and freezing poinds of solutions.
+
+KSP      - Calculates solubility products.
+
+FORMWTS	 - Calculates molecular weights.
+
+PH       - Calculates pH, OH-, and H+ concentrations of solutions.
+
+METRIC   - Converts English units of measure to metric units.
+
+ATOMWTS	 - Finds atomic weights.
+
+The PC-2 displays the results of its calculations to its full available accuracy - up to 10 digits. If you wish, you can receive a printout of each problem and its answer.
+
+

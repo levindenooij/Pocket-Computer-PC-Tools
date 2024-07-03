@@ -1,0 +1,35 @@
+1 REM v0.2
+10 " ":LOCK :WAIT 90:USING :ON ERROR GOTO 600
+20 PRINT "BPFP ELEVATION/DEPRESSION":PRINT "  Copr. 1982 Tandy Corp."
+50 CLEAR :WAIT 0:PRINT CHR$ 34;"P";CHR$ 34;:WAIT :INPUT " to print, ENTER ";P$:IF P$="P"TEXT :CSIZE 1
+60 CLS 
+100 INPUT "Solute mass? (gms) ";G:GOTO 110
+105 UNLOCK :END
+110 IF G<=0THEN 100
+120 INPUT "Solute molecular wt? ";M
+130 IF M<=0THEN 120
+140 INPUT "Solvent mass? (gms) ";T
+150 IF T<=0THEN 140
+160 Z$="":INPUT "Is solvent water? (Y/N) ";Z$
+170 IF Z$="N"THEN 400
+180 IF Z$<>"Y"THEN 160
+190 E=(G/M)/(T/1000)*1.86:K=-E:B=(G/M)/(T/1000)*.52:J=B+100
+200 Z$="":INPUT "Solute electrolyte? (Y/N)";Z$
+210 IF Z$="N"THEN 500
+220 IF Z$<>"Y"THEN 200
+300 I=0:INPUT "Ion factor? ";I
+310 IF I<=0THEN 300
+320 K=I*K:J=I*B+100:GOTO 500
+400 INPUT "Solvent BP? ";B
+410 INPUT "Solvent FP? ";F
+420 IF B<FTHEN 400
+430 INPUT "Elevation of BP? ";E
+440 IF E<0THEN 430
+450 INPUT "Depression of FP? ";D
+460 IF E<0THEN 450
+490 X=(G/M)/(T/1000)*E:J=B+X:Y=(G/M)/(T/1000)*D:K=F-Y
+500 PRINT "Solution BP =";J:PRINT "Solution FP =";K
+510 IF P$="P"LPRINT "Solution BP =";J:LPRINT "Solution FP =";K
+520 GOTO 50
+600 PRINT "*** ERROR";PEEK &789B;" in";STATUS 4;" ***":GOTO 100
+999 END

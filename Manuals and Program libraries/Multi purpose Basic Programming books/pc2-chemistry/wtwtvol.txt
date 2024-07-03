@@ -1,0 +1,57 @@
+1 REM v0.5
+10 " "CLEAR :USING :LOCK :WAIT 90:ON ERROR GOTO 900
+20 PRINT "WT/WT AND WT/VOL PROBLEMS":PRINT "  Copr. 1982 Tandy Corp.":WAIT 
+100 A$="":CLS :INPUT "WT/WT or WT/VOL? (W/V) ";A$:GOTO 120
+110 UNLOCK :END
+120 IF A$<>"W"AND A$<>"V"THEN 100
+130 P$="":WAIT 0:PRINT CHR$ 34;"P";CHR$ 34;:WAIT 
+140 INPUT " to print, ENTER ";P$:IF P$="P"TEXT :CSIZE 1
+150 CLS :IF A$="V"THEN 400
+200 G=0:INPUT "Comp 1 wt? ";G
+210 IF G<=0THEN 200
+220 M=0:INPUT "Comp 1 mol wt? ";M
+230 IF M<1THEN 220
+240 V=0:INPUT "Comp 1 eqtn value? ";V
+250 IF V<=0THEN 240
+260 N=0:INPUT "Comp 2 mol wt? ";N
+270 IF N<1THEN 260
+280 W=0:INPUT "Comp 2 eqtn value? ";W
+290 IF W<=0THEN 280
+300 B=W/V*(G/M*N):PRINT "Wt of comp 2 =";B:IF P$<>"P"THEN 100
+310 LPRINT "Wt of comp 1 =";G:LPRINT "Mol wt of comp 1 =";M
+320 LPRINT "Equat value of comp 1 =";V:LPRINT "Mol wt of comp 2 =";N
+330 LPRINT "Equat value of comp 2 =";W:LF 1:LPRINT "WT OF COMP 2 =";B:GOTO 100
+400 A$="":INPUT "(W)eight or (V)olume? ";A$
+410 IF A$="V"THEN 700
+420 IF A$<>"W"THEN 400
+500 V=0:T=273.2:P=760:INPUT "Volume in liters? ";V
+510 IF V<=0THEN 500
+520 A$="":INPUT "Is volume @ STP? (Y/N) ";A$
+530 IF A$="Y"THEN 600
+540 IF A$<>"N"THEN 520
+550 P=760:INPUT "Pressure in mm Hg? ";P:IF P<=0THEN 550
+560 T=273.2:INPUT "Temperature Kelvin? ";T:IF T<=0THEN 560
+600 V=V*(P/760)*(273.2/T)
+610 X=0:INPUT "Volume eqtn value? ";X
+620 IF X<=0THEN 610
+630 M=0:INPUT "Comp 2 mol wt? ";M
+640 IF M<1THEN 630
+650 Y=0:INPUT "Comp 2 eqtn value? ";Y
+660 IF Y<=0THEN 650
+670 B=Y/X*V/22.4*M:PRINT "Unknown wt =";B:IF P$<>"P"THEN 100
+680 LPRINT "Equat value of comp 1 =";X:LPRINT "Mol wt of comp 2 =";M
+690 LPRINT "Equat value of comp 2 =";Y:LF 1:LPRINT "UNKNOWN WT = ";B:GOTO 100
+700 G=0:INPUT "Comp 1 weight? ";G
+710 IF G<=0THEN 700
+720 M=0:INPUT "Comp 1 mol wt? ";M
+730 IF M<1THEN 720
+740 V=0:INPUT "Comp 1 eqtn value? ";V
+750 IF V<=0THEN 740
+760 W=0:INPUT "Gas eqtn value? ";W
+770 IF W<=0THEN 760
+780 B=W/V*G/M*22.4:PRINT "Vol";B;" liters":IF P$<>"P"THEN 100
+790 LPRINT "Wt of comp 1 =";G:LPRINT "Mol wt of comp 1 =";M
+800 LPRINT "Equat value of comp 1 =";V:LPRINT "Equat value of gas =";W
+810 LF 1:LPRINT "VOL =";B;" LITERS @ STP":GOTO 100
+900 PRINT "ERROR";PEEK &789B;" in";STATUS 4:GOTO 100
+999 END

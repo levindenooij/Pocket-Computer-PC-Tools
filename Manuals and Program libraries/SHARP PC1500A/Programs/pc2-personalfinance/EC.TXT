@@ -1,0 +1,36 @@
+1 CLEAR :DIM ME$(0)*26,A$(19,1)*10,A(19):WAIT 90:PRINT "Electronic Checkbook"
+2 PRINT "Copr. 1982 Tandy Corp."
+3 " "CLS :RESTORE :WAIT 0:FOR B=1TO 6:READ ME$(0):PRINT ME$(0):FOR C=1TO 75:A$=INKEY$ :IF A$<>""LET C=75
+4 NEXT C:FOR D=1TO 7:IF MID$ ("IBCDSLX",D,1)=A$LET D=7:NEXT D:B=6:NEXT B:WAIT :USING "######.##":GOTO A$
+5 NEXT D:NEXT B:GOTO 3
+6 DATA "Init: I","Bal: B","Chk: C","Dep: D","List: L","Stmt: S
+7 "I"INPUT "Init (Y/N) ?";A$:IF LEFT$ (A$,1)="Y"GOTO 10
+8 GOTO 3
+10 INPUT "New Balance ?";CB:OB=CB:F=0:GOTO 35
+12 GOTO 10
+16 "C"E=-1:INPUT "Check Number ?";A$(F,0):GOTO 22
+18 GOTO 16
+20 "D"E=1:A$(F,0)="Deposit"
+22 INPUT "Date ?";A$(F,1):GOTO 26
+24 GOTO 22
+26 INPUT "Description ?";@$(F+7):GOTO 30
+28 GOTO 26
+30 INPUT "Amount ?";A(F):GOTO 34
+32 GOTO 30
+34 CB=CB+E*A(F):F=F+1:IF F>19PRINT "Register Full, Post Checks"
+35 "B"PRINT "Balance: $";CB:GOTO 3
+36 "L"PRINT "Initial Balance:$";OB:B=OB:IF F=0GOTO 3
+38 FOR C=0TO F-1:IF A$(C,0)="Deposit"PRINT A$(C,0):E=1:GOTO 42
+40 PRINT "Check Number ";A$(C,0):E=-1
+42 PRINT "Date: ";A$(C,1):PRINT "Description: ";@$(C+7)
+44 PRINT "Amount: $";A(C):B=B+E*A(C):PRINT "Balance: $";B:NEXT C:GOTO 3
+46 "S"INPUT "Statement Balance ?";E:GOTO 50
+48 GOTO 46
+50 INPUT "Dep or Service Chg ?";D:E=E+D:GOTO 50
+52 INPUT "Check or Interest ?";D:E=E-D:GOTO 52
+58 INPUT "Checkbook Balance ?";D:E=E-D:GOTO 62
+60 GOTO 58
+62 IF E>.005PRINT "$";E;" Under":GOTO 3
+64 IF E<-.005PRINT "$";-E;" Over":GOTO 3
+66 PRINT "In Agreement!":GOTO 3
+68 "X"END

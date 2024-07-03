@@ -1,0 +1,31 @@
+Personal Finance Program: (c) 1982 Tandy Corporation. All rights reserved.
+
+Introduction
+
+The Personal Finance package for the Pocket Computer II is a group of five programs designed to help you manage your money more efficiently. You can use Personal Finance to set up and maintain a budget, keep a checkbook, figure stock portfolio values, or find Interest and annuity yields on your investments.
+
+The five Personal Finance programs are:
+
+BG1 - Budget Management I- Lets you set up amounts to be budgeted in up to 15 different categories.
+
+BG2 - Budget Management II- Lets you keep track of amounts budgeted vs. actual amounts spent for each of your budget categories. You can also print a bar graph of the budgeted amounts and amounts spent, to see where you've been successful or fallen short of your budget goals.
+
+EC - Electronic Checkbook- Keeps track of up to 20 checkbook transactions (deposits or payments) and reconciles your monthly statement.
+
+ST - Value of Stocks- Figures the current value of each stock you own for up to 20 different stocks and the current value of your entire portfolio. You can also print a list of the stocks in your portfolio with their values and the the entire portfolio's value.
+
+IA - Interest and Annuities- Figures yields from your investments with interest or annuities over a given time period, and calculates the required initial investment needed to produce a desired yield over a given time period.
+
+
+Required Equipment
+
+To use the Personal Finance package, you need the following equipment:
+
+. A TRS-80 Pocket Computer II
+
+. A TRS-80 Pocket Computer II Printer/Cassette Interface
+
+. A cassette recorder, such as the Radio Shack Minisette-9
+
+. One or more blank cassette tapes
+

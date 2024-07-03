@@ -1,0 +1,36 @@
+10 CLEAR :WAIT 90:DIM ME$(0)*26,A$(19)*6,A(19):GOSUB 600
+20 CLS :CURSOR 5:PRINT "Value of Stocks":CURSOR 2:PRINT "Copr. 1982 Tandy Corp."
+40 " "RESTORE :WAIT 0:FOR U=1TO 8:CLS :READ ME$(0):PRINT ME$(0):FOR Z=0TO 75:X$=INKEY$ :IF X$<>""LET Z=75
+60 NEXT Z:FOR V=1TO 8:IF MID$ ("ABCDEFGX",V,1)=X$LET V=8:NEXT V:U=8:NEXT U:WAIT :CLS :GOTO X$
+70 NEXT V:NEXT U:GOTO 40
+90 DATA "Select Function:","Add a Stock: A","Change Number of Shares: B"
+110 DATA "Clear Memory: C","Portfolio Value: D","Load Data Tape: E"
+120 DATA "Save Data Tape: F","Print Portfolio: G"
+200 "A"IF Y>19PRINT "Too Many Stocks!":GOTO 40
+210 INPUT "Name of Stock ?";A$(Y):GOTO 230
+220 GOTO 210
+230 INPUT "Number of Shares ?";A(Y):GOTO 250
+240 GOTO 230
+250 INPUT "Value per Share ?";@(Y+1):Y=Y+1:GOTO 40
+260 GOTO 250
+270 "B"INPUT "Which Stock ?";X$:GOTO 290
+280 GOTO 270
+290 FOR Z=0TO Y-1:IF A$(Z)=X$LET U=Z:Z=Y:NEXT Z:GOSUB 610:PRINT A$(U);":";A(U);" Shares":GOTO 310
+300 NEXT Z:PRINT X$;" Not Found!":GOTO 40
+310 GOSUB 600
+320 INPUT "Number of Shares ?";A(U):GOTO 40
+330 GOTO 320
+340 "C"X$="":INPUT "Are you sure (Y/N) ?";X$:X$=LEFT$ (X$,1):IF X$="Y"THEN 10
+350 IF X$="N"THEN 40
+360 GOTO 340
+370 "D"U=0:FOR Z=0TO Y-1:GOSUB 610:PRINT A$(Z);":";A(Z);" Shares":GOSUB 600
+380 PRINT "Value/Share ?";@(Z+1):INPUT "New Value/Share ?";@(Z+1)
+390 W=INT (A(Z)*@(Z+1)*100+.5)/100:U=U+W:PRINT "Value $";W:NEXT Z:PRINT "Portfolio $";U:GOTO 40
+400 "E"PRINT "Load Data Tape!":INPUT #"STDATA";A$(*),A(*),@(*),Y:GOTO 40
+410 "F"PRINT "Load a Blank Tape!":PRINT #"STDATA";A$(*),A(*),@(*),Y:GOTO 40
+420 "G"U=0:COLOR 0:TEXT :CSIZE 2:FOR Z=0TO Y-1:LPRINT A$(Z);":":GOSUB 610:LPRINT "Shares: ";A(Z)
+430 GOSUB 600:LPRINT "Value/Share:":LPRINT TAB (6);"$ ";@(Z+1):W=A(Z)*@(Z+1)
+440 U=U+W:LPRINT "Value $ ";W:LF 2:NEXT Z:LPRINT "Portfolio:":LPRINT TAB (6);"$ ";U:LF 5:GOTO 40
+500 "X"END
+600 USING "#######.##":RETURN 
+610 USING "#######":RETURN 

@@ -1,0 +1,720 @@
+
+
+
+          SHARP <--> PC, Version 1.05                               Seite 1
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+          Inhaltsverzeichnis
+
+          1. Einleitung                                                    2
+          2. Kurzbeschreibung des Programms                                2
+             2.1 Daten vom Sharp laden (CSAVE/PRINT #)                     2
+             2.2 Daten zum Sharp schicken (CLOAD/INPUT #)                  2
+             2.3 Daten auf Diskette speichern                              2
+             2.4 Daten von Diskette laden                                  3
+             2.5 BASIC-Programm (ASCII-Text) von Diskette laden            3
+             2.6 Programm LISTen                                           3
+             2.7 Druckerport „ndern                                        3
+             2.8 Verzeichnis anzeigen                                      3
+          3. Wichtige Hinweise                                             4
+          4. Fr den interessierten Benutzer                               4
+             4.1 Der PC und sein Timerlein                                 4
+             4.2 Untersttzte Sharp-Dateien                                5
+             4.3 Programmpflege                                            5
+          5. Eine kleine Referenz - Technische Informationen               6
+             5.1 Das Interface zwischen Sharp und PC                       6
+             5.2 Das šbertragungsformat                                    7
+                 5.2.1 Am Anfang war das Bit - oder "Von Nullen und
+                         Einsen"                                           7
+                 5.2.2 Vom Bit zum Byte - oder "Nibble, wechsle dich"      8
+                 5.2.3 Der Header - oder "Mit dem Kopf durch das Band"     8
+                 5.2.4 Bl”cke und Prfsummen                               9
+          6. Schluábemerkung                                              10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          SHARP <--> PC                                             Seite 2
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+          SHARP.EXE - Die Verbindung zwischen PC/AT und Sharp PC-1401/2/3
+
+
+          1. Einleitung
+
+          Wer hat sich noch nicht ber die kleine Tastatur des Sharp  ge„r-
+          gert, wenn er lange  Basic-Programm eintippen wollte oder  muáte?
+          Mit  dem   Kassetteninterface   lassen  sich   zwar   die   Daten
+          abspeichern, es hilft aber recht  wenig bei der Tipparbeit.  Doch
+          die kann man sich jetzt um einiges erleichtern.
+
+          Dieses Programm ist fr alle, die einen Sharp-Pocketcomputer  der
+          Serie PC-140x und  Zugriff auf einen  IBM-kompatiblen PC oder  AT
+          haben. Es dient zur Dateibertragung zwischen den beiden Rechner-
+          typen. Damit kann man Programme auf dem PC mit seinem  Lieblings-
+          editor schreiben und hinterher  ber Kabel zum Sharp  bertragen.
+          Oder umgekehrt lassen  sich Programme vom  Sharp zum PC  schicken
+          und dort ausdrucken. Oder einfach auf der Festplatte oder Disket-
+          te archivieren. Oder ...
+
+          Voraussetzung ist ein kompatibler PC oder AT mit mindestens einer
+          freien parallelen Schnittstelle und ein (selbstgel”tetes)  Kabel.
+          Ein Schaltungsvorschlag folgt weiter  unten in dieser  Dokumenta-
+          tion.
+
+          Eine kurze Bemerkung im voraus: ALLE Zahlenangaben in diesem Text
+          sind Hexadezimalzahlen,  auch  wenn sie  nicht  ausdrcklich  als
+          solche markiert  sind. Erscheinen  irgendwo dezimale  Zahlen,  so
+          sind sie ausdrcklich als solche gekennzeichnet.
+
+
+          2. Kurzbeschreibung des Programms
+
+          Das Programm wird durch die  Eingabe von "SHARP" gestartet,  ohne
+          irgendwelche Parameter  oder Optionen.  Es erscheint  sofort  das
+          Haupt- und einzige Men. Hier eine Kurzbeschreibung der einzelnen
+          Menpunkte:
+
+          2.1 Daten vom Sharp laden (CSAVE/PRINT #)
+
+          Mit diesem Befehl  werden Daten und  Programme vom  Sharp zum  PC
+          bertragen. Das Programm erwartet danach noch einmal einen  Druck
+          auf die RETURN-Taste und dann die Daten vom Sharp am Druckerport.
+          Sind nach etwa fnf Sekunden  immer noch keine Daten  angekommen,
+          so gibt's eine Fehlermeldung, und das Programm kehrt unverrichte-
+          ter Dinge wieder zum Hauptmen zurck. Also zuerst auf dem  Sharp
+          CSAVE (oder CSAVE "NAME" oder CSAVE "NAME","PASSWORT" etc.)  tip-
+          pen, dann erst auf dem PC die Return-Taste drcken.
+
+          2.2 Daten zum Sharp schicken (CLOAD/INPUT #)
+
+          Dies ist die Umkehrung des  ersten Befehls. Wenn ein Programm  im
+          Speicher des PC ist, so erfolgt (schon wieder) die  Aufforderung,
+          RETURN zu drcken. Danach schiebt  der PC unerbittlich die  Daten
+          zum Sharp 'rber, und l„át sich nicht einmal mehr durch den  "Af-
+          fengriff" (Ctrl-Alt-Del) davon  abbringen. Also  erst beim  Sharp
+          CLOAD (oder CLOAD "NAME" oder ...) eingeben, und dann RETURN  auf
+          dem PC drcken!
+
+          2.3 Daten auf Diskette speichern
+
+          Mit diesem Menpunkt schreibt man die Daten, die im  Arbeitsspei-
+          cher des PC stehen, auf das Disketten- oder  Festplattenlaufwerk.
+          Auf die Frage nach dem  Dateinamen kann man mit einem  kompletten
+
+
+
+
+
+          SHARP <--> PC                                             Seite 3
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+          Pfadnamen antworten. Ist ein Vorschlag in eckigen Klammern "[VOR-
+          SCHLAG]" vorgegeben, reicht ein  einfacher Druck auf die  Return-
+          Taste, um den Namen zu bernehmen.
+
+          2.4 Daten von Diskette laden
+
+          Dies ist die Umkehrung zu Punkt drei. Man wird nach einem  Datei-
+          namen gefragt, und diese  Datei wird dann (hoffentlich)  eingele-
+          sen. Taucht ein  Fehler auf,  so wird  dieser angezeigt  ("Fehler
+          beim ™ffnen" bedeutet meistens: "Datei nicht gefunden"). Es  k”n-
+          nen nur Daten eingelesen  werden, die mit  dem Punkt drei  vorher
+          geschrieben wurden.
+
+          2.5 BASIC-Programm (ASCII-Text) von Diskette laden
+
+          Mit diesem Menpunkt werden BASIC-Programme im Klartext  eingela-
+          den und in das Sharp-Format konvertiert (kann recht lange dauern,
+          da ich den primitivsten und langsamsten Algorithmus benutzt habe,
+          den ich finden konnte). Man kann aber die konvertierten Programme
+          mit Punkt drei sichern und sp„ter mit Punkt vier schneller wieder
+          einlesen (zum Archivieren). Das Programm erkennt auch die Symbole
+          "û" (Wurzelzeichen) und "ã" (Pi) korrekt. Die Programmzeilen wer-
+          den beim Einlesen in aufsteigender Reihenfolge sortiert. Doppelte
+          oder zu groáe Zeilennummern werden erkannt und angemeckert.  Syn-
+          taxfehler und zu lange Zeilen allerdings nicht. Hier muá der  Be-
+          nutzer (ganz recht: SIE!) selbst  aufpassen. Siehe dazu auch  das
+          Kapitel "Wichtige Hinweise".
+
+          2.6 Programm LISTen
+
+          Wenn ein BASIC-Programm im Speicher  ist, so erscheint die  Frage
+          nach dem "wohin". Ein RETURN als Antwort schickt das Listing  zum
+          Ger„t CON, also auf den  Bildschirm. Es kann jeder Datei-,  Pfad-
+          oder Ger„tename angegeben werden.  Beispiele: PRN oder LPT1  oder
+          LPT2 -->  Drucker, COM1  oder  COM2 -->  serielle  Schnittstelle,
+          c:\sharp\test.bas --> Datei  auf der Diskette.  Die Angabe  eines
+          Dateinamens erlaubt es brigens, das Programm in eine ASCII-Datei
+          zu schreiben, die mit einem beliebigen Texteditor ge„ndert werden
+          kann (Programmpflege!).  Die  so abgespeicherten  und  ge„nderten
+          Programme lassen sich mit Punkt fnf wieder einlesen.
+
+          2.7 Druckerport „ndern
+
+          Beim Start geht das Programm  davon aus, daá das  Sharp-Interface
+          am "letzten"  verfgbaren Druckerport  h„ngt. Ist  das nicht  der
+          Fall, so kann man die  Einstellung mit dieser Option „ndern.  Er-
+          laubt sind die  Schnittstellen LPT1  bis LPT4.  Ist die  gew„hlte
+          Schnittstelle nicht vorhanden, so gibt das Programm eine  Fehler-
+          meldung aus und beh„lt die Voreinstellung.
+
+          2.8 Verzeichnis anzeigen
+
+          Mit dieser Option kann man sich das Verzeichnis der Diskette bzw.
+          Festplatte anzeigen lassen. Das Programm fragt nach einer  Maske.
+          Drckt man einfach RETURN, so werden alle Basic-Dateien angezeigt
+          (erkennbar an dem nachgestellten ".BAS"). Man kann aber jede  be-
+          liebige Suchmaske angeben, z.  B. *.* fr  alle Dateien im  aktu-
+          ellen Verzeichnis, c:\*.bas fr  alle Basic-Dateien im  Hauptver-
+          zeichnis von c: etc. Wird  nur ein Verzeichnisname angegeben,  so
+          zeigt das Programm alle Dateien  in diesem Verzeichnis (so  zeigt
+          z.B.  \  das  Hauptverzeichnis).  Unterverzeichnisse  werden   in
+          Groábuchstaben angezeigt, Dateinamen in Kleinbuchstaben.
+
+
+
+
+
+
+
+          SHARP <--> PC                                             Seite 4
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+          3. Wichtige Hinweise
+
+          Dieses Programm ist  nicht perfekt. Es  findet keine  šberprfung
+          statt, ob die eingelesen BASIC-Zeilen  zu lang sind, oder ob  das
+          Programm zu lang wird. Tritt ein solcher Fall ein, so k”nnen  in-
+          terne Daten berschrieben werden, was unter Umst„nden den Rechner
+          dazu veranlassen k”nnte,  seinen Dienst vorbergehend  einzustel-
+          len. Die Aufnahmekapazit„t  fr Daten betr„gt  exakt 32000  Bytes
+          (Konstante MAX_MEM in SHARP.C),  was fr die meisten  Anwendungen
+          ausreichen wird. Die maximale L„nge einer BASIC-Zeile betr„gt  80
+          Bytes (das sind wegen der  gepackten Darstellung im Rechner  mei-
+          stens wesentlich mehr  Zeichen). Der Benutzer  ist dafr  verant-
+          wortlich, daá diese Grenzwerte nicht berschritten werden.
+
+          Auáerdem ist darauf zu achten, daá der Sharp PC-1403 auch  kleine
+          Buchstaben beherrscht.  Besitzer der  "„lteren" Sharps,  die  nur
+          Groábuchstaben kennen, mssen beim Eingeben der Programme  selbst
+          darauf achten, daá  in Kommentaren  (REM-Zeilen) und  Textstrings
+          keine Kleinbuchstaben  vorkommen. Bei  den Basic-Befehlen  selbst
+          spielt die Graphie keine Rolle.
+
+          Wenn Daten an  den Sharp bertragen  werden (Menpunkt zwei),  so
+          produziert das  Programm unerbittlich  seine Tonfrequenzen,  auch
+          wenn gar kein  Sharp angeschlossen ist.  Man kann diesen  Vorgang
+          nicht einmal mit dem "Affengriff" unterbrechen. Das liegt  daran,
+          daá w„hrend  des Sendens  alle Interrupts  gesperrt sind.  Leider
+          l„át sich  das nicht  verhindern, da  sonst nicht  sichergestellt
+          werden kann, daá das Timing exakt eingehalten wird. Beim  Empfan-
+          gen von Daten  (Menpunkt zwei) gilt  brigens „hnliches,  jedoch
+          wird dort nach sp„testens 5  Sekunden mit einem Timeout  abgebro-
+          chen, wenn kein  gltiges Signal vom  Sharp gelesen werden  kann.
+          Die Sache mit dem gesperrten Interrupt hat brigens auch noch den
+          Nebeneffekt, daá die Systemuhr im  PC hinterher ein paar  Minuten
+          nachgeht, da sie direkt vom Timerinterrupt abh„ngig ist.
+
+
+          4. Fr den interessierten Benutzer
+
+          4.1 Der PC und sein Timerlein
+
+          Die Sende- und Empfangsroutinen arbeiten unabh„ngig von der Takt-
+          frequenz des  verwendeten  PC's. Fr  die  n”tigen  Zeitmessungen
+          wurde der Kanal 2 des in jedem PC vorhandenen Timer-Bausteins be-
+          nutzt. Dieser Kanal  fristet normalerweise als  Frequenzgenerator
+          fr den Lautsprecher (wer kennt nicht das nervt”tende Piepsen bei
+          falschen Tastatureingaben!?) ein langweiliges Dasein und wird fr
+          die kleine Abwechslung sicher dankbar sein. Wer einen  frisierten
+          Sharp mit einer anderen Taktfrequenz hat, máte Daten zum PC ohne
+          Fehler bertragen k”nnen,  da der Sharp  vor der šbertragung  ein
+          spezielles Synchronisationssignal sendet. Er   (der Mensch)  wird
+          aber wegen der ge„nderten Taktfrequenz  keine Daten an den  Sharp
+          zurckschicken k”nnen. Dessen Empfangsroutinen sind leider  recht
+          empfindlich  gegenber  ge„nderten  Tonfrequenzen.  Eine  Abhilfe
+          schafft der folgende Trick:
+
+          Das Programm benutzt zum Senden  von Daten an den Sharp eine  Va-
+          riable, die die ben”tigte  Zeitkonstante enth„lt. Diese  Variable
+          ist mit einem Standardwert, der fr den "normalen" Sharp  berech-
+          net wurde, initialisiert. Bei jedem Ladevorgang wird diese  Zeit-
+          konstante anhand des Synchronisationssignals neu berechnet.  Wer-
+          den also zuerst irgendwelche "Dummy"-Daten vom Sharp zum PC ber-
+          tragen (der Vorspann reicht schon aus, danach darf BREAK gedrckt
+          werden), so wird die Zeitkonstante  neu berechnet und beh„lt  bis
+          zum Programmende ihre Gltigkeit.
+
+
+
+
+
+          SHARP <--> PC                                             Seite 5
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+          4.2 Untersttzte Sharp-Dateien
+
+          Das Programm l„dt und erkennt automatisch folgende Dateitypen:
+
+          Typ                ³ speichern/laden z.B. mit
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+          Basic              ³ CSAVE                   CLOAD
+                             ³ CSAVE "NAME"            CLOAD "NAME"
+          Basic mit Password ³ CSAVE ,"PASWORD"        CLOAD
+                             ³ CSAVE "NAME","PASWORD"  CLOAD "NAME"
+          Bin„rdateien       ³ CSAVE M;Startadresse,Endadresse
+                             ³ CSAVE M"NAME";Startadresse,Endadresse
+                             ³ CLOAD M                 CLOAD M"NAME"
+                             ³ CLOAD M;Ladeadresse     CLOAD M"NAME";Ladeadresse
+          Datendateien       ³ PRINT #Variable         PRINT #"NAME";Variable
+                             ³ INPUT #Variable         INPUT #"NAME";Variable
+
+          Noch einige Anmerkungen dazu:
+
+          Datendateien k”nnen nur sehr eingeschr„nkt benutzt werden, da mir
+          das genaue Dateiformat nicht bekannt ist. Konkret heiát das,  daá
+          beim PRINT#-Befehl  keine Variablenliste  angegeben werden  kann,
+          sondern nur eine einzige Variable. Konstrukte mit Sternchen (z.B.
+          "PRINT #B*")  sind allerdings  erlaubt.  Fr Hinweise  zu  diesem
+          Thema bin ich natrlich dankbar.
+
+          Die Syntax  einiger der  aufgefhrten  Befehle ist  (glaube  ich)
+          nicht korrekt. So merkwrdig sich das anh”rt: ich selbst bin kein
+          Besitzer eines Sharp-Rechners;  daher kann ich  fr die  korrekte
+          Syntax der Befehle nicht garantieren.
+
+          4.3 Programmpflege
+
+          Wenn das Programm ver„ndert und neu bersetzt werden muá, so  ist
+          darauf zu achten,  daá der  C-Compiler unbedingt  auf das  kleine
+          Speichermodell eingestellt wird (SMALL  MODEL), da sonst die  As-
+          semblerroutinen durcheinander geraten.  Das geschieht bei  Micro-
+          soft mit der Option /AS, bei Turbo-C durch den Menpunkt Options/
+          Compiler/Model/Small (bzw. mit der  Option -ms bei der  Kommando-
+          zeilenversion). Das C-Programm l„át sich mit jedem "modernen"  C-
+          Compiler, das Assemblerprogramm mit MASM 5.1 oder TASM 1.0  ber-
+          setzen (Vorsicht: Die korrekte Groá- und Kleinschreibung der  Op-
+          tionen und die Semikola am Zeilenende sind wichtig!).
+
+          Mit Microsoft-Programmen:
+
+              cl /c /AS /Ox /Gs sharp.c
+              masm /Mx sharplow;
+              link sharp+sharplow;
+          Oder einfach:
+              make sharp
+
+          Mit den Borland-Produkten:
+
+              tcc -c -ms -I\tc\include sharp.c
+              tasm /Mx sharplow
+              tlink \tc\lib\c0s sharp sharplow, sharp,, \tc\lib\cs
+          Oder auch:
+              tcc -c -ms sharp.c sharplow.asm
+          Oder ganz einfach automatisch mit dem Borland-Make:
+              make
+
+          Fr die  intergrierte Entwicklungsumgebung  von Turbo-C  gibt  es
+          eine Project-Datei  (SHARP.PRJ),  die  ber  den  Menupunkt  Pro-
+
+
+
+
+
+          SHARP <--> PC                                             Seite 6
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+          ject/Project name  eingeladen werden  sollte; danach  sollte  ein
+          einfaches  Compile/Make  EXE  file  ausreichen,  um  das  fertige
+          Programm zu generieren.
+
+          Voraussetzung ist natrlich, das  sich C-Compiler und  -Assembler
+          im  Suchpfad  befinden,  und  daá  die  Borland-Bibliotheken  und
+          Inlcude-Dateien  wirklich  im   Verzeichnis  "\tc\lib"  bzw.   in
+          "\tc\include" stehen. Andernfalls  mssen Sie TLINK  und TCC  die
+          entsprechenden Verzeichnisse  mitteilen.  Die  Warnungen  des  C-
+          Compilers k”nnen ignoriert werden.
+
+          Falls sp„ter mal jemand eigene Forschungen betreiben will: Werden
+          die Routinen "holesharp (&Header)" und "sendesharp (&Header)" mit
+          Header.Dateityp = S_DUMP aufgerufen, so werden die Daten  vom/zum
+          Sharp bertragen, ohne daá Header, Prfsummen etc.  interpretiert
+          werden. Aber Vorsicht:  bei allen Bytes  wurden nach dem  Empfang
+          Low- und High-Nibble vertauscht!
+
+
+          5. Eine kleine Referenz - Technische Informationen
+
+          5.1 Das Interface zwischen Sharp und PC
+
+          Zuerst einmal  zeige  ich  hier die  Pinbelegung  der  multifunk-
+          tionalen Schnittstelle des  Sharps, soweit sie  mir bekannt  ist.
+          Die Tabellenspalte Richtung  gibt an, ob  die Leitung ein  Signal
+          zum Sharp hin ("in") oder vom Sharp weg ("out") fhrt. Alle Anga-
+          ben sind ohne Gew„hr:
+
+              Pin ³ Richtung ³ Bedeutung             ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ
+              ÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ          ³  on
+               1  ³ ??       ³ ??                1 ÄÄ³ ÚÄ¿ ÉÍÍÍÍÍÍÍÍÍ
+               2  ³ ---      ³ Vcc    (+6V)      2 ÄÄ³ ³ ³ º
+               3  ³ ---      ³ Ground ( 0V)      3 ÄÄ³ ÀÄÙ º > CSAVEÛ
+               4  ³ out      ³ Busy              4 ÄÄ³ off º   _ _
+               5  ³ out      ³ Data out          5 ÄÄ³     ÈÍÍÍÍÍÍÍÍÍÍÍ
+               6  ³ in       ³ Load              6 ÄÄ³
+               7  ³ out      ³ Save              7 ÄÄ³ ÚÄÄÄ¿ ÚÄÄÄ¿ ÚÄÄÄ
+               8  ³ in       ³ Data in           8 ÄÄ³ ÀÄÄÄÙ ÀÄÄÄÙ ÀÄÄ
+               9  ³ in       ³ Ack               9 ÄÄ³ ÚÄÄÄ¿ ÚÄÄÄ¿ ÚÄ
+              10  ³ ---      ³ n.c.             10 ÄÄ³ ÀÄÄÄÙ ÀÄÄÄÙ
+              11  ³ ---      ³ n.c.             11 ÄÄ³ ÚÄÄÄ¿ ÚÄÄ
+                                                     ³ ÀÄÄÄÙ
+
+          Relevant fr die Datenbertragung  vom/zum PC sind die  Leitungen
+          Ground (3), Load  (6) und  Save (7).  Beim PC  wird die  Drucker-
+          schnittstelle als universeller I/O-Port miábraucht. Sie ist bri-
+          gens hervorragend  geeignet fr  einfache Steuerungsaufgaben  mit
+          ihren (je nach Beschaltung und Programmierung) bis zu 12 Aus- und
+          9 Eing„ngen. In  diesem Fall wird  nur je  ein Ein- bzw.  Ausgang
+          ben”tigt. Diese  Funktion  bernehmen die  Pins  D0  (Datenbit 0,
+          Pin 2) als Ausgang und Strobe (Pin 1) als Eingang. Die Masse kann
+          man z.B. an Pin 18 entnehmen.
+
+          Da im Sharp  CMOS-Bauteile, im  PC aber  meist TTL-IC's  stecken,
+          sollte man zum Schutze des Sharp (und seiner dnnen  Knopfzellen)
+          die Leitungen  nicht direkt  verbinden. Mein  Schaltungsvorschlag
+          sieht folgendermaáen aus (ich hoffe, der IBM-Zeichensatz gibt ge-
+          nug Grafiksymbole her...):
+
+
+
+
+
+
+
+
+
+
+          SHARP <--> PC                                             Seite 7
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+              PC                                             Sharp
+
+          Signal  Pin                                      Pin  Signal
+                                      BC548 oder
+          Strobe   1 ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿  BC238
+                                  C \³_____ÚÄÄÄÄÄÄÄ¿_______ 7   Save
+                                    /³ B   ÀÄÄÄÄÄÄÄÙ
+                                  E³        47 kOhm
+          Ground  18 ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ 3   Ground
+
+          Data 0   2 __________ÚÄÄÄÄÄÄÄ¿___________________ 6   Load
+                               ÀÄÄÄÄÄÄÄÙ
+                               ca. 10 kOhm
+
+          (Das soll mir mal einer nachmachen, im Textmodus einen Schaltplan
+          zu zeichnen. Zugegeben, der Transistor l„át etwas zu wnschen b-
+          rig, aber er ist doch ganz gut zu erkennen...)
+
+          Ich glaube, ich  bin einigen  Leuten noch  eine kleine  Erkl„rung
+          schuldig. Einem  aufmerksamen  Leser wird  wohl  nicht  entgangen
+          sein, daá "Strobe" eigentlich ein  Signal vom PC zum Drucker  ist
+          und nicht umgekehrt.  Das ist im  Prinzip richtig.  Aber in  IBMs
+          paralleler Schnittstelle  ist diese  Leitung als  Open  Collector
+          ausgefhrt (die es  betrifft, wissen jetzt  bescheid), mit  einem
+          eingebauten Pull-Up-Widerstand von 4,7k. Diesen Ausgang kann  man
+          ber einen anderen Portbaustein zurcklesen. Wird nun die Strobe-
+          Leitung auf 5V  gelegt (der interne  Transistor sperrt), so  kann
+          man mit einem externen Schalter/Transistor/Schalttransistor (eben
+          den BCsowieso von oben) gegen Masse den Pegel der Leitung „ndern,
+          ohne irgendwelchen  Schaden anzurichten.  Dieser so  eingestellte
+          Pegel l„át sich dann ber oben genannten Port auslesen.
+
+          Im Laufe  der Zeit  hat sich  herausgestellt, daá  das  Interface
+          nicht an allen parallelen Schnittstellen arbeitet, die im  Umlauf
+          sind.  An  den  "alten"   Ports,  die  noch  aus   TTL-Bausteinen
+          kompatibel aufgebaut sind, sollte das Interface problemlos seinen
+          Dienst tun.  Allerdings  gibt  es  Probleme  mit  einigen  dieser
+          neumodischen Druckerkarten, die, vielleicht sogar in  Kombination
+          mit einer CGA- oder  Herkuleskarte, aus integrierten  Gate-Arrays
+          aufgebaut sind.  Ich habe  die Ursachen  nicht n„her  untersucht.
+          Vielleicht fehlt es diesen Karten an den Pull-Up-Widerst„nden bei
+          den  Steuerleitungen?  Ist  man  (un)glcklicher  Besitzer  einer
+          solchen Karte, kann man sich  notfalls damit helfen, daá man  die
+          Leitungen direkt,  das  heiát ohne  Transistor  und  Widerst„nde,
+          miteinander verbindet (also Pins  1 -- 7,  18 -- 3  und 2 --  6).
+          Dann sollte man aber den Sharp nicht tagelang am PC angeschlossen
+          lassen, sondern nur fr  die Dauer der eigentlichen  šbertragung.
+          Vielleicht bin ich etwas bervorsichtig, aber neue Batterien  fr
+          den Sharp sind ja auch nicht ganz billig.
+
+          5.2 Das šbertragungsformat
+
+          Das  Format,  mit  dem  der  Sharp  seine  Daten  auf  Magnetband
+          schreibt, ist (leider)  nicht ganz trivial.  Da zu erwarten  ist,
+          daá dieser Abschnitt  etwas l„nger (und  auch interessant)  wird,
+          unterteile ich ihn noch etwas feiner. Also los:
+
+          5.2.1 Am Anfang war das Bit - oder "Von Nullen und Einsen"
+
+          Der Sharp  kennt, wie  eigentlich jeder  andere digitale  Rechner
+          auch, nur Nullen und Einsen  (meist einfach Bits genannt).  Alles
+          schon mal  geh”rt.  Im Speicher  ist  diese Art  der  Darstellung
+          durchaus angebracht, nur  fr Magnetb„nder (sprich:  Musikkasset-
+          ten) ist sie denkbar  ungeeignet. Darum macht  der Sharp aus  den
+
+
+
+
+
+          SHARP <--> PC                                             Seite 8
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+          Bits T”ne, denn damit k”nnen Kassettenrekorder ganz gut  umgehen.
+          Aus jeder Eins wird ein Ton von 4000 Hz, und aus jeder Null einer
+          von 2000 Hz. Weiterhin  legt er fest,  daá jedes  Bit genau  2 ms
+          dauert. Nach einer kleinen Rechnung kommt man dann auf  folgendes
+          Ergebnis (Tabellen sehen immer professioneller aus):
+
+              Bit³ der Sharp sendet
+              ÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+               0 ³ 4 Perioden zu 2000 Hz
+               1 ³ 8 Perioden zu 4000 Hz
+
+          5.2.2 Vom Bit zum Byte - oder "Nibble, wechsle dich"
+
+          Da der Sharp bekanntlich acht dieser Bits zu einem Byte zusammen-
+          faát, das Magnetband aber nur eine Frequenz gleichzeitig  aufneh-
+          men kann (wenn  man einfacher Software  und sicherer  šbertragung
+          den Vorzug gibt),  schaufelt er die  Bits seriell im  G„nsemarsch
+          ber die Leitung. Dabei  benutzt er aber  ein anderes Format  als
+          allgemein gebr„uchlich ist. Er spaltet das Byte in der Mitte  und
+          sendet jedes Nibble  einzeln, jeweils mit  Start- und  Stopbit(s)
+          versehen. Er scheint sich aber  nicht einig zu sein, welche  Rei-
+          henfolge dabei die beste ist, denn sie wechselt von Zeit zu Zeit.
+          Doch dazu sp„ter mehr. Zun„chst einmal habe ich die beiden m”gli-
+          chen šbertragungsformate  aufgeschlsselt. Ich  habe sie  "H-Typ"
+          und "D-Typ" genannt,  weil der erstere  haupts„chlich im  Header,
+          der letztere fast nur in Datenbl”cken zu finden ist.
+
+          Angenommen, das zu bertragende Byte sei `hgfedcba', wobei a  das
+          Bit 0 und h das  Bit 7 ist. Dann  produziert der Sharp  folgenden
+          Bit-Brei:
+
+          H-Typ: Nicht verdreht
+
+                   0abcd10efgh11...
+              mit  0--------------- 1 Startbit
+                   -abcd----------- 4 Datenbits (unteres Nibble)
+                   -----1---------- 1 Stopbit
+                   ------0--------- noch ein Startbit
+                   -------efgh----- 4 Datenbits (oberes Nibble)
+                   -----------11... 2 bis 5 Stopbits
+
+          D-Typ: Low- und High-Nibble vertauscht
+
+                   0efgh10abcd11...
+              mit  0--------------- 1 Startbit
+                   -efgh----------- 4 Datenbits (oberes Nibble)
+                   -----1---------- 1 Stopbit
+                   ------0--------- noch ein Startbit
+                   -------abcd----- 4 Datenbits (unteres Nibble)
+                   -----------11... 2 bis 5 Stopbits
+
+          Wo welcher Typ mit wieviel  Stopbits erscheint, werde ich in  den
+          n„chsten Kapiteln jeweils mit angeben.
+
+          5.2.3 Der Header - oder "Mit dem Kopf durch das Band"
+
+          Vor der eigentlichen šbertragung schickt der Sharp einen  kleinen
+          Datenblock durch die Leitung, in  dem verschlsselt ist, um  wel-
+          chen Dateityp es sich handelt,  wie die Datei heiát, etc.  Dieser
+          sogenannte Header hat den folgenden Aufbau:
+
+
+
+
+
+
+
+
+
+          SHARP <--> PC                                             Seite 9
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+              Byte³ Typ   ³ Funktion
+              ÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+               00 ³ D-Typ ³ Dateityp
+               01 ³ Name  ³ Dateiname
+               0A ³ Name  ³ Password, wenn vorhanden
+
+          Ein `Name' sieht dabei so aus:
+
+              Byte³ Typ   ³ Funktion
+              ÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+               00 ³ H-Typ ³ Dateiname, 7. Buchstabe
+               01 ³ H-Typ ³ Dateiname, 6. Buchstabe
+               ...³  ...  ³    ...
+               05 ³ H-Typ ³ Dateiname, 2. Buchstabe
+               06 ³ H-Typ ³ Dateiname, 1. Buchstabe
+               07 ³ D-Typ ³ Kennung fr das Ende des Namens (immer 5F)
+               08 ³ D-Typ ³ Prfsumme ber die Bytes 00 bis 07
+
+          Der Dateiname wird  immer auf sieben  Zeichen gestreckt oder  ge-
+          krzt. Ist der Name krzer, so wird er mit Nullen (das ASCII-Zei-
+          chen NUL, keine "0")  aufgefllt. Das gilt  auch, wenn kein  Name
+          angegeben wird, er besteht dann  aus sieben Nullen. Das Feld  fr
+          das Password existiert  nur, wenn  es im  Dateityp vermerkt  ist,
+          sonst wird es weggelassen. Folgende Dateitypen sind mir bis jetzt
+          bekannt:
+
+              Typ ³ Bedeutung
+              ÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+               70 ³ Basic-Programm
+               71 ³ Basic-Programm mit Password
+               74 ³ Datendatei
+               76 ³ Bin„rdatei
+
+          Im Header sendet der Sharp brigens hinter jedem Byte 5, in  Wor-
+          ten: "fnf", Stopbits.
+
+          5.2.4 Bl”cke und Prfsummen
+
+          Der Sharp bildet ber  jeden Datenblock eine 8-Bit-Prfsumme  wie
+          folgt: Am Anfang des Blocks wird die Prfsumme auf 0 gesetzt. Je-
+          des Byte, das mit in  die Prfsumme soll, wird in Low-Nibble  und
+          High-Nibble zerlegt.  Dann wird  erst das  High-Nibble, dann  das
+          Low-Nibble zur Prfsumme addiert.  Tritt bei der ersten  Addition
+          (die des High-Nibbles)  ein šberlauf der  Prfsumme auf, so  wird
+          diese um eins erh”ht. Ein  eventueller šberlauf bei der  Addition
+          des Low-Nibbles wird ignoriert.
+
+          In Assembler l„át sich das z.B. so in Befehle fassen:
+
+          Pruefsumme  DB 0                ; hier landet die Prfsumme
+          ; ...
+          Pruefe      PROC
+          ; Das Byte, das `geprft' werden soll, ist in AL
+                      mov ah, al          ; rette eine Kopie
+                      mov cl, 4
+                      shr ah, cl          ; AH enth„lt das High-Nibble
+                      and al, 0Fh         ; und AL das Low-Nibble
+                      add Pruefsumme, ah  ; addiere High, šberlauf im Carry
+                      adc Pruefsumme, al  ; und Low-Nibble mit šbertrag
+                      ret
+          Pruefe      ENDP
+
+          Dabei ist zu beachten, daá die Prfsumme ber die "echten"  Daten
+          gebildet wird.  Das  spielt eine  Rolle  bei Bytes  des  `D-Typs'
+
+
+
+
+
+          SHARP <--> PC                                            Seite 10
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+          (siehe oben), bei denen der Sharp die Nibbles verdreht. Die Prf-
+          summe wird erst  nach dem "Entknoten"  des Bytes berechnet  (oder
+          vor dem Verdrehen, wenn man selbst die Daten sendet).
+
+          Bei den Prfsummen im Header muá man darauf achten, daá das erste
+          Byte (der Dateityp)  nicht mit berprft  wird. Es  wird nur  die
+          Quersumme ber den Namen und das Password (wenn vorhanden) gebil-
+          det, wobei sie  vor letzterem natrlich  wieder auf Null  gesetzt
+          wird. Das Passwordfeld im Header gilt als eigenst„ndiger "Daten"-
+          Block.
+
+          Der Aufbau der eigentlichen  Daten nach dem  Header hat so  seine
+          Tcken. Mir ist nur  die Struktur eines Basic-Programms  einiger-
+          maáen bekannt, zu den anderen  Datentypen kann ich keine  n„heren
+          Angaben machen. Also zum Basic-Programm. Alle Bytes in einem  Ba-
+          sicprogramm, die nach  dem Header kommen,  sind brigens vom  "D-
+          Typ", auch  die  Prfsummen.  Auáerdem reduziert  der  Sharp  die
+          Anzahl der Stopbits in den Daten auf zwei.
+
+          Allgemein gilt, daá  nach jeweils 120  (dezimal!) Datenbytes  des
+          Basic-Programms eine  Prfsumme eingefgt  wird. Ein  Basic-Block
+          ist also  120 Bytes  lang. Nach  jedem Block  wird die  Prfsumme
+          wieder auf Null zurckgesetzt. Am Ende des Programms stehen 2 FF-
+          Bytes, von denen das erste  eigentlich noch zum Programm  geh”rt.
+          Nach den beiden Eff-Effs steht noch eine abschlieáende Prfsumme,
+          in der alle Bytes dieses  letzten Blocks, bis einschlieálich  das
+          erste FF-Byte, enthalten sind - das letzte FF ist nicht mit drin.
+
+          Da ich mit diesen Regeln  beim šberprfen der Prfsummen am  Ende
+          eines Programms einige Schwierigkeiten  hatte, will ich den  Vor-
+          gang noch einmal  anders formulieren: Es  muá zuerst das  gesamte
+          Programm eingeladen werden. Dann  werden die Datenbl”cke  solange
+          "normal" in einer Schleife berprft (Prfsumme alle 120  Bytes),
+          bis noch genau 3 Bytes ber  sind. Man nehme das erste davon  (es
+          muá ein FF sein) und nehme  es mit in die Prfsumme hinein.  Dann
+          nehme man das zweite (es muá ebenfalls FF sein) und ignoriere es.
+          Dann nehme man das  dritte und letzte  und vergleiche es mit  der
+          berechneten Prfsumme.  Sie mssen  bereinstimmen, sonst  stimmt
+          bei Ihrem Programm  was nicht.  Diesen Aufwand  muá man  (leider)
+          treiben, da man  sonst Probleme bekommt,  wenn der letzte  Daten-
+          block ungef„hr 120 Bytes lang ist (119 oder 120 Bytes).
+
+
+          6. Schluábemerkung
+
+          So, ich glaube,  das langt frs  erste. Soviel Dokumentation  muá
+          erstmal getippt  werden. Ich  hoffe,  dieses Programm  macht  den
+          Sharp-Benutzern das Leben etwas bequemer.
+
+          šbrigens: Das Programm darf (soll!)  sich jeder kopieren, den  es
+          interessiert. Die Dateien sollten nur alle zusammen bleiben, denn
+          ich weiá  aus eigener  Erfahrung, wie  schmerzhaft es  ist,  wenn
+          pl”tzlich eine Datei  fehlt (wenn es  auch nur eine  Header-Datei
+          ist ...).
+
+          Dieses Programm soll auch nicht das absolute Produkt  darstellen;
+          jeder soll  sich  frei  fhlen,  selbst  Verbesserungen  und  Er-
+          weiterungen vorzunehmen. Ich hoffe, die Quelltexte sind  einiger-
+          maáen lesbar und verst„ndlich.
+
+                        Norbert Unterberg,
+                        K”hlerstr. 12c,
+                        D-5802 Wetter 2
+
+
+

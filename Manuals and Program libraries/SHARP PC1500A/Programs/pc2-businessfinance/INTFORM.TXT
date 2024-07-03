@@ -1,0 +1,37 @@
+1 " "LOCK :WAIT 90:CLEAR :USING :DIM ME$(0)*26:ON ERROR GOTO 900
+2 CLS :CURSOR 4:PRINT "INTEREST FORMULAS":PRINT "  Copr. 1982 Tandy Corp."
+10 RESTORE :WAIT 0:FOR I=1TO 8:CLS :READ ME$(0):PRINT ME$(0):FOR J=1TO 75:A$=INKEY$ :IF A$<>""LET J=75
+11 NEXT J
+12 J=0:FOR K=1TO 7:IF MID$ ("123456X",K,1)=A$LET J=K:K=7
+13 NEXT K:IF J>0LET I=8:NEXT I:WAIT :GOTO 100*J
+14 NEXT I:GOTO 10
+20 DATA "Select Function:"
+21 DATA "Single pmt cmpd amt: 1"
+22 DATA "Single pmt worth: 2"
+23 DATA "E.P.S. compound amount: 3"
+24 DATA "E.P.S. sinking fund: 4"
+25 DATA "E.P.S. capital recovery: 5"
+26 DATA "E.P.S. present worth: 6"
+27 DATA "Exit program: X"
+50 "IP"INPUT "Percent interest? ";I
+51 I=.01*I:INPUT "Number of periods? ";N
+52 RETURN 
+60 "PW"INPUT "Present worth? $";P
+61 RETURN 
+70 "FW"INPUT "Future worth? $";S
+71 RETURN 
+80 "PA"INPUT "Payment? $";R
+81 RETURN 
+90 X=P:GOSUB "RO":PRINT "Present worth $";X$:GOTO 10
+91 X=S:GOSUB "RO":PRINT "Future worth $";X$:GOTO 10
+92 X=R:GOSUB "RO":PRINT "Payment $";X$:GOTO 10
+100 GOSUB "PW":GOSUB "IP":S=P*(I+1)^N:GOTO 91
+200 GOSUB "FW":GOSUB "IP":P=S*(1/((I+1)^N)):GOTO 90
+300 GOSUB "PA":GOSUB "IP":S=R*((((I+1)^N)-1)/I):GOTO 91
+400 GOSUB "FW":GOSUB "IP":R=S*(I/(((I+1)^N)-1)):GOTO 92
+500 GOSUB "PW":GOSUB "IP":R=P*((I*((I+1)^N))/((I+1)^N-1)):GOTO 92
+600 GOSUB "PA":GOSUB "IP":P=R*(((I+1)^N)-1)/(I*(I+1)^N):GOTO 90
+700 UNLOCK :END
+800 "RO"X$=STR$ (.01*(INT (100*X+.5))):RETURN 
+900 PRINT "*** ERROR";PEEK &789B;" in";STATUS 4;" ***":GOTO 10
+999 END

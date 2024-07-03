@@ -1,0 +1,43 @@
+1 REM v0.1
+10 " "LOCK :USING :ON ERROR GOTO 900:WAIT 90
+20 PRINT "  IDEAL GAS CALCULATIONS":PRINT "  Copr. 1982 Tandy Corp.":WAIT 
+30 PRINT "Enter null for unknown":PRINT "Enter neg pressure to exit"
+100 CLEAR :WAIT 0:PRINT CHR$ 34;"P";CHR$ 34;:WAIT :INPUT " to print, ENTER ";P$:IF P$="P"TEXT :CSIZE 1
+110 CLS :INPUT "Pressure? ";P
+120 IF P<0UNLOCK :END
+130 IF P=0THEN 160
+140 B$="":INPUT "(A)tm or (M)m Hg? ";B$
+150 IF B$<>"A"AND B$<>"M"THEN 140
+160 D$=" atm":IF B$="M"LET D$=" mm Hg":P=P/760
+170 INPUT "Gas volume? (l) ";V
+180 IF V<0THEN 170
+190 INPUT "Number of moles? ";N
+200 IF N<0THEN 190
+210 C$="K":INPUT "Gas temperature? ";T:GOTO 230
+220 GOTO 250
+230 WAIT 0:PRINT CHR$ 34;"C";CHR$ 34;:WAIT :INPUT " if Celsius, ENTER ";C$:IF C$="C"LET T=T+273.
+240 CLS :IF T<0THEN 210
+250 N$=STR$ ((P=0)+(V=0)+(T=0)+(N=0)):IF N$="0"LET N$="No"
+260 IF N$<>"1"PRINT N$;" unknowns!":GOTO 100
+300 CLS :IF P$<>"P"THEN 400
+310 IF PLPRINT " Pressure =";P+759*P*(D$=" mm Hg");D$
+320 IF VLPRINT " Volume =";V;" liters"
+330 IF NLPRINT N;" moles"
+340 IF TLPRINT T;" degrees ";C$
+350 LF 1
+400 IF P=0THEN 500
+410 IF V=0THEN 600
+420 IF N=0THEN 700
+430 GOTO 800
+500 P=N*.082*T/V:Z$=" atm":IF B$="M"LET Z$=" mm Hg":P=P*760
+510 IF P$="P"LPRINT " PRESSURE =";P;Z$
+520 PRINT "Pressure =";P;Z$:GOTO 100
+600 V=N*.082*T/P:IF P$="P"LPRINT " VOLUME =";V;" liters"
+610 PRINT "Volume =";V;" liters":GOTO 100
+700 N=(P*V)/(.082*T):IF P$="P"LPRINT N;" MOLES"
+710 PRINT N;" Moles":GOTO 100
+800 T=(P*V)/(N*.082):IF C$="C"LET T=T-273.2
+810 IF P$="P"LPRINT T;" DEGREES ";C$
+820 PRINT T;" degrees ";C$:GOTO 100
+900 PRINT "*** ERROR";PEEK &789B;" in";STATUS 4;" ***":GOTO 100
+999 END

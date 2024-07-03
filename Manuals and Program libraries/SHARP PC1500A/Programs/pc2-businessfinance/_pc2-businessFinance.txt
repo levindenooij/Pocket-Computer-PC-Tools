@@ -1,0 +1,19 @@
+Business Finance Program: (c) 1982 Tandy Corporation. All rights reserved.
+
+The Business Finance package is a group of seven programs which performs a variety of calculations used in business finace applications.
+
+The 7 programs are:
+
+1. Internal Rate of Return (IRR) - Calculates the rate of return on an Investment or property which produces revenue, as well as required present value or initia1 cost . The IRR program can also be used for investments which produce annual revenue.
+
+2. Bond Price and Yield (BONDS) - Solves problems related to coupon-type bonds which produce a fixed annual return (coupon value) for each year of a bond's life. The BONDS program can figure the effective annual yield (in percent) or find the selling price of the bond.
+
+3. Loans and Annuities (LOANS) - Finds the true annual interest rate, present value, amount of payment, or number of payments for a loan or an annuity. The sum of all payments and total interest paid are also calculated.
+
+4. Dates (DATES) - Finds the day of the week for a given date, the number of days between two dates, and the date for a day "x" days ago or "x" days following a given date.
+
+5. Future Value (FUTURE) - Performs calculations dealing with future values of loans, such as interest rate, amount of payment, future value, and number of payments.
+
+6. Interest Formulas (INTFORM)- Performs common interest calculations, including single payment compound amount, single payment present worth, equal payment series compound amount, equal payment series sinking fund, equal payment series capital recovery amount, and equal payment series present worth.
+
+7. Depreciation (DEPREC) - Given the initial or acquisition cost, life in years, and final value of an item or property, DEPREC calculates depreciation and current value by straight line, double declining, or sum-of-years-digits methods.

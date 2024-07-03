@@ -1,0 +1,14 @@
+#
+# Make-File fÅr SHARP
+#
+# fÅr die Borland-Programme
+#
+
+sharp.exe: sharp.obj sharplow.obj
+    tlink d:\tc\lib\c0s sharp sharplow, sharp,, d:\tc\lib\cs
+
+sharplow.obj: sharplow.asm
+    tasm /Mx sharplow
+
+sharp.obj: sharp.c sharp.h sharplow.h
+    tcc -c -ms -w-pia sharp.c

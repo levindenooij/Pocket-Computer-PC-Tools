@@ -1,0 +1,28 @@
+Statistics Program: (c) 1983 Tandy Corporation. All rights reserved.
+
+Introduction
+
+Statistics is a general data analysis system to be used with the Radio Shack TRS-80(r) PC-2. The system consists of a Statistics program stored on cassette tape, a special keyboard overlay for your Pocket Computer-2, and this step-by-step instruction manual.
+
+The program is easy to use. Even if you have never used a computer before, the instructions and the keyboard overlay will guide you through each of the program functions. You will find that just a few keystrokes allow you to perform data maintenance functions, calculate a wide variety of statistics on your data, display the analysis results on your PC-2, or list them on your PC-2 printer. The Statistics program and your data remain in the memory of your PC-2 even when the computer is turned off.
+
+You can maintain your data file using these special program functions (Chapter 1):
+
+. Enter data.
+
+. Add records to your data file.
+
+. Delete records from your data file.
+
+. Update values on any data record.
+
+. Display records on your PC-2.
+
+. List records on your PC-2 printer.
+
+. Display the number of records and variables in the file.
+
+. Save your data file on a cassette tape.
+
+. Read a data file stored on cassette tape.
+

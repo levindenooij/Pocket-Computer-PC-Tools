@@ -1,0 +1,7119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html lang="de">
+<head>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <title>CASsette IO Utilities - Readme</title>
+  <meta content="Casio, Tape, Kansas City Standard, KCS" name="KEYWORDS">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="CONTENT-TYPE">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" type="text/css" href="mvcdocs.css">
+</head>
+
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1><a class="mozTocH1" name="mozTocId207484"></a><a href="http://www.mvcsys.de/"><img style="border: 0px solid ; width: 107px; height: 44px; float: right;" alt="www.mvcsys.de" name="Grafik5" src="logo_kl.gif"></a>CASsette
+IO
+Utilities</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>If you read this file from a local copy, the online version of
+this file
+is <a href="http://www.mvcsys.de/doc/casioutil.html">here</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="TOC">
+<ul id="mozToc">
+
+
+
+
+
+
+
+
+
+<!--mozToc h2 1 h3 2 h4 3--><li><a href="#mozTocId399717">Utilities
+to handle tape and floppy disk images from vintage pocket
+computers</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId83898">Download</a></li>
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+
+
+  <li><a href="#mozTocId467333">Generations
+of Casio pockets.</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId839357">The PB-100 series</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId967561">The FX-702P</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId930870">The PB-700,
+PB-770 and FX-750P</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId992705">The
+FX-850P, FX-870P, FX-880P, FX-890P, VX-1 to 4,&nbsp;Z-1 and PB-1000</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId464531">The FP-200</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId933538">The
+MD-100 floppy drive with the PB-1000 and PB-2000C calculators</a></li>
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+
+
+  <li><a href="#mozTocId814602">Other
+machines</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId535538">Casio fx-8000G</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId653752">Canon X-07</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId916220">Texas Instruments TI-74</a></li>
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+
+
+  <li><a href="#mozTocId964441">How
+to handle tape recordings</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId124913">Recording</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId632705">Playing</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId300839">Refreshing</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId516627">Converting
+to other formats</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId189317">Listing
+as text</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <ul>
+
+
+
+
+
+
+
+
+
+          <li><a href="#mozTocId294789">Casio BASIC computers</a></li>
+
+
+
+
+
+
+
+
+
+          <li><a href="#mozTocId138060">Casio graphics calculators</a></li>
+
+
+
+
+
+
+
+
+
+          <li><a href="#mozTocId711153">Canon&nbsp;X-07</a></li>
+
+
+
+
+
+
+
+
+
+          <li><a href="#mozTocId818664">TI-74</a></li>
+
+
+
+
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </ul>
+
+
+
+
+
+
+
+
+
+      </li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId490265">Creating
+from binary files</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId57435">Creating
+from BASIC source files</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <ul>
+
+
+
+
+
+
+
+
+
+          <li><a href="#mozTocId69232">FX-702P </a></li>
+
+
+
+
+
+
+
+
+
+          <li><a href="#mozTocId945540">FX-730P family </a></li>
+
+
+
+
+
+
+
+
+
+          <li><a href="#mozTocId250612">PB-700
+and FX-850P families and the FP-200</a></li>
+
+
+
+
+
+
+
+
+
+          <li><a href="#mozTocId955806">Canon X-07</a></li>
+
+
+
+
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </ul>
+
+
+
+
+
+
+
+
+
+      </li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId991687">Using the serial interface on the Canon X-07 to enter a
+program</a></li>
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+
+
+  <li><a href="#mozTocId326461">An
+example: Dumping the memory of a PB-770</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId90156">PB-770
+BASIC source</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId121133">Getting
+the data into your PC</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId983897">Converting
+the data</a></li>
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+
+
+  <li><a href="#mozTocId764851">How
+to handle floppy disk images</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId729462">Creating
+an image</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId309085">Writing to a floppy</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId350588">Manipulating files</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId622296">MD-100
+filenames and types</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId731583">Examples</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <ul>
+
+
+
+
+
+
+
+
+
+          <li><a href="#mozTocId272747">Listing
+the disk directory</a></li>
+
+
+
+
+
+
+
+
+
+          <li><a href="#mozTocId152261">Listing
+files</a></li>
+
+
+
+
+
+
+
+
+
+          <li><a href="#mozTocId873101">Copying
+files to the PC</a></li>
+
+
+
+
+
+
+
+
+
+          <li><a href="#mozTocId347307">Copying
+files to the floppy image</a></li>
+
+
+
+
+
+
+
+
+
+          <li><a href="#mozTocId804008">Renaming
+or deleting files and setting file attributes</a></li>
+
+
+
+
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </ul>
+
+
+
+
+
+
+
+
+
+      </li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId157512">Direct floppy access</a></li>
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+
+
+  <li><a href="#mozTocId961298">Links</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId345157">BASIC Comparison
+Sheet</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId589074">Casio
+Pages</a></li>
+
+
+
+
+
+
+
+
+
+      <li><a href="#mozTocId759747">Floppy
+access</a></li>
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2><a class="mozTocH2" name="mozTocId399717"></a>Utilities
+to handle tape and floppy disk images from vintage pocket
+computers</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Author: <a href="mailto:marcus@mvcsys.de">Marcus
+von Cube &lt;marcus@mvcsys.de&gt;</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><em>This
+is free software,
+licensed under the GNU General Public License. The software is provided
+as is. I'm not reliable for any
+consequences arising from the usage of it.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><em>All Trademarks, company or product names belong to
+their respective owners!</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The utilities here were originally intended for Casio pocket
+computers only. I've recently begun to support other machines with a
+comparable data format&nbsp;and have therefore renamed the package
+from
+"Casio Utilities" to "CASsette IO Utilities". The main focus is still
+on Casio machines and most of the documentation handles just them. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>This is work in
+progress! Not all functions work on all operating systems and some
+files may be handled badly wrong. Sorry for any inconvenience.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Latest updates:</p>
+
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>Added option -d to list850 in order to support files copied from an MD100 disk.</li>
+
+  <li>Rework of md100. Removed -f option and added -p option following info from Piotr Piatek.</li>
+
+  <li>Fixed a bug causing an endless loop when writing Sharp style wave files. Affects mainly wav2wav.</li>
+
+
+  <li>Data file support needed some improvements. Added option to suppress header output to list850. </li>
+
+
+
+  <li>Added support for data files to bas850.</li>
+
+
+
+
+  <li>Added Unicode (UTF-8) support to list850, listX07, bas850 and basX07.</li>
+
+
+
+
+
+  <li>Option -i ignores data with framing or parity errors on wave file input for most list utilities.</li>
+
+
+
+
+
+
+  <li>Added binaries for Windows CE host (ARM, CE 3.0)</li>
+
+
+
+
+
+
+  <li>Removed PPC support for OS/X (I no longer have an appropriate compiler)</li>
+
+
+
+
+
+
+  <li>list8000 now supports display and export of Range / ViewWindow data</li>
+
+
+
+
+
+
+
+  <li>list8000 now&nbsp;exports variable memory to CAS file (for FA-121).</li>
+
+
+
+
+
+
+
+  <li>bas850 and md100 allow piping on text files. Fixed some escape sequences (phi-&gt;theta).</li>
+
+
+
+
+
+
+
+  <li>list8000 now supports exporting in FA-123/FA-124 format. </li>
+
+
+
+
+
+
+
+
+
+  <li>list8000 - Added listing support for fx-8000G graphic calculator with FA-80 interface.</li>
+
+
+
+
+
+
+
+
+
+
+  <li>wav2wav enhanced to support more formats.</li>
+
+
+
+
+
+
+
+
+
+
+
+  <li>list74 - Support for the TI-74 starts.</li>
+
+
+
+
+
+
+
+
+
+
+
+  <li>waveX07 - Added wave file generator for Canon X-07.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>basX07 - Added tokenizer for Canon X-07.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>listX07 - First program for a non Casio machine: Canon X-07.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The following software is provided:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>list702 - Show the contents of a binary or WAV file as
+BASIC text or data. This program is for the <a href="#The_FX-702P">FX-702P</a>.
+It is an adaption of list730.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>list730 - Show the contents of a binary or WAV file as
+BASIC text or data. This program is for the <a href="casioutil.html#The_PB-100_series">PB-100 series</a>.
+It was
+originally created by <a href="casioutil.html#Piotr_Piatek">Piotr
+Piatek</a>,
+I've added the various file formats.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>list850 - Show the contents of a binary or WAV file as
+BASIC text or data. This program is for all newer machines, starting
+with the <a href="#The_PB-700_PB-770_and_FX-750P">PB-700</a>
+and including the <a href="#The_FX-850P_FX-880P_and_PB-1000">FX-850
+and PB-1000</a>. The <a href="#The_FP-200">FP-200</a>
+is included as well.</li>
+
+
+
+
+
+
+
+
+
+
+  <li>list8000 - Show the contents of a binary or WAV file as source
+listing, registers, screen image or text. This program is for the <a href="#Casio_fx-8000G">fx-8000G</a> series of graphic calculators. list8000 can export in a file format understood by Casios FA-121 or FA-124 software.
+  </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>listX07 - Show the contents of a binary or WAV file as
+BASIC text. This program is for the <a href="#Canon_X-07">Canon
+X-07</a>.</li>
+
+
+
+
+
+
+
+
+
+
+
+  <li>list74 -&nbsp;Show the contents of a binary or WAV file as
+BASIC text. This program is for the <a href="#Texas_Instruments_TI-74">Texas Instruments TI-74</a>.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>wave730 - Create a WAV file from a binary file. This
+program is for the <a href="casioutil.html#The_PB-100_series">PB-100
+series</a>.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>wave850 - Create a WAV file from a binary
+file.&nbsp;This
+program is for all newer machines, starting with the <a href="casioutil.html#The_PB-700_PB-770_and_FX-750P">PB-700</a>
+and including the <a href="casioutil.html#The_FX-850P_FX-880P_and_PB-1000">FX-850
+and PB-1000</a>. The&nbsp;The <a href="casioutil.html#The_FP-200">FP-200</a> is
+included as well. The files can be created in (S)low or (F)ast
+mode.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>waveX07 - Create a WAV file from a binary file. This program is for the <a href="casioutil.html#Canon_X-07">Canon
+X-07</a>.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>bas702 - Create a WAV (or binary or ASCII encoded) file
+from a BASIC source text. This
+program is just for the <a href="#The_FX-702P">FX-702P</a>.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>bas730 - Create a WAV (or binary or ASCII encoded) file
+from a BASIC source text. This
+program is for all older machines, starting with the <a href="casioutil.html#FX-730_familiy_">PB-100</a><a href="casioutil.html#FX-730_familiy_">
+or FX-700P</a> and including the FX-730P and FX-795P.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>bas850 - Create a WAV (or binary or ASCII encoded) file
+from a BASIC source text. This
+program is for all newer machines, starting with the <a href="casioutil.html#The_PB-700_PB-770_and_FX-750P">PB-700</a>
+and including the <a href="casioutil.html#The_FX-850P_FX-880P_and_PB-1000">FX-850
+and PB-1000</a>. The&nbsp;<a href="casioutil.html#The_FP-200">FP-200</a> is
+included as well. The WAV files can be created in (S)low or (F)ast
+mode. Possible data formats are text (to be loaded with LOAD,A on some
+machines) or
+internal format (to be loaded with LOAD).</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>basX07 - Create a WAV (or binary) file from BASIC source
+text. This program is for the <a href="casioutil.html#Canon_X-07">Canon
+X-07</a>.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>wav2raw - Extract a binary image from a WAV file. Works for
+all models.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>wav2wav - Recreate a WAV file bit for bit. The resulting
+file can be better compressed by lossless compression software like ZIP
+or GZIP than an original recording. Since the recreation is done bit
+for bit, the program should work for any WAV file that is recorded in
+the Kansas City Standard with 2400 Hz carrier. (I've recently included
+support for Sharp
+computers which use different frequencies.)</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>md100 - Handle images of <a href="#The_MD-100_Floppy_drive_with_the_PB-1000">MD-100
+floppy disks</a> written by the PB-1000 or PB-2000C computers. On
+some PC systems this works even on the real disks!</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId83898"></a>Download</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+Download the archive: <a href="http://www.mvcsys.de/download/casutil.zip">http://www.mvcsys.de/download/casutil.zip</a>
+(~4.2 MB)
+<h2><a class="mozTocH2" name="mozTocId467333"></a>Generations
+of Casio pockets.</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The Casio BASIC pocket computers can be grouped. Within each
+group, the program files can be exchanged or programs can be directly
+transferred from one machine to the other through their tape
+interfaces.
+Not all programs can be executed on all machines within the same
+series, because some keywords differ. The FX-700P for example does not
+understand REM.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>More details about the different BASIC versions are available
+in my <a href="#BASIC_Comparison_Sheet">BASIC comparison
+sheet</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId839357"></a><a name="The_PB-100_series"></a>The PB-100 series</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>This is the name Casio gave to a range of its early pocket
+computers
+with BASIC. The group includes, according to a later Casio manual, the
+following machines: PB-100, PB-110, PB-220, PB-240, PB-300,
+PB-410,
+FX-700P, FX-720P, FX-730P, FX-770P, FX-785P,&nbsp;FX-790P and
+FX-795P. &nbsp;I
+own
+some of them: PB-220, PB-300,
+FX-700P,&nbsp;FX-720P,&nbsp;FX-730P and FX-795P.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>All models share some common features: A mode key switches
+between RUN or WRT (program) mode, selects angle modes
+and redirects output to the optional (or built-in) printer. 10 separate
+program areas are available. The keyboard has a single EXE key. Shifted
+functions are selected by prefix keys which must be pressed and
+released before the shifted key.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The internal encoding is not ASCII but <a href="#FX-730_character_table">something very special</a>.
+If you are interested in technical details, see <a href="#Piotr_Piatek">Piotr
+Piatek's pages</a> on the
+Internet.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+All tape recordings have been done through the FA-3 interface, albeit
+the PB-220 needs an adapter to connect it mechanically. The
+transmission speed is 300 bits per second.
+<h3><a class="mozTocH3" name="mozTocId967561"></a><a name="The_FX-702P"></a>The FX-702P</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>This machine stands
+for itself. Its BASIC dialect is a little odd. The commands <span style="font-family: monospace;">GOSUB</span>,
+<span style="font-family: monospace;">RETURN</span>,
+<span style="font-family: monospace;">PRINT</span>
+and <span style="font-family: monospace;">INPUT</span>
+have been replaced by <span style="font-family: monospace;">GSB</span>,
+<span style="font-family: monospace;">RET</span>, <span style="font-family: monospace;">PRT</span> and <span style="font-family: monospace;">INP</span>.
+The internal character&nbsp;code is <a href="#FX-702P_character_table">something special</a>.
+It is
+neither ASCII nor compatible with the PB-100 series encoding.&nbsp;</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The keyboard has a mode key which works pretty much like on
+the
+PB-100 series&nbsp;machines. Ten separate
+program areas are available. The keyboard has a single EXE key. The
+alpha keyboard isn't arranged like a typewriter but in alphabetical
+order. The two shift keys (F1, F2) are prefix keys.&nbsp;</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The
+tape format has some similarities to the PB-100 series
+format&nbsp;but seems to be an earlier variant.
+The program to list a tape file is therefore a separate executable
+while the wave file generator for the PB-100 series (wave730) can
+create images for the FX-702P.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+All tape recordings have been done through the FA-2 interface. The
+transmission speed is 300 bits per second.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId930870"></a><a name="The_PB-700_PB-770_and_FX-750P"></a>The PB-700,
+PB-770 and FX-750P</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>This is a newer generation of BASIC pockets which lack the
+mode key. Instead, the ENTER key on the numeric keypad is used for
+direct
+mode calculations while the return key is for entering commands and
+BASIC program lines. The shift key must be pressed and held down
+together with the affected key, just like on a typewriter. Ten seperate
+program areas are available. A special keyword (<span style="font-family: monospace;">PROG</span>) switches
+between
+areas without starting the program.&nbsp;There is a subtle
+difference in handling the logarithm functions. The PB
+systems (PB-700 series and the PB-1000, see below) use <span style="font-family: monospace;">LGT</span> for the
+base 10 logarithm
+and <span style="font-family: monospace;">LOG</span>
+for the natural logarithm. All other machines, including the
+old PB-100 series, use <span style="font-family: monospace;">LOG</span>
+and <span style="font-family: monospace;">LN</span>
+respectively. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The internal encoding is <a href="#PB-700-Character_set">ASCII
+with graphics characters</a> in the extended set. If you are
+interested in
+technical details, see <a href="casioutil.html#Piotr_Piatek">Piotr
+Piatek's pages</a> on the Internet. The FX-750P has an annoying
+quirk: It does not understand lowercase characters but displays nothing
+instead. This makes it impossible to edit lines with lowercase strings
+transmitted from a PB-700 or loaded from a PB-700 file.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>I own the PB-700 and PB-770 with the FA-10 interface and the
+FX-750P with
+the FA-20. I've tested my programs with these machines and interfaces.
+The transmission speed is 300 bits per second.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId992705"></a><a name="The_FX-850P_FX-880P_and_PB-1000"></a>The
+FX-850P, FX-870P, FX-880P, FX-890P, VX-1 to 4,&nbsp;Z-1 and PB-1000</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>These machines have a new implementation of BASIC, called JIS
+Standard BASIC by Casio. The PB-1000 has a RAM file system while the FX
+and VX systems retain the ten program areas of the earlier machines.
+The
+internal encoding is ASCII but the BASIC keywords and line numbers are
+encoded differently (line numbers can now reach up to 65535, not only
+9999.) The extended character sets differ between the PB-1000 and the
+other machines of the series. The PB-1000 shares the <a href="#PB-700-Character_set">PB-700 character set</a>
+with special graphics while the FX, VX and Z systems show <a href="#FX-850P_Character_set">math and &nbsp;science
+symbols</a> instead. The Z-1 and its sibling FX-890P lack the
+tape interface.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>All machines except the PB-1000 connect to the FA-6 interface.
+This
+interface offers a higher transmission speed of 1200 bits per
+second.&nbsp;The data block format is a variant of the PB-700
+scheme but the encoding of BASIC programs is different. It is possible
+to load a file saved with <span style="font-family: monospace;">SAVE,A</span>
+on a PB-700 into the FX-850P, and the
+other way round is possible, too. You have to restrict the speed
+to 300 bits per second (<span style="font-family: monospace;">SAVE"(S)"</span>
+and <span style="font-family: monospace;">LOAD"(S)"</span>
+on the FX-850P.)&nbsp;I could only partly test the tape interface
+with the VX-1 or FX-870P
+because I could only write but not read programs or data through the
+FA-6 interface with these machines.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The FX-850P/FX-880P systems can read tapes from the PB-100
+series with&nbsp;special commands (<span style="font-family: monospace;">PBLOAD</span>, <span style="font-family: monospace;">PBGET</span>).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The PB-1000 has a similar connector but mechanical
+and electrical differences inhibit the use of the FA-6. The PB-1000
+uses the FA-7
+interface which offers even higher transfer rates (up to 2400 bits per
+second, selectable by DIP switch on the interface.) The Z-1 and FX-890P
+no longer support tapes but can still be used with
+the bas850 source text translator and a serial or USB interface.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId464531"></a><a name="The_FP-200"></a>The FP-200</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>This is an A4 sized&nbsp;machine in a class of its own.
+The BASIC is
+similar to the PB-1000 but contains some Microsoft-BASIC features also.
+The included CETL spreadsheet application is unique. The tape format is
+similar enough to the FX-850P like machines to include the handling in
+the same programs. In most of the cases, the switch <span style="font-family: monospace;">-2</span> will handle
+the differences. Some ASCII encoded files are compatible between the
+families, in particular:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>The tape speed is 300 baud (slow format only).</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>The internal coding is different, binary files cannot be
+exchanged.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>The FP-200's ASCII format is understood by the FX-850P but
+not
+the PB-1000. I could not test it with the VX-4 or FX-870P (see above.)</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>The FP-200 understands the ASCII format of all other
+machines, given the correct speed.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>You can feed the files through list850 and bas850 to create
+files for the different platforms. </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId933538"></a><a name="The_MD-100_Floppy_drive_with_the_PB-1000"></a>The
+MD-100 floppy drive with the PB-1000 and PB-2000C calculators</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The MD-100 lacks a tape interface but who cares when a floppy
+disk with a real filesystem is readily available? I own two pocket
+calculators that connect to the MD-100: the PB-1000 BASIC computer and
+the PB-2000C which can be programmed in a variant of C (interpreted,
+quite slow). The Program <em>md100</em>
+understands the
+disk format. There is a BASIC ROM OM-53B available for the PB-2000C
+which
+turns it essentially into a PB-1000 with a different case, but I
+haven't seen this yet. Piotr Piatek has <a href="http://www.pisi.com.pl/piotr433/index.htm#pb1000">emulators</a>
+for all these.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2><a class="mozTocH2" name="mozTocId814602"></a>Other
+machines</h2>
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId535538"></a><a name="Casio_fx-8000G"></a>Casio fx-8000G</h3>
+
+
+
+
+
+
+
+
+
+
+<p>This is not a BASIC pocket computer but a Graphic calculator. With
+its FA-80 interface, you can save programs, registers, graphics and
+text files to cassette tape. <span style="font-style: italic;">list8000</span>
+supports listing of these files. I don't have an interface myself, so
+development is slow. Files can conatain more than one data type. The
+program lists the contents as it appears in the file. Graphics are
+converted to BMP files on request. The recording is done at 2400 baud.
+You may have to set your audio software to a proper sampling rate for
+reliable reading of the WAV files.
+
+
+ </p>
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId653752"></a><a name="Canon_X-07"></a>Canon X-07</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Canon X-07 is a capable little machine with a powerful BASIC and a
+built in cassette interface. I've just begun to support it with the programs <span style="font-style: italic;">listX07</span>, <span style="font-style: italic;">waveX07</span> and <span style="font-style: italic;">basX07</span>.
+The encordings are in fast mode at 1200 baud,
+a format already supported by the wave library in this project. Just
+the low level encoding is a bit different: 8 Bits, no parity, at least
+2&nbsp;stop bits. I had to adjust the generated wave pattern to make
+CLOAD work reliably.&nbsp;<br>
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId916220"></a><a name="Texas_Instruments_TI-74"></a>Texas Instruments TI-74</h3>
+
+
+
+
+
+
+
+
+
+
+
+<p>The TI-74 is the successor of the CC-40 BASIC computer which failed
+commercially, because, initially, no mass storage device was available.
+The newer TI-74 can be equipped with the CI-7 cassette interface
+through its DockBus connector. The logic of the interface is built into
+the computer, not the interface. This makes it impossible to use the
+CI-7 through an adapter with the CC-40. The CC-40+, from which only
+very few prototypes exist, has a&nbsp;built-in cassette interface and
+may work with my utilities, but I can't test it myself.</p>
+
+
+
+
+
+
+
+
+
+
+
+<p>The BASIC is one of the best you can find for any pocket size
+computer of its era. It supports sophisticated I/O, subprograms with
+parameters, long variable names, and more. The cassette interface
+mimiks the DockBus (or HexBus) device <span style="font-family: monospace;">"1."</span>. It can record BASIC programs with <span style="font-family: monospace;">SAVE"1.NAME"</span> which are loaded by <span style="font-family: monospace;">OLD"1.NAME"</span> or just&nbsp;<span style="font-family: monospace;">OLD"1."</span>. The interface supports sequential text mode data files for programmatic input and output as well. You can even <span style="font-family: monospace;">LIST"1.NAME"</span> a program in ASCII but you cannot load it back into the computer. I'm working on a solution but that may take some time.</p>
+
+
+
+
+
+
+
+
+
+
+
+<p>The wave file format is a rather special variant of the Kansas City
+Standard (KCS) used elsewhere: The frequencies are 1400 Hz and 700 Hz
+and the speed is 1400 bits per second. This means that only half of a
+wave is used for a zero bit @ 700 Hz! Synchronization is totally
+different from KCS and the bytes are encoded without start, parity or
+stop bits. Information is transferred in blocks of up to 64 bytes of
+net data. Logical records can be composed of multiple blocks. Each
+block is protected by a simple checksum and is transmitted twice for
+redundancy. Saving a BASIC program is relatively fast because it is
+transmitted as one large logical record. There is still enough
+synchronization overhead to create a 30 second wave file for a short
+program but a longer program will not make the file too much longer.
+Writing an ASCII file is a totally different matter: the overhead is
+added for each record of the file.</p>
+
+
+
+
+
+
+
+
+
+
+
+Owners of the PC interface have more options: They can directly save to
+and load from a PC file system. Program files are binary and typically
+have an extension of PGM. The DOS program <span style="font-style: italic;">TIC74</span>
+that comes with the interface software produces such a file from a
+BASIC text file. The contents of this file is the same as the single
+large record transmitted through the cassette interface. I'm planning
+to take such a PGM file as input and create a wave file for loading it
+without the PC interface. Be patient!&nbsp;<span style="font-style: italic;">list74</span> is already able to display such a file as a&nbsp;BASIC listing or extract it from a&nbsp;recording.
+
+<h2><a class="mozTocH2" name="mozTocId964441"></a>How
+to handle tape recordings</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId124913"></a>Recording</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Connect the tape interface with the microphone cable directly
+to your sound card. Start the audio recorder software of your choice
+with the following parameters:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>WAV file format.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>8 bits per sample. More bits are possible but not
+needed.&nbsp;Don't use floating point format!</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>11025 or 22050 samples per second (It's a good idea,
+but not mandatory, to record 2400 baud recordings at 44100 samples per
+second.)</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>Monaural.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>Recording level high enough to fill the dynamic range of
+the &nbsp;wave file. Alternatively use a sound editor like <a href="http://audacity.sourceforge.net/">Audacity</a>
+to amplify the signal.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Send the program or data from your pocket computer
+with&nbsp;<span style="font-family: monospace;">SAVE</span>,
+<span style="font-family: monospace;">SAVE ALL</span>,
+<span style="font-family: monospace;">PUT</span>&nbsp;or
+<span style="font-family: monospace;">WRITE#</span>
+and start the
+recording. Stop the recording when the Ready prompt returns.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The high speed recordings (1200 baud or more) make it hard for the utilities to
+interprete
+the wave patterns correctly because redundancy is greatly reduced. If
+you have problems, try to set the environment variable <span style="font-family: monospace;">WAVE_PHASE</span><span style="font-family: monospace;">=1</span> or invert
+the recording with a sound editor and try again.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>There is a problem with my iMac and its internal sound card.
+The
+recording level on the line-in input is very low. I've connected a
+Soundblaster USB with a mic input instead. A much cheaper noname USB
+sound plug with microphone input has proved to work fine, too. Playback
+via the internal
+sound card is fine.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId632705"></a>Playing</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Connect the EAR input of the tape interface to the PHONES
+output of your sound card. There is a problem to solve: You will need
+an adapter to connect the stereo output of your sound card (just one
+channel) to the mono input of the tape interface. You may damage the
+sound card with the cable provided by the tape interface because it
+shorts one of the output channels!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><strong>Read the preceding paragraph&nbsp;again
+before you proceed!</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>If everything is properly connected, enter the appropriate
+<span style="font-family: monospace;">LOAD</span> (<span style="font-family: monospace;">ALL</span>), <span style="font-family: monospace;">READ#</span> or <span style="font-family: monospace;">GET</span> command and
+then start playing the
+WAV file. Set the output level higher than normal. If it is too loud
+for your ears it's just right for your little computer!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p> If the pocket computer reads and processes data within a
+program, making use of the REMote plug of the tape interface to stop
+playback while it is working, you will have to mimick this by halting
+and resuming the playback manually. Program files are no problem in
+this respect.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId300839"></a>Refreshing</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The original recordings (or recordings from other sources on
+the Internet) may not be optimal for archiving. Lossless compression
+programs like ZIP or GZIP don't like analog signals!&nbsp;Some
+recordings found elsewhere do not tell the tape interface correctly
+when the recording is over. This can even lead to missing program lines
+when downloading to the pocket calculator.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><em>wav2wav</em> makes a bit-for-bit copy of a WAV
+file that is recorded in the Kansas City Standard or one of the
+supported variants. All Casio models use this recording scheme, even in
+fast or
+high speed mode
+(1200 or 2400 bits per second) where&nbsp;a bit is represented by
+just one
+or two waves instead of four to eight in the standard mode at 300 bits
+per second. The software is able to recode a recording in any of the
+speeds 300, 1200 or 2400 bits per second into any other of these speeds.</p>
+
+
+
+
+
+
+
+
+
+
+
+<p>There are two special modes for other devices: 500 bits per second
+for Sharp pocket computers and 1400 bits per second for the TI-74 or
+TI-95. These are always used for input and output. It doesn't make
+sense to change the speed for these recordings because the resulting
+files would be useless.</p>
+
+
+
+
+
+
+
+
+
+
+
+<p>The output pattern is a sine wave for all speeds exept for the TI where a square wave is used. This may change in the future.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+The program is called as follows:<span style="font-weight: bold;"><br>
+
+
+
+
+
+
+
+
+
+
+
+</span><span style="font-weight: bold;"></span>
+<pre>usage: wav2wav &lt;options&gt; infile outfile<br>         -d debug mode<br>         -s preserve silent areas in recording<br>         -f fast (1200 baud) input and output<br>         -if fast input file only<br>         -of fast output file only<br>         -h high speed (2400 baud) input and output<br>         -ih high speed input file only<br>         -oh high speed output file only<br>         -5 500 baud (Sharp pocket computers) in/out<br>         -t 1400 baud (Texas Instruments TI-74/95) in/out<br>         Fast mode works for FX-850P, PB-1000 and Canon X-07<br>         High speed mode works for the PB-1000 and the fx-8000G series.<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+<p>Hints:</p>
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+
+
+
+
+
+  <li>If you want to recode a 300 baud file (e. g. a file from a PB-700) to a high speed file for the PB-1000, use option <span style="font-family: monospace;">-oh</span> alone. Input speed is 300 by default.</li>
+
+
+
+
+
+
+
+
+
+
+
+  <li>If you want to recode a high speed file from a PB-1000 for loading into a FX-850P, use both options <span style="font-family: monospace;">-ih</span> and <span style="font-family: monospace;">-of</span>.</li>
+
+
+
+
+
+
+
+
+
+
+
+  <li>Options are parsed from left to right. So even the combination <span style="font-family: monospace;">-t -of</span> works but is useless.</li>
+
+
+
+
+
+
+
+
+
+
+
+  <li>You can use <span style="font-family: monospace;">-f</span> on
+300 baud files. This is possible because the frequencies are the same.
+The reported number of bits will be wrong by a factor of four and the
+reliability of the conversion is greatly reduced.</li>
+
+
+
+
+
+
+
+
+
+
+
+  <li>If the converted file cannot be read by the device, try again with the environment variable <span style="font-family: monospace;">WAVE_PHASE=1</span>. If the file is recorded at a very low volume, try setting the environment variable <span style="font-family: monospace;">WAVE_THRESHOLD</span> to values above 10. In any case it's better to load the file into an audio editor and normalize it there.</li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId516627"></a>Converting
+to other formats</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Recordings can be analysed (and archived) easily by converting
+them to a binary format. Several formats are available:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>Byte binary format is just the plain decoded data. It
+looses the so called "lead-in" sequences used to synchronize the
+decoder and to seperate data blocks. Bytes with framing or parity
+errors are left out. The format is easiest to understand for humans and
+is the basis for the listing programs.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>Word binary format is a variant of the binary format which
+preserves more information of the original data stream. "Lead-in"
+sequences are encoded as a special value, all framing and parity
+information is preserved in the upper byte of each data word.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>Word raw format is just the 12 bits per data byte (with
+start, stop and parity bits) expanded to&nbsp;16 bit words.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>ASCII encoded raw data is the format generated and accepted
+by <a href="#Piotr_Piatek">Piotr's serial interface</a>.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><em>wav2raw</em> converts a WAV file to one of the
+formats mentioned above:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>usage: wav2raw &lt;options&gt; &lt;format&gt; infile outfile<br>	 -d or -D debug mode(s)<br>	 -w words (with framing information)<br>	 -b bytes (only decoded data bytes)<br>	 -a ascii (ASCII encoded raw data)<br>	 -r raw (raw bits in 16 bit words)<br>	 -s slow (300 baud) wave file (default)<br>	 -f fast (1200 baud) wave file<br>	 -h high speed (2400 baud) wave file<br>            Try -s-, -f- or -h- in case of read errors<br>	 -5 Sharp (500 baud) wave file in/out<br>	 -15 1500 baud (Sharp graphics calculators) in/out<br>         -t TI-74 (1400 baud synchronous) wave file<br>	 -p{E|O|N}[1|2] select parity and stopbits<br>	 -i ignore parity or framing errors in format -b<br><br></pre>
+
+
+
+
+
+
+
+
+
+<p>Hints:</p>
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+
+
+
+
+
+  <li>Appending a '<span style="font-family: monospace;">-</span>' to the end of options <span style="font-family: monospace;">-s</span>, <span style="font-family: monospace;">-f</span> or <span style="font-family: monospace;">-h</span> has the same effect as setting the environment variable <span style="font-family: monospace;">WAVE_PHASE</span> to <span style="font-family: monospace;">1</span>. This can help to avoid read errors because of a wrong phase in the wave file.</li>
+
+
+
+
+
+
+
+
+
+
+
+  <li>Use options <span style="font-family: monospace;">-f
+-pN2</span> to read the Canon X-07 format.&nbsp;</li>
+
+
+
+
+
+
+
+
+
+
+
+  <li>The Casio graphics calculators fx-8000G and fx-8500G with interface FA-80 use format <span style="font-family: monospace;">-h</span>. My tests gave best results with option <span style="font-family: monospace;">-h-</span>.<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId189317"></a>Listing
+as text</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>These programs interprete a WAV or a binary file and output
+its
+contents as a program or data listing. The programs are <em>list702</em>,
+<em>list730</em>
+and<em> list850</em>.&nbsp;All programs write their output to the console which can be
+redirected to a file.</p>
+
+
+
+
+
+
+
+
+
+<h4><a class="mozTocH4" name="mozTocId294789"></a>Casio BASIC computers</h4>
+
+
+
+
+
+
+
+
+
+<pre>list702  &lt;options&gt; infile &gt; outfile<br>	 -w reads a WAV file directly<br>	 -a reads an ASCII encoded file from Piotr's interface<br>	 -b&lt;skip&gt; reads a binary file, &lt;skip&gt; is an optional offset<br>	 -i ignores any errors on the input stream <br>	 -n new syntax listing (PRT-&gt;PRINT)<br><br>list730  &lt;options&gt; infile &gt; outfile<br>	 -w reads a WAV file directly<br>	 -a reads an ASCII encoded file from Piotr's interface<br>	 -b&lt;skip&gt; reads a binary file, &lt;skip&gt; is an optional offset<br>	 -i ignores any errors on the input stream <br>	 -e generate backslash escapes for special codes<br><br>list850  &lt;options&gt; infile &gt; outfile<br>	 -2 file is from FP-200<br>	 -w[S|F|H] reads a WAV file directly<br>	   S: slow (PB-700, FX-750P)<br>	   F: fast (FX-850P, PB-1000)<br>	   H: high speed (PB-1000 with FA-7 at 2400 baud)<br>	 -a reads an ASCII encoded file from Piotr's interface<br>	 -b&lt;skip&gt; reads a binary file, &lt;skip&gt; is an optional offset<br>         -d reads a file copied from an MD100 disk<br>	 -i ignores any errors on the input stream <br>	 -e[F|P|X] use backslash escapes in strings<br>	   F: FX-850P extended character set<br>	   P: PB-1000 graphics character set<br>	   X: generic hexadecimal escapes (default)<br>	 -u[F|P] create unicode (UTF-8) instead of escapes<br>	 -l[F|P] handling of LOG/LN versus LGT/LOG<br>	   F: FX-850P/VX/Z logarithm syntax LOG and LN<br>	   P: PB-700/PB-1000 logarithm syntax LGT and LOG<br>	 -n no header output (good for data files)<br></pre>
+
+
+
+
+
+
+
+
+<p><em>list702</em> handles just the FX-702P. Data
+files are not supported.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p> <em>list730</em> handles the PB-100 series,
+namely the FX-730P. Data files are not supported. Use option <span style="font-family: monospace;">-e</span>, if you
+want to translate the output later with <em>bas730</em>!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><em>list850</em> knows about all the other Casio
+BASIC
+calculators
+beginning with the PB-700, namely the FX-850P. Data files and ASCII
+files saved with <span style="font-family: monospace;">SAVE,A</span>
+are supported, too. Use options <span style="font-family: monospace;">-eP</span> (or <span style="font-family: monospace;">-uP</span>) and <span style="font-family: monospace;">-lP</span> when
+listing a PB-1000 program.&nbsp;<span style="font-family: monospace;">-2</span>
+handles all the FP-200 specifics, especially the different binary
+encoding.</p>
+
+
+
+
+
+
+
+
+
+<h4><a class="mozTocH4" name="mozTocId138060"></a>Casio graphics calculators</h4>
+
+
+
+
+
+
+
+
+
+
+<pre>list8000 &lt;options&gt; infile [outfile]<br>         -w reads a WAV file directly.<br>         -w- inverts the phase in case of difficulty.<br>         -b&lt;skip&gt; reads a binary file, &lt;skip&gt; is an optional offset.<br>	 -i ignores any errors on the input stream <br>         -e[C|X] use backslash escapes in strings:<br>           C: character escapes like '\Pi'.<br>           X: generic hexadecimal escapes (default).<br>         -c[D|W] use character set translation:<br>           D: DOS code page 437.<br>           W: Windows code page 1252 (default).<br>         -c takes precedence over -e. Both can be mixed.<br>         -l&lt;width&gt; limits the listing width. Default is 40.<br>         -g&lt;name#.bmp&gt; creates bitmap files for any graphic.<br>         -cas[A|P|E|7] translate output to CAS format for FA-121 software.<br>           A: Export all supported types (default).<br>           P: Export program areas only.<br>           E: Export editor files only.<br>           M: Export variable memory only.<br>           R: Export range data only.<br>	   7: fx-7700GB mode: convert editor files and memory to programs.<br>         -cat&lt;prg#&gt; translate output to CAT format for FA-122/123/124 software.<br>             &lt;prg#&gt; is an optional program name prefix.<br>         -p&lt;#&gt; set the first program number.<br></pre>
+
+
+
+
+
+
+
+
+<p><span style="font-style: italic;"><img style="width: 347px; height: 230px; float: right;" alt="fx-8000G screenshots" src="fx-8000G-screenshots.png" hspace="4" vspace="4"></span></p>
+
+
+
+
+
+
+
+
+<p><span style="font-style: italic;">list8000</span> lists and converts files from the fx-8000G graphic calculator. All record types are supported. The command <span style="font-family: monospace;">SAVE "Name" A</span>
+&nbsp;saves a mixture of all the available formats: programs, variables
+(memory), graphics and files. <span style="font-style: italic;">list8000</span> supports escape sequences in
+strings like the other programs and has inherited the codepage options
+of <span style="font-style: italic;">listX07</span>. The <a href="http://casetta.tuxfamily.org/spec/newcat/token_list.0.2.1.txt" target="_blank">escape sequences</a> are compatible with the CAT file format (see below). Graphics are converted to&nbsp;BMP files if option <span style="font-family: monospace;">-g</span> is present. It must be followed by a filename ending in&nbsp;<span style="font-family: monospace;">.bmp</span> and should contain a '<span style="font-family: monospace;">#</span>' character which is replaced by '<span style="font-family: monospace;">1</span>' to '<span style="font-family: monospace;">3</span>'.
+The first file has the exact display resolution of 96 by
+64 pixels. The second file has a resolution of 192 by 128 pixels. It is
+used by the calculator internally for high resolution printing. If the
+selector switch on the left is set to "N" instead of "HD" while drawing
+a graph, only every second dot is drawn in the high resolution image.
+Both formats are part
+of the graphics record on the tape. A third picture is created which is
+a copy of the first but three times the size: Each pixel is drawn as a
+2x2 square with an empty colum to the right and an empty row to the
+bottom. This looks more like the real display where the single dots are
+slightly spaced.</p>
+
+
+
+
+
+
+
+
+
+<p><span style="font-style: italic;"><img style="margin-bottom: 10px; margin-left: 20px; width: 220px; height: 179px; float: right;" alt="Screenshot FA-124" src="FA-124.png">list8000</span> supports the conversion to file formats understood by the FA-121~124 software from Casio (see <a href="#Casio_File_Formats">below</a>): CAS format for FA-121 and CAT format for FA-122 onwards. With a proper serial
+cable from Casio or Yellow Computing - their FX-Interface USB cable
+maps to a regular serial port - you can connect all recent graphics calculators with
+the round three pin connector.&nbsp; The built-in USB port of some calculators
+cannot be used directly because FA-124 does not support it in the traditional (FA-123) mode which is required by the CAT format.</p>
+
+
+
+
+
+
+
+
+<p>There are a few things to consider:</p>
+
+
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+
+
+  <li><span style="font-style: italic;">CAS file:</span> &nbsp;Use option <span style="font-family: monospace;">-cas</span> and provide an output&nbsp;file ending in&nbsp;<span style="font-family: monospace;">.CAS<span style="font-family: Tahoma,Arial,Helvetica,sans-serif;"></span></span>. The
+option can&nbsp;optionally be followed by an indicator what to put in
+the file: All items, programs,&nbsp;editor files, memory or <span style="font-family: monospace;">Range</span> information only. The CAS
+file format is used by FA-121,&nbsp;an old 16 bit Windows program. You
+should restrict
+yourself to 8+3 filenames for the&nbsp;output file. CAS files can also 
+be imported by the newer FA software. No code conversion takes place.
+Even the top of the line calculator of this generation, the CFX-9800G,
+should happily execute all old fx-8000G code. When you open a type
+A&nbsp;file in FA-121, missing items like&nbsp;<span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;">Factor</span> are automatically created but they contain only default information.&nbsp; Use option <span style="font-family: monospace;">-casP</span> or <span style="font-family: monospace;">-cas7</span>
+if you target a fx-7700GB which supports program transfers only. The
+latter option has the effect of putting the variable memory and any editor files into program
+areas <span style="font-family: monospace;">A</span>, <span style="font-family: monospace;">B</span>, etc. The first of these, <span style="font-family: monospace;">Prog A</span>, contains a program to set variables <span style="font-family: monospace;">A~Z</span>
+to the values found in the source file. The original editor filenames
+are saved as comments at the beginning of each generated program. No
+attempt is made to translate any <span style="font-family: monospace;">Prog&nbsp;"name"</span> calls.</li>
+
+
+
+
+
+
+
+
+  <li><span style="font-style: italic;">CAT file:</span> Use option <span style="font-family: monospace;">-cat</span> and provide an output&nbsp;file ending in&nbsp;<span style="font-family: monospace;">.cat</span>.
+This file is accepted by FA-122~124. FA-124 must be in the traditional
+mode (Model Type: fx-7400G /
+CFX-9850G) even if you connect a newer calculator. An
+optional&nbsp;prefix for the program file name conversion must follow
+the option directly (see below). If you don't have a three pin cable
+you can still try the conversion option of FA-124 and transfer the
+converted file in native FA-124 mode over USB.</li>
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+
+
+  <li><span style="font-style: italic;">list8000</span> converts programs, editor files, variables <span style="font-family: monospace;">A~Z</span> and <span style="font-family: monospace;">Range</span> information into both formats.&nbsp; Graphics go into&nbsp;the CAT file format only. All information is
+written to&nbsp;a single file. In a CAT file, programs&nbsp;are renamed
+according to their position in the source recording. If you <span style="font-family: monospace;">SAVE</span>
+to cassette with a filename, this will be used as a prefix. You can optionally provide your own prefix after the option <span style="font-family: monospace;">-cat</span>. A '<span style="font-family: monospace;">#</span>' in the prefix will become the program area digit. If no '<span style="font-family: monospace;">#</span>' is present in the prefix, program 0 will get the prefix name alone while the digits <span style="font-family: monospace;">1~9</span> are appended to the following program areas. Calls to <span style="font-family: monospace;">Prog</span> &nbsp;<span style="font-family: monospace;"><span style="font-family: monospace;">n</span></span> &nbsp;are automatically converted to <span style="font-family: monospace;">Prog</span>&nbsp;<span style="font-family: monospace;">"name"</span>.&nbsp;</li>
+
+
+
+
+
+
+
+
+  <li>The tape recording lacks information about the original program
+areas of the saved programs. This can cause trouble if you are calling
+one program from the other. Option <span style="font-family: monospace;">-p</span> allows to set the area for the first program in the file to a value other than <span style="font-family: monospace;">0</span>.&nbsp;<span style="font-family: monospace;"></span> </li>
+
+
+
+
+
+
+
+
+  <li>There are
+some more syntax differences between the various generations of Casio's
+programming language. Notably the instructions <span style="font-family: monospace;">Scl</span>, <span style="font-family: monospace;">Cl</span> and <span style="font-family: monospace;">Dt</span> cannot be converted into the CAT format. To overcome this, some
+commands are replaced when a CAT file is created. This should avoid
+syntax errors but cannot help in all cases. E. g. array access is
+replaced by list access, but if you rely on a specific mapping between
+variables <span style="font-family: monospace;">A~Z</span> and the arrays, you have to modify the program. The <span style="font-family: monospace;">Mcl</span> command is changed to clear variables <span style="font-family: monospace;">A~Z</span> and setup <span style="font-family: monospace;">List 1</span>
+with 26 elements. Add it in the beginning of your arrray handling
+program. You should adjust the list size manually after the conversion.</li>
+
+
+
+
+
+
+
+
+  <li>Text files are stored in the tape recording under their name together with
+their&nbsp;passwords. The CAT file format keeps both the name and the
+password but since this file format is ASCII you can simply
+edit passwords out. Don't edit the file <span style="font-style: italic;">contents</span> directly in the cat file because the length field will no longer be correct! CAS files do not contain passwords.</li>
+
+
+
+
+
+
+
+
+  <li>Graphics in a CAT file are converted to various formats: <span style="font-family: monospace;">Picture1</span> to <span style="font-family: monospace;">Picture3</span> contain a centered image (96x64 on a 128x64 screen) in three colors: <span style="color: rgb(255, 102, 0);">orange</span>, <span style="color: rgb(0, 0, 153);">blue</span> and <span style="color: rgb(0, 153, 0);">green</span>. <span style="font-family: monospace;">Picture4</span>
+has the original 96x64 resolution in blue. Calculators with a wider
+screen will reject it (in fact, I have yet to find a calculator that loads it.) The high resolution image is not converted
+because no other calculator can deal with it.</li>
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+<p>Examples:</p>
+
+
+
+
+
+
+
+
+<pre>list8000 -catMYAPP-#.FX -p3 -w myapp.wav &gt; myapp.cat<br>list8000 -casA -p3 -w myapp.wav MYAPP.CAS<br></pre>
+
+
+
+
+
+
+
+
+<p>In the first example, the first program on the tape will be renamed <span style="font-family: monospace;">"MYAPP-3.FX"</span>. The redirection operator '<span style="font-family: monospace;">&gt;</span>' is optional for CAT file creation and must be omitted for CAS file output.</p>
+
+
+
+
+
+
+
+
+<span style="font-style: italic;"></span>
+<h4><a class="mozTocH4" name="mozTocId711153"></a>Canon&nbsp;X-07</h4>
+
+
+
+
+
+
+
+
+<pre>listX07  &lt;options&gt; infile &gt; outfile<br>	 -w reads a WAV file directly<br>	 -b&lt;skip&gt; reads a binary file, &lt;skip&gt; is an optional offset<br>	 -i ignores any errors on the input stream <br>	 -e[C|X] use backslash escapes in strings<br>	   C: character escapes like '\pi'<br>	   X: generic hexadecimal escapes (default)<br>	 -c[A|D|W] use charater set translation in strings<br>	   A: ASCII codes only (very simple)<br>	   D: DOS code page 437<br>	   W: Windows code page 1252 (default)<br>	 -c takes precedence over -e. Both can be mixed.<br></pre>
+
+
+
+
+
+
+
+
+<em>listX07</em> handles the Canon X-07. It
+supports binary and WAV
+files from CSAVE only. The escape sequences are a bit different from the Casio
+machines because the charset differs considerably. See <a href="Canon_X-07_Token.pdf">here</a>
+for a complete list. You can use the DOS or Windows extend character
+set (code pages 437 or 1252 respectively) on the output with option <span style="font-family: monospace;">-c</span>. This will
+make many special characters in strings or comments, entered with the
+GRPH key on the X-07, readable on your system. If you want to translate
+the output later with <span style="font-style: italic;">basX07</span>
+you should use option <span style="font-family: monospace;">-e</span>
+and you may use option <span style="font-family: monospace;">-c</span>.
+Both can be mixed. If a matching extended character in the selected
+code page is found, it will be output instead of the escape sequence.
+
+
+<h4><a class="mozTocH4" name="mozTocId818664"></a>TI-74<span style="font-style: italic;"></span></h4>
+
+
+
+
+
+
+
+
+
+<pre>list74   &lt;options&gt; infile &gt; outfile<br>         -w reads a WAV file directly<br>         -b reads a binary or *.PGM file<br>         -r creates a raw binary (*.PGM) file<br>         -e[C|X] use backslash escapes in strings<br>           C: character escapes like '\pi'<br>           X: generic hexadecimal escapes (default)<br>         -c[A|D|W] use charater set translation in strings<br>           A: ASCII codes only (very simple)<br>           D: DOS code page 437<br>           W: Windows code page 1252 (default)<br>         -c takes precedence over -e. Both can be mixed.</pre>
+
+
+
+
+
+
+
+
+<p><span style="font-style: italic;">list74</span> handles the TI-74. It supports binary files or WAV files. A binary file can either be created by <span style="font-style: italic;">wav2raw</span>, be extracted by option <span style="font-family: monospace;">-r</span> in an earlier run of <span style="font-style: italic;">list74</span>, or come from the TI PC interface: saved from a TI-74 (or CC-40) or created by the <span style="font-style: italic;">TIC74</span> compiler. Use option <span style="font-family: monospace;">-r</span>
+if you want to create a file that can be sent to the TI-74&nbsp;by the
+PC interface software. The filename must&nbsp;follow the option char&nbsp;directly. No listing is produced then.   <span style="font-style: italic;">list74</span> works for sequential files written to device <span style="font-family: monospace;">"1."</span> as well. Options <span style="font-family: monospace;">-e</span> and <span style="font-family: monospace;">-c</span> work similar to <span style="font-style: italic;">listX07</span>
+but the TI supports less national characters. At least some special
+characters like &auml;, &ouml;, &uuml; or &szlig; can be used. They
+cannot be entered directly on the device but may slip in through the PC
+interface or appear in data files. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId490265"></a>Creating
+from binary files</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Three programs interprete a binary file and create a WAV file
+from it that can be transferred to the calculator via the sound card.
+The programs are <em>wave730</em>,&nbsp;<em>wave850</em> and<em> waveX07</em>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>wave730 [-a|-b&lt;skip&gt;] infile outfile<br>	-a read an ASCII encoded file from Piotr's interface<br>	-b&lt;skip&gt; read a binary file, &lt;skip&gt; is an optional offset<br><br>wave850 [-a|-b&lt;skip&gt;][-f|-s] infile outfile<br>	-a read an ASCII encoded file from Piotr's interface<br>	-b&lt;skip&gt; read a binary file, &lt;skip&gt; is an optional offset<br>	-s create a 300 baud WAV file (slow: PB-700, FX-750P)<br>	-f create a 1200 baud WAV file (fast: FX-850P, PB-1000)<br>	-2 handle FP-200 specifics<br><br>waveX07 [-b&lt;skip&gt;] infile outfile<br>	&lt;skip&gt; is an optional offset<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The first program handles the Casio PB-100 series, namely the
+FX-730P and, as a side effect, the FX-702P (but the program name stored
+in the file isn't
+correctly displayed on screen.) The
+second is written for the&nbsp;other BASIC calculators beginning
+with the PB-700, namely the FX-850P. <span style="font-style: italic;">waveX07</span> &nbsp;handles the Canon X-07.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The lead-in sequences are shorter than in an original file
+coming from the tape interface. This saves some time when loading the
+files. The FP-200 needs slightly longer lead-ins: use the <span style="font-family: monospace;">-2</span> switch!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId57435"></a>Creating
+from BASIC source files</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>These programs take a source file, which might
+have
+been created by one of the list utilities or just typed in on the PC,
+and create a tape file in one of the following formats from it: WAV
+file,
+binary file or ASCII encoded file for <a href="casioutil.html#Piotr_Piatek">Piotr's serial interface</a>.
+The programs are&nbsp;<em>bas702</em>, <em>bas730,&nbsp;</em><em>bas850</em><em></em>
+and <span style="font-style: italic;">basX07</span><em>.</em>
+The last two can create plain ASCII source files for transmission
+through a serial interface.<em></em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>BASIC programs can be written with lowercase or mixed case
+keywords.
+The utilities translate everything outside strings, comments or DATA
+lines to uppercase before further processing. Uppercasing can be
+suppressed for the newest machines which support&nbsp;case
+sensitive
+variable names. You can
+use a single apostrophe (') instead of REM&nbsp;to start a comment.
+This is
+natively supported on the FX-850P and later models and on the X-07 but
+not on the older
+machines where
+it
+will be translated to REM or :REM depending on its
+position.&nbsp;Lines
+that do not start with a line number are ignored. This way you can have
+lenghty comments in your source code which are not downloaded to your
+pocket computer.<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Different generations and lines of pocket computers use
+different
+BASIC dialects. The differences are sometimes huge and sometimes very
+subtle. This ranges from the almost exotic FX-702P BASIC variant with
+abbreviated keywords like <span style="font-family: monospace;">PRT</span>
+instead of <span style="font-family: monospace;">PRINT</span>
+to minor quirks like the lack of <span style="font-family: monospace;">USING</span>
+in the FX-850P or the renaming of the logarithm functions in the PB-700
+and PB-1000. The translators know about some of these specifics and try
+to bridge the gaps with special options. Of course some restrictions
+like variable name syntax or memory organization or the lack of
+functionality cannot be overcome. But I tried hard to avoid these nasty
+<span style="font-family: monospace;">?SN Error</span>
+or <span style="font-family: monospace;">ERR-2</span>
+messages resulting from&nbsp;unknown keywords where a perfect
+replacement on the target machine exists. <span style="font-family: monospace;">VAC</span> vs. <span style="font-family: monospace;">CLEAR</span> is a good
+example for this.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Within the same family, some commands are valid for one
+machine but not for
+the
+other. The statistics functions of the FX-750P
+are unavailable on the PB-700. <em>bas850</em> translates
+these
+functions to tokens but the PB-700 cannot list or execute them. This is
+equally
+true, if you load a programm written on and saved by the FX-750P
+directly into a
+PB-700.</p>
+
+
+
+
+
+
+
+
+
+
+
+<p>You will find a detailed analysis of the various BASIC dialects in my <a href="#BASIC_Comparison_Sheet">BASIC Comparison Sheet</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4><a class="mozTocH4" name="mozTocId69232"></a><a name="FX-702_familiy"></a>FX-702P </h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>bas702 [-a|-b|-w] [-l] infile outfile<br>	-a create an ASCII encoded file for Piotr's interface<br>	-b create a binary file<br>	-w create a WAV file<br>	-l convert LGT/LOG to LOG/LN<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>You can translate&nbsp;source files especially written for
+the FX-702P or&nbsp;from newer Casios; standard BASIC keywords like
+<span style="font-family: monospace;">PRINT</span>
+or <span style="font-family: monospace;">INPUT</span>
+are automatically translated to the special syntax of the
+FX-702P.&nbsp;The prefix <span style="font-family: monospace;">FACT</span>
+function is replaced by the FX-702P postfix factorial "!". Some unkown
+commands like <span style="font-family: monospace;">REM</span>
+or <span style="font-family: monospace;">DATA</span>
+are completely removed.
+This can lead to lines being deleted and therefore unavailable as jump
+targets. The PB-700/PB-1000 logarithm syntax is supported with the <span style="font-family: monospace;">-l</span> option.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The FX-702P supports only one array named <span style="font-family: monospace;">A()</span>. On the
+PB-100 series you better use <span style="font-family: monospace;">Z()</span>
+after <span style="font-family: monospace;">DEFM</span>
+when you do not want to overlap your standard variables with your
+array. <em>bas702</em> translates the arrayname <span style="font-family: monospace;">Z()</span> to array <span style="font-family: monospace;">A()</span> to emulate
+this behaviour.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><em>bas702</em> supports escape sequences anywhere
+in the code in order to allow the use of the special characters of the
+pocket computer. An escape starts with a backslash character '<span style="font-family: monospace;">\</span>' followed by
+either&nbsp;one or two characters (see table below) or a two digit
+hexadecimal code. Set the <span style="font-family: monospace;">-e</span>
+switch on <em>list702</em> to
+include these sequences in a program listing! Here is the character map:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><a name="FX-702P_character_table"></a><img style="width: 640px; height: 310px;" alt="Casio character table FX-702P" src="charset702.png"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Code <span style="font-family: monospace;">0F</span>
+is used as the space character. The BASIC tokens range from <span style="font-family: monospace;">60</span> to <span style="font-family: monospace;">AF</span>. The
+character escape sequences are:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><span style="font-family: monospace;">\DG</span>
+(&deg;), <span style="font-family: monospace;">\&gt;=</span>
+(greater or equal),&nbsp;<span style="font-family: monospace;">\&lt;=</span>
+(less or equal),&nbsp;<span style="font-family: monospace;">\&lt;&gt;</span>
+(not equal), &nbsp;<span style="font-family: monospace;">\<span style="font-family: monospace;">PI</span></span>
+and <span style="font-family: monospace;">\E+</span>
+(exponent).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>These are case insensitive: <span style="font-family: monospace;">\PI</span> and <span style="font-family: monospace;">\pi</span> are
+equivalent.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The strings <span style="font-family: monospace;">&gt;=</span>,
+<span style="font-family: monospace;">&lt;=</span>,
+<span style="font-family: monospace;">&lt;&gt;</span>,
+<span style="font-family: monospace;">PI</span><span style="font-family: monospace;"></span> and <span style="font-family: monospace;">E</span> in numbers
+are automatically translated when they occur in normal code. There is
+no need to escape them, except when you want to use them in strings.
+The character <span style="font-family: monospace;">`</span>
+is treated as <span style="font-family: monospace;">&deg;</span>,
+<span style="font-family: monospace;">^</span> is
+the up arrow and <span style="font-family: monospace;">~</span>
+is PI. <span style="font-family: monospace;">{</span>,
+<span style="font-family: monospace;">}</span> and <span style="font-family: monospace;">|&nbsp;</span><span style="font-family: monospace;"></span>are &lt;=,
+&gt;=&nbsp; and &lt;&gt; respectively. <span style="font-family: monospace;"></span>So in order to
+print the character
+"pi", any of the following will do: <span style="font-family: monospace;">~</span>, <span style="font-family: monospace;">\PI</span>, <span style="font-family: monospace;">\pi</span>, <span style="font-family: monospace;">\Pi</span> or <span style="font-family: monospace;">\3B.</span> Outside of
+strings, <span style="font-family: monospace;">PI</span>,
+<span style="font-family: monospace;">pi</span> or <span style="font-family: monospace;">Pi</span> are also
+valid.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4><a class="mozTocH4" name="mozTocId945540"></a><a name="FX-730_familiy"></a>FX-730P family </h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>bas730 [-a|-b|-w] [-o|-n] [-1] infile outfile<br>	-a create an ASCII encoded file for Piotr's interface<br>	-b create a binary file<br>	-w create a WAV file<br>	-o allow old style FX-702P keywords<br>	-n allow new style FX-850P keywords<br>	-l convert LGT/LOG to LOG/LN<br>	-1 target for PB-100/FX701P<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>If you have a source file
+from an FX-702P, which uses some
+special keywords like <span style="font-family: monospace;">PRT</span>
+or <span style="font-family: monospace;">INP</span>,
+translate your source with
+the&nbsp;<span style="font-family: monospace;">-o</span>
+option. If you want to port a program from one of the
+newer machines like the FX-850P, try option <span style="font-family: monospace;">-n</span>. The
+program does
+its best to translate to the older or newer syntax, but it is not
+foolproof.&nbsp;The FX-702P postfix factorial "!" is translated to
+the
+prefix <span style="font-family: monospace;">FACT</span>
+function.&nbsp; The PB-700/PB-1000 logarithm syntax is supported
+with the <span style="font-family: monospace;">-l</span>
+option.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p> Since
+the BASIC of the PB-100, PB-300, FX-701P and FX-801P lacks some
+keywords, notably <span style="font-family: monospace;">REM</span>,
+use option <span style="font-family: monospace;">-1</span>&nbsp;if
+you want to target one of
+these. The unknown commands are then excluded from the output. This may
+lead to lines being dropped as a whole. Their line numbers are no
+longer available as jump targets! Options <span style="font-family: monospace;">-n</span> and <span style="font-family: monospace;">-o</span> are mutually
+exclusive.
+Option <span style="font-family: monospace;">-1</span>
+may be combined with either one. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><em>bas730</em> supports escape sequences anywhere
+in the code in order to allow the use of the special characters of the
+pocket computer. An escape starts with a backslash character '<span style="font-family: monospace;">\</span>' followed by
+either&nbsp;one or two characters (see table below) or a two digit
+hexadecimal code. Set the <span style="font-family: monospace;">-e</span>
+switch on <em>list730</em> to
+include these sequences in a program listing! Here is the character map
+(courtesy Piotr Piatek):</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><a name="FX-730_character_table"></a><img style="width: 640px; height: 480px;" alt="Casio character table" src="charset730.png"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Code <span style="font-family: monospace;">00</span>
+is used as the space character. The BASIC tokens range from <span style="font-family: monospace;">80</span> to <span style="font-family: monospace;">D1</span>. The
+character escape sequences are:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><span style="font-family: monospace;">\&gt;=</span>
+(greater or equal),&nbsp;<span style="font-family: monospace;">\&lt;=</span>
+(less or equal),&nbsp;<span style="font-family: monospace;">\&lt;&gt;</span>
+(not equal), <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;">\<span style="font-family: monospace;">PI</span></span>,&nbsp;<span style="font-family: monospace;">\E-</span>,&nbsp;<span style="font-family: monospace;">\E+</span> (exponent),<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;">\SD</span>, <span style="font-family: monospace;">\SL</span> (small
+caps), <span style="font-family: monospace;">\GA</span>
+(gamma), &nbsp;<span style="font-family: monospace;">\SI</span>
+(lowercase sigma), <span style="font-family: monospace;">\-1</span>
+(small),<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">\`</span>, <span style="font-family: monospace;">\'</span>(quotes) <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;">\@</span>
+(circle),&nbsp;<span style="font-family: monospace;">\SM</span>
+(Sum),&nbsp;<span style="font-family: monospace;">\DG</span>
+(&deg;),&nbsp;<span style="font-family: monospace;">\^</span>
+(triangle),&nbsp;<span style="font-family: monospace;">\*</span>
+(multiply),&nbsp;<span style="font-family: monospace;">\:</span>
+(divide), <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;">\SP</span>
+(spade),&nbsp;<span style="font-family: monospace;">\HT</span>
+(heart),&nbsp;<span style="font-family: monospace;">\DI</span>
+(diamond),&nbsp;<span style="font-family: monospace;">\CL</span>
+(club),&nbsp;<span style="font-family: monospace;">\MU</span>
+(&micro;),&nbsp;<span style="font-family: monospace;">\OM</span>
+(omega),<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;">\YN</span>
+(Yen),&nbsp;<span style="font-family: monospace;">\SQ</span>
+(square),&nbsp;\. (dot) and&nbsp;<span style="font-family: monospace;">\#</span> (block), <span style="font-family: monospace;">\\</span> (backslash),
+<span style="font-family: monospace;">\]</span>
+(gray block),<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;">\/</span>
+(thick slash), <span style="font-family: monospace;">\B&gt;</span>
+(B?) and <span style="font-family: monospace;">\TA</span>
+(tau).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>These are case insensitive: <span style="font-family: monospace;">\PI</span> and <span style="font-family: monospace;">\pi</span> are
+equivalent.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The strings <span style="font-family: monospace;">&gt;=</span>,
+<span style="font-family: monospace;">&lt;=</span>,
+<span style="font-family: monospace;">&lt;&gt;</span>,
+<span style="font-family: monospace;">PI</span>, <span style="font-family: monospace;">E-</span> and <span style="font-family: monospace;">E</span> in numbers
+are automatically translated when they occur in normal code. There is
+no need to escape them, except when you want to use them in strings or
+comments. The character <span style="font-family: monospace;">`</span>
+is treated as <span style="font-family: monospace;">&deg;</span>.
+<span style="font-family: monospace;">{</span>, <span style="font-family: monospace;">}</span>, <span style="font-family: monospace;">^</span> and <span style="font-family: monospace;">|</span> are the left,
+right, up and down arrows. &nbsp;So in order to print the character
+"pi", any of the following will do: <span style="font-family: monospace;">\PI</span>, <span style="font-family: monospace;">\pi</span>, <span style="font-family: monospace;">\Pi</span> or <span style="font-family: monospace;">\1B.</span> Outside of
+strings, <span style="font-family: monospace;">PI</span>,
+<span style="font-family: monospace;">pi</span> or <span style="font-family: monospace;">Pi</span> are also
+valid.<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4><a class="mozTocH4" name="mozTocId250612"></a>PB-700
+and FX-850P families and the FP-200</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>bas850 &lt;options&gt; infile [outfile]<br>	-a create an ASCII encoded file for Piotr's interface<br>	-b create a binary file<br>	-w or -s create a 300 baud WAV file (slow: PB-700, FX-750P)<br>	-f create a 1200 baud WAV file (fast: FX-850P, PB-1000)<br>	-2 create FP-200 compatible file<br>	-t[T|A|B|2|7|8] select type of output<br>	  T: plain text for download via serial or USB interface<br>	  A: SAVE,A output; load with LOAD,A on PB-700/FX-750P/FX-850P<br>	  B: same as -tA but creates large blocks: FP-200/FX-850P only<br>	  2: internal format for FP-200<br>	  7: internal format for PB-700 family<br>	  8: internal format for FX-850P/PB-1000 family<br>	-d&lt;delay&gt;,&lt;count&gt; process data file instead of BASIC code<br>	&nbsp; &lt;delay&gt; adjusts the time between data lines<br>	  Start with 20 (default) and increase in case of difficulty<br>	  &lt;count&gt; inserts a new file header each &lt;count&gt; data lines<br>	  This must equal the number of items read by a PB-700 GET statement<br>	-e[F|P] backslash escape syntax used<br>	  F: FX-850P/VX/Z extended character set<br>	  P: PB-700/PB-1000/FP-200 graphics character set<br>	-l[F|P] handling of LOG/LN versus LGT/LOG<br>	  F: convert to FX-850P/VX/Z logarithm syntax LOG and LN<br>	     use with -t8 to translate PB-1000 programs<br>	  P: convert to PB-700/PB-1000/FP-200 logarithm syntax LGT and LOG<br>	-l allow lowercase keywords and variables for FX-850P/PB-1000/FP-200<br>	-u[F|P] enable Unicode (UTF-8) input<br>	  F: FX-850P/VX/Z extended character set<br>	&nbsp; P: PB-700/PB-1000/FP-200 graphics character set<br>	-u make everything uppercase for FX-750P<br>	-o replace old style keywords like PRT, VAC or CSR<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><span style="font-family: monospace;">-tT</span>
+format is just
+plain text with all source text translations performed. You can send
+the result directly to the serial or USB interface. The outfile can be omitted, the output goes to standard out then. This
+way, you can send the output directly to other utilities like <span style="font-style: italic;">md100</span>. In Windows, the
+following commands will setup the serial port and send the file
+directly to the pocket computer:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>C:\Casio&gt;mode com1 baud=4800 parity=e data=8 stop=2 xon=on<br>C:\Casio&gt;bas850 -tT source.txt com1<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The mode command is necessary only once. On an FX-850P use <span style="font-family: monospace;">LOAD"COM0:6"</span>,
+to load the file. I've tried this successfully with the USB-interface
+by Manfred Becker (see <a href="#Links">below</a>.)&nbsp;</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p> <span style="font-family: monospace;">-tA</span>
+format
+is
+compatible with the PB-700, FX-850P series machines and the FP-200. But
+it's slow
+because&nbsp;each program line is preceeded by a lead-in sequence
+of about two seconds. This is
+necessary because the computer needs some time to "compile" one line
+in memory before the next line arrives. This is still better than
+typing the code in.&nbsp;The FP-200 and the FX-850P support <span style="font-family: monospace;">-tB</span> format, a
+blocked variant of the <span style="font-family: monospace;">-tA</span>
+format. Blocking creates less but larger blocks&nbsp;and is
+therefore faster to load but cannot be used for the PB-1000.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The <span style="font-family: monospace;">-2</span>
+switch sets all relevant options for the FP-200 and adds some special
+quirks. If you target to this machine, use the <span style="font-family: monospace;">-2</span>
+switch!&nbsp;<span style="font-family: monospace;">-t2</span>
+creates a binary file for the FP-200. It sets the <span style="font-family: monospace;">-2</span> switch as
+well.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>To get a program
+from the PC into your PB-700, PB-770 or FX-750P, use switch <span style="font-family: monospace;">-t7</span> to create a
+binary file. This will be&nbsp;much faster than
+<span style="font-family: monospace;">-tA</span>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p> <span style="font-family: monospace;">-t8</span>
+is preferable over <span style="font-family: monospace;">-tA</span>
+or <span style="font-family: monospace;">-tB</span>
+if you target the FX-850 or the PB-1000. For the latter, <span style="font-family: monospace;">-lF</span>
+is needed as well, if you are using the correct LGT/LOG syntax of the
+PB series. The token table only contains the FX syntax LOG/LN keywords.
+The <span style="font-family: monospace;">-lF</span>
+switch takes care
+of the source text translation before the tokenization takes place.
+There is another caveat: The token table contains all keywords for all
+known variants of JIS BASIC. If your program uses such a keyword as a
+variable name on a machine where it is not a reserved word (e.g. VAC
+which is a replament for CLEAR on the FX-850P but free for use on the
+PB-1000) the tokenizer will accidently translate your variable name to
+a token. Rename your variable or use -tA mode instead!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>In any case, be careful to select a speed (<span style="font-family: monospace;">-w</span> or <span style="font-family: monospace;">-f</span>) that is
+supported by your pocket computer!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Use <span style="font-family: monospace;">-u</span>
+if you plan to load the file into your FX-750P: This
+machine does not support lowercase letters! On the other hand, option <span style="font-family: monospace;">-l</span>
+allows lowercase variable names and keywords as accepted by the newer
+machines; otherwise, everything outside strings and remarks is
+translated to uppercase. If you have a source file
+from an FX-702P or from the PB-100/FX-730P series, which have some
+special keywords like VAC, the <span style="font-family: monospace;">-o</span>
+option might help. The program does
+its best to translate to the new syntax, but it is not
+foolproof.&nbsp;The FX-702P postfix factorial "!" is translated to
+the prefix <span style="font-family: monospace;">FACT</span>
+function.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>There is a problem with the different meanings of LOG, LN and
+LGT in
+the various versions of Casio BASIC. The PB-700 series, the PB-1000
+and the FP-200 use LGT for the base 10 logarithm and LOG for the
+natural logarithm.
+The other machines use LOG for base 10 logarithm and LN for the natural
+logarithm. If your source file specifies LOG and LN but you want to
+transmit the file to a PB-700 or PB-1000, specify <span style="font-family: monospace;">-lP</span> to force a
+translation. In the opposite case, specify <span style="font-family: monospace;">-lF</span>
+if you transfer, for example, a source from a PB-700 to a FX-850P. If
+your source file already contains the correct logarithm functions, <em>do
+not specify a conversion!</em> There is an Exception: If you are
+creating a binary file for the PB-1000, you need to use <span style="font-family: monospace;">-lF</span> (see above.)</p>
+
+
+
+<p>With option <span style="font-family: monospace;">-d</span> data
+files can be created for all machines. As a modern PC does not allow
+the pausing of the sound output to the tape interface by means of a
+"Remote" plug, there is the <span style="font-family: monospace;">&lt;delay&gt;</span>
+parameter. It controls the time in tens of seconds between data lines
+or blocks. You may have to increase this value from its default (two
+seconds in non blocked mode, four seconds in blocked mode) if you
+program misses data.&nbsp;</p>
+
+
+
+<p>There are differences between the PB-700 and later systems. A PB-700
+PUT command creates an unnamed tape file with as many lines as there
+are items in the command. Later systems use OPEN and CLOSE&nbsp;to
+create named files with as many lines as there are PRINT# statements.
+The FP-200 and the FX-850P support large blocks of several records
+before a new lead-in sequence is output. Option <span style="font-family: monospace;">-2</span> forces this mode. For other systems just set the the <span style="font-family: monospace;">&lt;count&gt;</span> parameter of option <span style="font-family: monospace;">-d</span> to&nbsp;<span style="font-family: monospace;">B</span>. Here are a few examples:</p>
+
+
+
+<ul>
+
+
+
+  <li>PB-700: <span style="font-family: monospace;">bas850 -w -d30,1 DATAFILE.DAT DATAFILE.WAV<br>
+
+
+
+    </span>This matches a single variable as in <span style="font-family: monospace;">GET A$</span>. Set option <span style="font-family: monospace;">-d30,3</span> for <span style="font-family: monospace;">GET A$,B$,C$</span>.
+The value 30 for the lead-in time is arbitrary. In most cases the
+default of 20 works fine. For each tape file, two blocks are written to
+the wav-file, header and data, each with its own lead-in of the
+requested length!<span style="font-family: monospace;"></span></li>
+
+
+
+  <li>FX-850P: <span style="font-family: monospace;">bas850 -w -d,B DATAFILE.DAT DATAFILE.WAV<br>
+
+
+
+    </span>This will create a file with large data blocks. The lead-in
+time per block is 40 in this case. You can try to decrease it to 30 or
+some such.</li>
+
+
+
+  <li>FP-200: <span style="font-family: monospace;">bas850 -w -d -2 DATAFILE.DAT DATAFILE.WAV<br>
+
+
+
+    </span>Option <span style="font-family: monospace;">-2</span> forces large blocks and a modified line end (CR LF). This is FP-200 specific.</li>
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><em>bas850</em> supports escape sequences anywhere
+in the code in order to allow the use of the special characters of the
+pocket computer without resorting to the CHR$ function. An escape
+starts with a backslash character '<span style="font-family: monospace;">\</span>' followed by
+either&nbsp;one or two characters (see table below) or a two digit
+hexadecimal code. Set the <span style="font-family: monospace;">-e</span>
+switch on <em>list850</em> to
+include these sequences in a program listing! Here are the character
+maps for the PB-700 and the FX-850P
+(courtesy Casio and some editing by me):</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><a name="PB-700-Character_set"></a><img style="width: 640px; height: 790px;" alt="" src="charsetPB700.png"><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+PB-700 and PB-1000 character map. The FP-200 uses a reduced version of
+this map.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><a name="FX-850P_Character_set"></a><img style="width: 640px; height: 790px;" alt="" src="charsetFX850.png"><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+FX-850P character map. Also valid for VX and Z machines.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The character escape sequences for the FX-850P are:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><span style="font-family: monospace;">\AN</span>
+(Angstr&ouml;m), <span style="font-family: monospace;">\IN</span>
+(integral), <span style="font-family: monospace;">\RT</span>
+(root), <span style="font-family: monospace;">\/</span>
+(over), &nbsp;<span style="font-family: monospace;">\SM</span>
+(Sum),&nbsp;<span style="font-family: monospace;">\OM</span>
+(omega),<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;">\]</span>
+(gray block), &nbsp;<span style="font-family: monospace;">\#</span>
+(block), <span style="font-family: monospace;">\AL</span>
+(alpha), <span style="font-family: monospace;">\BT</span>
+(beta), <span style="font-family: monospace;">\GA</span>
+(gamma), &nbsp;<span style="font-family: monospace;"></span><span style="font-family: monospace;">\EP</span> (epsilon),<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;">\TH</span>
+(theta),&nbsp;<span style="font-family: monospace;">\MU</span>
+(&micro;), <span style="font-family: monospace;">\SI</span>
+(sigma), <span style="font-family: monospace;">\P<span style="font-family: monospace;">S</span></span>
+(psi), <span style="font-family: monospace;">\S0</span>...<span style="font-family: monospace;">\S9</span>, <span style="font-family: monospace;">\S+</span>, <span style="font-family: monospace;">\S-</span>, <span style="font-family: monospace;">\SN</span>, <span style="font-family: monospace;">\SX</span>, <span style="font-family: monospace;">\-1</span>
+(superscripts),<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;">\:</span>
+(divide),&nbsp;\. (dot), <span style="font-family: monospace;"></span><span style="font-family: monospace;">\DG</span>
+(&deg;),&nbsp;<span style="font-family: monospace;">\&gt;=</span>
+(greater or equal),&nbsp;<span style="font-family: monospace;">\&lt;=</span>
+(less or equal), &nbsp;<span style="font-family: monospace;">\&lt;&gt;</span>
+(not equal),<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;">\^</span>, <span style="font-family: monospace;">\V</span>, <span style="font-family: monospace;">\&lt;-</span>, <span style="font-family: monospace;">\-&gt;</span>
+(arrows), <span style="font-family: monospace;">\<span style="font-family: monospace;">PI</span></span>
+(pi), &nbsp;<span style="font-family: monospace;">\SP</span>
+(spade),&nbsp;<span style="font-family: monospace;">\HT</span>
+(heart),&nbsp;<span style="font-family: monospace;">\DI</span>
+(diamond), <span style="font-family: monospace;">\CL</span>
+(club),<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;"></span>
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">\SQ</span>
+(square),&nbsp;<span style="font-family: monospace;">\@</span>
+(circle),<span style="font-family: monospace;"></span>&nbsp;<span style="font-family: monospace;">\TR</span>
+(triangle)<span style="font-family: monospace;">, \*</span>
+(multiply), <span style="font-family: monospace;"></span><span style="font-family: monospace;">\PN</span> (pound), <span style="font-family: monospace;">\CN</span> (cent), <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;">\+-</span>, <span style="font-family: monospace;">\-+</span> (signs), <span style="font-family: monospace;">\YN</span>
+(Yen), <span style="font-family: monospace;">\\</span>
+(backslash, same as Yen).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>These are not case&nbsp;sensitive: <span style="font-family: monospace;">\PI</span> and <span style="font-family: monospace;">\pi</span>
+are
+equivalent. The symbolic escape sequences help in porting software from
+the older PB-100/FX-700 series machines and are easier to remember.
+Just use the <span style="font-family: monospace;">-e</span>
+switch on <em>list730</em>.&nbsp;</p>
+
+
+
+
+
+<p>Use option <span style="font-family: monospace;">-uF</span> if you
+have created the source text in UTF-8 format. A&nbsp;complete list of
+the supported extended characters is contained in the following
+document: <a href="Casio_FX-850P_Charset.pdf">Casio_FX-850P_Charset.pdf</a></p>
+
+
+
+
+
+With option <span style="font-family: monospace;">-eP</span>
+set on <em>bas850</em>,
+a different set of character escapes is used, because the PB-700 and
+PB-1000 support a different character set. Hexadecimal escapes are not
+affected by this option. The following codes are used instead
+(some&nbsp;looking a little strange, like the arrows):
+
+
+
+
+
+
+
+<p><span style="font-family: monospace;">\_1</span>...<span style="font-family: monospace;">\_8</span> (horizontal
+bars), <span style="font-family: monospace;">\|1</span>...<span style="font-family: monospace;">\|7</span> (vertical
+bars),&nbsp; <span style="font-family: monospace;">\/</span>
+(over),<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;">\]</span>
+(gray block), &nbsp;<span style="font-family: monospace;">\#</span>
+(block),&nbsp;<span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span>\. (dot), <span style="font-family: monospace;"></span><span style="font-family: monospace;">\DG</span>
+(&deg;), &nbsp;<span style="font-family: monospace;"></span><span style="font-family: monospace;">\^</span>, <span style="font-family: monospace;">\V</span>, <span style="font-family: monospace;">\&lt;-</span>, <span style="font-family: monospace;">\-&gt;</span>
+(sort of arrows),&nbsp;<span style="font-family: monospace;"></span><span style="font-family: monospace;"><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+\SP</span>
+(spade),&nbsp;<span style="font-family: monospace;">\HT</span>
+(heart),&nbsp;<span style="font-family: monospace;">\DI</span>
+(diamond), <span style="font-family: monospace;">\CL</span>
+(club),<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;"></span>
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">\LD</span>
+(large dot),&nbsp;<span style="font-family: monospace;">\@</span>
+(circle),<span style="font-family: monospace;"></span>&nbsp;<span style="font-family: monospace;">\TR</span>
+(triangle), <span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span> <span style="font-family: monospace;">\YN</span>
+(Yen), <span style="font-family: monospace;">\\</span>
+(backslash).</p>
+
+
+
+
+
+<p>Use option <span style="font-family: monospace;">-uP</span> if you have
+created the source text in UTF-8 format. A&nbsp;complete list of the
+supported extended characters is contained in the following document: <a href="Casio_PB_700_Charset.pdf">Casio_PB_700_Charset.pdf</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+On the PB-700 and the FX-750P, lines with escape codes beyond <span style="font-family: monospace;">\7F</span> cannot be
+edited because the codes are replaced by their corresponding keywords
+when using <span style="font-family: monospace;">LIST</span>
+or <span style="font-family: monospace;">EDIT</span>.
+You can still <span style="font-family: monospace;">LOAD</span>
+and <span style="font-family: monospace;">RUN</span>
+such a program. Code <span style="font-family: monospace;">\F0</span>
+(multiplication sign) is not allowed on these machines because it
+breaks the transmission protocol. It can only be used in the
+form&nbsp;<span style="font-family: monospace;">CHR$(&amp;HF0)</span>.
+
+
+
+
+
+
+
+<h4><a class="mozTocH4" name="mozTocId955806"></a>Canon X-07</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>basX07 &lt;options&gt; infile outfile<br>	-b create a binary file<br>	-w create a WAV file<br>	-t create plain text for download via serial or USB interface<br>	   &lt;delay&gt; is an optional delay in seconds after each line<br>	-c set character translation mode:<br>	  D DOS charset - code page 850<br>	  W Windows charset - code page 1252 (default)<br>	  U Unicode (UTF-8) charset<br>	  This simplifies the use of national characters<br>        -s remove space characters to save memory</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The program supports three output formats: <span style="font-family: monospace;">-b</span> creates a
+binary file, used mainly for debugging the tokenizer or later translation with <span style="font-style: italic;">waveX07</span>. <span style="font-family: monospace;">-w</span>&nbsp;
+creates a WAV file which can be fed to the computer via the sound card.
+<span style="font-family: monospace;">-t</span> creates plain text but
+all source text translations are
+performed. The delay value inserts a short break for the slow X-07 and
+controls the line termination: CR only if a delay is specified, the
+system default (CR+LF for DOS, LF for Unix) without delay. The output
+can be sent to your machine directly via the serial interface
+(see below for details.)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The Canon X-07 has an extended character set with many special
+characters for foreign languages like French or German. You can use
+your favorite editor in DOS or Windows and type text in strings,
+comments or data lines without worrying about the encoding. If you are
+on DOS use option <span style="font-family: monospace;">-cD</span>,
+on Windows use option <span style="font-family: monospace;">-cW</span>. If your text is in UTF-8 format use option <span style="font-family: monospace;">-cU</span>.
+Escape sequences are supported as well such as <span style="font-family: monospace;">\:A</span> for <span style="font-family: monospace;">&Auml;</span> or <span style="font-family: monospace;">\'e</span> for <span style="font-family: monospace;">&eacute;</span>.
+The complete list is in the following document: <a href="Canon_X-07_Token.pdf">Canon_X-07_Token.pdf</a>.
+You can&nbsp;use binary escape sequences like <span style="font-family: monospace;">\86</span> for <span style="font-family: monospace;">&Auml;</span>,
+too. A single backslash serves as the marker for an escape sequence.
+Therefore, in order to enter a backslash for the integer division, you
+need to encode it as <span style="font-family: monospace;">\\</span>
+(or <span style="font-family: monospace;">\YN</span>
+because it is displayed as the Yen symbol <span style="font-family: monospace;">&yen;</span> on
+the machine).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId991687"></a>Using the serial interface on the Canon X-07 to enter a
+program</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The Canon X-07 lacks the ability to load an ASCII program with
+the
+LOAD command from the serial interface. Instead, it can be remotely
+controlled from another computer or terminal over the serial line. This
+way, an ASCII file can be simply "typed in" from the controlling system.
+To enable this feature, it is easiest to type in a small program first:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>10 INIT#5,"COM:",2400<br>20 EXEC &amp;HEE1F<br><br>SAVE"REMOTE"<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The program is now ready to be run from the memory disk with <span style="font-family: monospace;">RUN"REMOTE"</span>.
+Before you start downloading, make sure to delete the current program. Otherwise, new lines will be merged with existing ones.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<p>You can now send your source from the PC. The following example is for
+a command prompt on Windows:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>C:\Casio&gt;mode com1 baud=2400 parity=n data=8 stop=2 octs=on rts=hs<br>C:\Casio&gt;basX07 -t1 -cW source.txt com1<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The mode command is necessary only once. The <span style="font-style: italic;">basX07</span>
+command assumes that you have entered the text with a windows editor
+and you want to translate extended characters
+from&nbsp;Windows&nbsp;to
+the machine's character set.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>If you see obvious garbage on the display, then the X-07 was too
+slow to read and store all the lines. You will then need to reduce the
+speed further or increase the delay&nbsp;after option <span style="font-family: monospace;">-t</span>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Turning the machine off and on returns control to the
+keyboard. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2><a class="mozTocH2" name="mozTocId326461"></a>An
+example: Dumping the memory of a PB-770</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Here is a short example on how to get the RAM contents of a
+PB-770
+as a binary dump file into your PC. This does not work for the FX-750P
+or the PB-700 because they lack the necessary PEEK function. Only RAM
+can be accessed, PEEK does not read out the ROM contents. <span style="font-family: monospace;">PEEK(&amp;H0000)</span>
+and <span style="font-family: monospace;">PEEK(&amp;H8000)</span>
+return identical values.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId90156"></a>PB-770
+BASIC source</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The following source text should be created on the PC and
+transferred to the PB-770 via sound card:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>' PB-Dump: Dump the memory contents of a PB-770 to tape<br>'<br>100 cls:print "PB-DUMP (C) MvC 2008"<br>110 input"Start (HEX): ", st$:st=val("&amp;H"+st$)<br>120 input"# kilobytes: ", kb<br>130 st=int(st/256)*256<br>140 erase a$:dim a$(7)*70<br>150 for b=0 to 4*kb-1<br>160 a=st+256*b:s=0<br>170 st$=hex$(a):cls:print st$<br>180 for i=0 to 7 <br>190 c=a+32*i:a$(i)=hex$(c)+": "<br>200 for j=c to c+31<br>210 d=peek(j):s=s+d:a$(i)=a$(i)+right$(hex$(d),2)<br>220 next j<br>230 locate 0,0:print a$(i);<br>240 next i<br>250 cls:if s=0 then 280 else print st$,"writing":beep 0<br>260 put a$(0),a$(1),a$(2),a$(3),a$(4),a$(5),a$(6),a$(7)<br>270 beep 1:beep 0<br>280 next b<br>285 print hex$(st-1024*kb+256);"-";hex$(st+255)<br>290 a$=inkey$:if a$="" then 290<br>300 goto 100<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Save the file as pb-dump.txt and translate it to a WAV file:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>bas850 -w -t7 pb-dump.txt pb-dump.wav<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The wav file can now be downloaded to your PB-770. A simple <span style="font-family: monospace;">LOAD</span> on the
+machine will do.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId121133"></a>Getting
+the data into your PC</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Set up your recording software on the PC and start recording.
+You
+will need a lot of space. About half of the recording will be silence
+which you can edit out later if you like.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Now run the program and enter the start address and the number
+of kilobytes to transfer. RAM seems to start at address&nbsp;<span style="font-family: monospace;">0000</span>.
+Without RAM expansion, the size is 8 kb. Each block of 256 bytes takes
+about 75 seconds to collect and another 70 seconds&nbsp;to write
+out.
+This totals to about 80 minutes for 8 kb of RAM.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>After the last block has been written, save the recording as a
+WAV file, let's say as <span style="font-family: monospace;">dump.wav</span>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId983897"></a>Converting
+the data</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The following command converts dump.wav into a readable format:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>list850 -w dump.wav &gt;dump.txt<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The conversion takes its time because of the size of the WAV
+file. The file&nbsp;<span style="font-family: monospace;">dump.txt</span>
+can be inspected with an editor or treated with the following simple C
+program:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>/*<br> *  undump.c<br> */<br>#include &lt;stdio.h&gt;<br>#include &lt;errno.h&gt;<br>#include &lt;string.h&gt;<br><br>int main()<br>{<br>    FILE *in, *out;<br>    char line[ 72 ];<br>    unsigned char buff[ 32 ];<br>    int i, b, a;<br>    char *p;<br><br>    printf( "Reading dump.txt, updating dump.bin\n" );<br><br>    in = fopen( "dump.txt", "rt" );<br>    out = fopen( "dump.bin", "r+b" );<br>    if ( errno ) {<br>        errno = 0;<br>        out = fopen( "dump.bin", "w+b" );<br>    }<br><br>    while ( !errno &amp;&amp; !feof( in ) ) {<br>        <br>        if ( NULL == fgets( line, 72, in ) ) {<br>            break;<br>        }<br>        strtok( line, "\r\n" );<br>        if ( strlen( line ) != 70 ) {<br>            continue;<br>        }<br>        printf( "%s\n", line );<br>        sscanf( line, "%4X", &amp;a );<br>        for ( i = 0, p = line + 6; i &lt; 32; ++i, p += 2 ) {<br>            sscanf( p, "%2X", &amp;b );<br>            buff[ i ] = (unsigned char) b;<br>        }<br>        fseek( out, a, SEEK_SET );<br>        if ( !errno ) {<br>            fwrite( buff, 32, 1, out );<br>        } <br>        if ( errno ) {<br>            break;<br>        }<br>    }<br>    if ( errno ) {<br>        perror( "Error" );<br>        return 2;<br>    }<br>    fclose( out );<br>    return 0;<br>}<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The filenames <span style="font-family: monospace;">dump.txt</span>
+and <span style="font-family: monospace;">dump.bin</span>
+are hardcoded into the source. Feel free to improve it.
+The binary file is updated with each run of the program so that you can
+upload the dump in chunks of your liking. The new data will be
+inserted or updated in the correct position of <span style="font-family: monospace;">dump.bin</span>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Download all files including&nbsp;Windows executable of <span style="font-family: monospace;">undump.exe</span>
+here: <a href="http://www.mvcsys.de/download/pb-dump.zip">http://www.mvcsys.de/download/pb-dump.zip</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2><a class="mozTocH2" name="mozTocId764851"></a>How
+to handle floppy disk images</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId729462"></a>Creating
+an image</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>An MD-100 image is a file that contains the sectors of a real
+3.5" floppy disk. The disks are written with 80 tracks and 16 sectors
+of 256 bytes length on each track. Only one side of the disk is used. I
+use double density disks (without the second hole in the case) but high
+density disk may work if you cover the hole with black tape. You should
+format the floppy in the MD-100 drive.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Now you need access to a Linux PC. Sorry, I haven't written
+software yet to copy the disk under DOS or Windows&reg;. In order
+to access the disk physically you need to tell the floppy driver about
+the format of the disk. I've had success with the package <a href="#fdutils">fdutils-5.5</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>In the <em>Linux </em>subdirectory of<em>
+casutil </em>you'll find shell scripts to setup the drive, read
+and write floppies. The setup script <em>makedev.sh</em>
+creates the device <em>/dev/fd0casio</em> and configures
+it with <em>setfdprm SS DD ssize=256 sect=16</em>. Copying
+is done with <em>dd</em>. The sample script <em>getmd100.sh</em>
+creates an image file named <em>md100.img</em>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The <em>md100</em> program can create an image if
+you precede the image name by the option -c. It
+is possible to create disk images of up to 512 blocks instead of the
+default 320 blocks, but these cannot be written back to a real disk.A
+new image is filled with empty blocks. The option is mostly ignored if
+the image already exists but you can increase the maximum allowed size
+of the image with its parameter. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId309085"></a><span style="font-weight: bold;"></span>Writing to a floppy</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The image created in the step above can be written back to a
+real floppy in pretty much the same way. A sample script <em>putmd100.sh</em>
+is provided in the <em>linux</em> subdirectory.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId350588"></a><span style="font-weight: bold;"></span>Manipulating files</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>A single program, <em>md100</em>, does all the
+manipulations to the disk image (or the real disk on some operating
+systems, see <a href="#Direct_Floppy_Access">below</a>.)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>md100 &lt;image&gt; &lt;cmd&gt; &lt;options&gt; &lt;parameters&gt;<br><br>       &lt;image&gt; holds the floppy data<br>       &lt;cmd&gt; &lt;parameters&gt; is one of:<br>         dir  &lt;options&gt; "&lt;md100-pattern&gt;"<br>         type &lt;options&gt; &lt;md100-file&gt;<br>         get  &lt;options&gt; &lt;md100-file&gt; [&lt;pc-file&gt;]<br>         mget &lt;options&gt; "&lt;md100-pattern&gt;"<br>         put  &lt;options&gt; &lt;pc-file&gt; [&lt;md100-file&gt;]<br>              &lt;pc-file&gt; may be "stdin" or "stdin.EXT" to allow piping<br>         mput &lt;options&gt; &lt;pc-files&gt;<br>         del  &lt;options&gt; "&lt;md100-pattern&gt;"<br>         ren  &lt;options&gt; &lt;md100-file&gt; &lt;new name&gt;<br>         set  &lt;options&gt; "&lt;md100-pattern&gt;" -t&lt;type&gt; -p&lt;protect&gt;<br><br>       &lt;options&gt; are:<br>         -i   ignore the case of md100-file(s)<br>         -l   make all files lowercase<br>         -u   make all files uppercase<br>         -tX  select or set type to X (B, C, M, R, S or hex)<br>         -pN  select or set file protection (0, 1)<br>         -b   force binary transfer<br>         -a   force ASCII transfer<br>         -eX  use escape syntax, X=N(one), H(ex) or S(ymbols)<br>         -n   no updates are written to the image<br>         -cS  create a new image if the file does not exist<br>              S is the size (default 320, maximum 512)</pre>
+
+<p>Patterns are DOS style, but you can use "*" for all files.
+Wildcard expansion on local files depends on the platform. On Linux
+this is automatic, on&nbsp; other platforms it depends on the compiler.
+The Borland compiler has wildcard support, the library <em>wildargs.obj</em>
+is automatically linked in by the compile jobs provided with the
+package. <span style="font-weight: bold;">Patterns for
+files on the floppy must be included in double
+quotes.</span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId622296"></a>MD-100
+filenames and types</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The MD-100 filenames are only eight characters long plus three
+characters for a file extension.&nbsp;Filenames can contain many
+characters not allowed on your PC. Case
+is respected just like on Unix file systems. There are no
+subdirectories on an MD-100 floppy.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Files have an additional attribute, the file
+type. Both the PB-1000 and the PB-2000C use the file type to select the
+correct handling of a file selected from the menu. I know of the
+following
+types:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><span style="font-family: monospace;">S</span>
+- Sequential files, including MEMO files, assembly
+source files, C data files, files loaded via RS-232C and BASIC programs
+saved with <span style="font-family: monospace;">SAVE,A</span>.
+Sequential files are opened with the MEMO editor and
+can be read and written by BASIC or C programs. The contents is ASCII
+text with <span style="font-family: monospace;">CR</span>+<span style="font-family: monospace;">LF</span> delimiters.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><span style="font-family: monospace;">R</span>
+- Relative or Random data files.
+They can&nbsp;only exist on a disk, not in PB-1000 RAM. C does not
+use type <span style="font-family: monospace;">R</span>
+files. The contents is defined by the BASIC <span style="font-family: monospace;">FIELD</span> statement.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><span style="font-family: monospace;">M</span>
+- Machine code files, created by the PB-1000 assembler.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><span style="font-family: monospace;">B</span>
+- BASIC programs in internal representation.</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><span style="font-family: monospace;">C</span>
+- C source or BAT files. The contents is ASCII text with CR+LF
+delimiters, just like sequential files. The PB-2000C can change the
+file type between C and S from the menu. The PB-1000 misinterprets a
+type <span style="font-family: monospace;">C</span>
+file and thinks it is a type <span style="font-family: monospace;">R</span>
+file. Consequently it refuses to copy
+such a file to RAM. </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><a name="flag"></a>There is an additional attribute
+byte stored in each directory entry on the disk. Bit 0&nbsp;is used to
+protect a file. You can set or select the attribute byte with the <span style="font-family: monospace;">-p</span> option.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Space allocation is done in
+blocks of 4 sectors (1KB) each. The size in bytes is computed by
+multiplying the total number of sectors by 256 and searching backwards
+the last sector of the file for the EOF marker <span style="font-family: monospace;">[1A]</span>. The
+marker is
+added even on empty files.
+</p>
+
+<h3><a class="mozTocH3" name="mozTocId731583"></a>Examples</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The following examples assume that you have an image named <em>md100.img</em>
+in the current directory and that the <em>md100 </em>executable
+is in your path.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4><a class="mozTocH4" name="mozTocId272747"></a>Listing
+the disk directory</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>&gt; md100 md100.img<br><br> Directory of md100.img<br><br>   Name     Type   Size  Blk  Prot<br>TOK1000.BAS   B    2997    3     0<br>TOK1000.ASC   S    3752    4     0<br>PI.BAS        B     765    1     0<br>A*/()^.BAS    B     283    1     0<br>hoch5.c       C    4205    5     0<br>hochfuen.c    C    2364    3     0<br>CHARPB7.ASC   S     534    1     0<br><br> Total:       7   14900   18<br> Free:      185  305152  298<br><br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+If you want to specify a pattern, the command name <em>dir</em>
+must be spelled out:
+<pre>&gt; md100 md100.img dir -i "*.bas" "*.c"<br><br> Directory of md100.img<br><br>   Name     Type   Size  Blk  Prot<br>TOK1000.BAS   B    2997    3     0<br>PI.BAS        B     765    1     0<br>A*/()^.BAS    B     283    1     0<br>hoch5.c       C    4205    5     0<br>hochfuen.c    C    2364    3     0<br><br> Total:       5   10614   13<br> Free:      185  305152  298<br><br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The double quotes around the patterns are essential! The <span style="font-family: monospace;">-i</span>
+option forces a case insensitive search. You can use the <span style="font-family: monospace;">-u</span> or <span style="font-family: monospace;">-l</span>
+options to convert all filenames to upper or lower case. With the
+options <span style="font-family: monospace;">-t</span>
+and/or <span style="font-family: monospace;">-p</span>
+the listing can be restricted to files of a
+certain type or with a certain protection setting:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>&gt; md100 md100.img dir -tS<br><br> Directory of md100.img<br><br>   Name     Type   Size  Blk  Prot<br>TOK1000.ASC   S    3752    4     0<br>CHARPB7.ASC   S     534    1     0<br><br> Total:       2    4286    5<br> Free:      185  305152  298<br><br><span style="font-weight: bold;"></span></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4><a class="mozTocH4" name="mozTocId152261"></a>Listing
+files</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Files on the image can be displayed as text with the <em>type</em>
+command:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>&gt; md100 md100.img type PI.BAS<br><br>10 CLEAR:CLS:PRINT TAB(9);"Pi",," (C) C. Le Glatin";TAB(7);2004;<br>...<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>(Ask me for a complete listing. The author's pages have seemingly gone.)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The file name(s) can be patterns and the options <span style="font-family: monospace;">-i</span>, <span style="font-family: monospace;">-t</span> and <span style="font-family: monospace;">-p
+</span>do also work. If more than one file is specified, each
+listing is
+preceded by the filename and a colon.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Listings can be binary (hex dump) or ASCII (the default for
+most file types). You can force a specific listing style with the
+options <span style="font-family: monospace;">-b</span>
+or <span style="font-family: monospace;">-a</span>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>&gt; md100 md100.img type -b PI.BAS<br><br>00000: 00 09 95 07 97 10 50 49 20 20 20 20 20 20 42 41        PI      BA<br>00010: 53 FF 59 00 01 00 01 00 D4 00 00 00 00 00 00 00  S Y             <br>...<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>As you can see, BASIC programs are decoded from their
+internal, tokenized form. I cannot guarantee that the decoder works
+correctly in all cases, save your programs in ASCII from the calculator
+if you want to be on the safe side! Option <span style="font-family: monospace;">-e</span> creates the
+same escape syntax as <em>list850</em> does.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4><a class="mozTocH4" name="mozTocId873101"></a>Copying
+files to the PC</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The commands <em>get</em> and <em>mget</em>
+copy single or multiple files from the image to your PC. The only
+difference is that <em>get</em> &nbsp;just copies one
+file (in case of a pattern the first that matches) while the second
+argument is the new name given to the file on your PC. With <em>mget</em>
+you can copy a bunch of files in one go but your options to rename the
+files on your PC are limited to a directory name&nbsp; given with
+the <span style="font-family: monospace;">-d</span>
+option. Both commands allow the file selection options <span style="font-family: monospace;">-i</span>, <span style="font-family: monospace;">-t</span>
+and <span style="font-family: monospace;">-f</span>
+and the case conversion options <span style="font-family: monospace;">-l</span> and <span style="font-family: monospace;">-u</span>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Use <em>get</em> to copy a single file:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>&gt; md100 md100.img get -i pi.bas md100-dat/*<br><br>PI.BAS B copied to md100-dat/pi.bas<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>This will copy the binary file, not the ASCII code of PI.BAS.
+You can specify no destination at all (defaults to the current
+directory), an explicit name, a directory ending in "<span style="font-family: monospace;">/</span>" or a name
+ending in "<span style="font-family: monospace;">*</span>".
+The trailing "<span style="font-family: monospace;">*</span>"
+in the destination filename is replaced
+by the source file name. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;If you want an ASCII copy (just like the <em>type</em>
+command) specify the <span style="font-family: monospace;">-a</span>
+option. Escape syntax can be created with the <span style="font-family: monospace;">-e</span> option:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>&gt; md100 md100.img get -a -eS -i pi.bas md100-dat/pi.txt<br><br>PI.BAS B copied to md100-dat/pi.txt<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>If you want to copy multiple files, use <em>mget</em>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>&gt; md100 md100.img mget -tB -d md100-dat/ "*"<br><br>TOK1000.BAS   B copied to md100-dat/TOK1000.BAS<br>PI.BAS        B copied to md100-dat/PI.BAS<br>A*/()^.BAS    B copied to md100-dat/A__()^.BAS<br>3 files copied<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The destination (after the <span style="font-family: monospace;">-d</span> option) must
+end in a directory
+delimiter or "<span style="font-family: monospace;">*</span>".
+This is prepended (without the trailing "<span style="font-family: monospace;">*</span>") to the
+filename from the floppy image. The source filename pattern(s) must be
+enclosed in double quotes to prevent the shell from interpreting the
+wildcard characters. Some characters from the source file name are
+translated to an underscore.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4><a class="mozTocH4" name="mozTocId347307"></a>Copying
+files to the floppy image</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The commands to copy PC files to the floppy image are <em>put</em>
+and <em>mput</em>. Again, the main difference is that <em>put</em>
+copies just one file while <em>mput</em> copies a bunch of
+files in one go.&nbsp;</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>When copying files to the MD-100 image or the floppy, you need
+to decide which&nbsp;type to assign to the file. The <em>md100</em>
+program tries to guess the file type from the extension correctly: <em>.c</em>,
+<em>.h</em> and <em>.BAT</em> files are of
+type <span style="font-family: monospace;">C</span>,
+<em>.BAS</em> is type <span style="font-family: monospace;">B</span>, <em>.REL</em>
+is type <span style="font-family: monospace;">R</span>
+and all
+others are type <span style="font-family: monospace;">S</span>.
+You can override this with the <span style="font-family: monospace;">-t</span>
+option. The protection attribute&nbsp;is set to <span style="font-family: monospace;">0</span> by
+default
+but can be changed with the <span style="font-family: monospace;">-p</span>
+option.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Files saved on your PC with <em>mget</em> in
+binary mode should be copied back with the <span style="font-family: monospace;">-b</span> switch set.
+This ensures
+that the file is transferred unchanged to the floppy image. PC text
+files should be transferred with the <span style="font-family: monospace;">-a</span> switch set to ensure ASCII
+mode. This way, the correct line termination (<span style="font-family: monospace;">CR</span>+<span style="font-family: monospace;">LF</span>) is forced
+on the
+destination file. ASCII mode is default for all files except types <span style="font-family: monospace;">M</span>, <span style="font-family: monospace;">R</span>
+and <span style="font-family: monospace;">B</span>.
+Escape syntax is supported with the <span style="font-family: monospace;">-e</span> option, just
+like in <em>bas850</em>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>If you are unsure whether a copy command will do what you
+intended, use the option <span style="font-family: monospace;">-n</span>
+before the image name or between the
+command and its parameters. This prevents updates to the image or the
+floppy.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Use <em>put</em> to copy a single PC file to the
+image:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>&gt; md100 md100.img put -u -e pi.asc<br><br>PI.ASC       S   2 created from pi.asc<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Since no destination filename was given it was built from the
+source file. The <span style="font-family: monospace;">-u</span>
+option forces the name to be all upper case. The <span style="font-family: monospace;">-e</span> option interprets
+escape sequences like <span style="font-family: monospace;">\PI</span>
+or <span style="font-family: monospace;">\80</span>
+and translates them to their binary equivalent. The
+file <em>PI.ASC</em> can later be opened on the PB-1000
+with the memo editor or
+it can be loaded from the BASIC command prompt
+with&nbsp;<span style="font-family: monospace;">LOAD"0:PI.ASC"</span>.
+The BASIC interpreter "compiles" the file
+to internal format upon loading.</p>
+
+
+
+
+
+
+
+<p>You can use piping with the put command if you replace the source filename with <span style="font-family: monospace;">stdin</span> or <span style="font-family: monospace;">stdin.EXT</span>.
+It's better&nbsp;to provide a destination filename with a proper
+extension. Otherwise, the file will be created under the name "<span style="font-family: monospace;">stdin.EXT</span>". Here is an example:</p>
+
+
+
+
+
+
+
+<pre>&gt; bas850 -lP -tT fx-850.txt | md100 md100.img put stdin "fx-850.txt"<br></pre>
+
+
+
+
+
+
+
+<p>The option <span style="font-family: monospace;">-lP</span> of <span style="font-style: italic;">bas850</span> will translate the fx-850 logarithm syntax <span style="font-family: monospace;">LOG</span>/<span style="font-family: monospace;">LN</span> to the PB-100 syntax <span style="font-family: monospace;">LGT</span>/<span style="font-family: monospace;">LOG</span>.</p>
+
+
+
+
+
+
+
+<p>With <em>put</em> and <em>mput</em>,
+destination names can be patterns included in double quotes. In order
+to copy all files ending on&nbsp;<em>.asc</em> on your
+PC to the floppy image and
+renaming them to be all lowercase and to end on&nbsp;<em>.txt</em>,
+enter the
+following command:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>&gt; md100 md100.img mput -l -d "*.txt" *.asc<br><br>casio.txt    S   1 created from Casio.asc<br>det.txt      S   1 created from DET.asc<br>fx-720p.txt  S   2 created from fx-720p.asc<br>pi-asc.txt   S   2 created from Pi-asc.asc<br>pi.txt       S   1 created from pi.asc<br>test1.txt    S  10 created from TEST1.asc</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Note the double quotes around the MD-100 pattern <em>"*.txt"</em>
+&nbsp;but not around the PC pattern&nbsp;<em>*.asc</em>! The third column is the size in blocks.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4><a class="mozTocH4" name="mozTocId804008"></a>Renaming
+or deleting files and setting file attributes</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The commands <em>ren</em>,<em> del</em>
+and <em>set</em> change the directory of the floppy image.
+They all work on file patterns or on single files.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>To rename all BASIC files to lower case with the extension <em>.bas</em>
+use the following command:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>&gt; md100 md100.img ren -tB -l "*" "*.bas"<br><br>TOK1000.BAS  B renamed to tok1000.bas  B<br>PI.BAS       B renamed to pi.bas       B<br>A*/()^.BAS   B renamed to a*/()^.bas   B<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>As usual, all patterns must be enclosed in double quotes. With
+the <em>ren</em> command, all patterns except the last are
+considered source files, the last pattern forms the new name(s).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>To delete some&nbsp;C files from the image, enter:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>&gt; md100 md100.img del "hoch*.c"<br><br>hoch5.c      C deleted<br>hochfuen.c   C deleted<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Use option <span style="font-family: monospace;">-tC</span>
+and the pattern <span style="font-family: monospace;">"*"</span>
+to delete all type <span style="font-family: monospace;">C</span>
+files.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>To change&nbsp;all type <span style="font-family: monospace;">C</span> files to be
+of type <span style="font-family: monospace;">S</span>
+and alter
+the protection attribute, enter:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre>&gt; md100 md100.img set -tC "*" -tS -p1<br><br>test1.c      C P=0 changed to S P=1<br>test1.h      C P=0 changed to S P=1<br></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>This allows access to the files created by the PB-2000C from a
+PB-1000. The protection attribute is supposed to protect the file against writing.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId157512"></a><a name="Direct_Floppy_Access"></a>Direct floppy access</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>On Linux, you can replace the image name in the <em>md100</em>
+commands by <em>/dev/fd0casio</em>, the device created
+with <em>makedev.sh.</em> All operations are directly
+performed on the floppy. That's much slower than manipulating an image
+but you save the work of copying the image back and forth.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>On Windows you'll need an additional package, <a href="http://www.seasip.demon.co.uk/Unix/LibDsk">LibDsk</a>.
+This is a library to directly access floppies in various formats. See
+the file <em>readme.txt</em> in the <em>win32</em>
+subdirectory. The library is cross platform and it should be perfectly
+possible to use it on other platforms. I simply haven't tried
+it, yet. You can set the <span style="font-family: monospace;">-DLIBDSK</span>
+switch of your C compiler and try for
+yourself. To access the floppy, replace the image name with "<span style="font-family: monospace;">A:</span>".</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>I've written an OS/2 floppy access module as well, but that
+doesn't work, I keep getting read errors. My interest in OS/2 has ceased so updates are unlikely. :-(</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr style="width: 100%; height: 2px;">
+<h2><a class="mozTocH2" name="mozTocId961298"></a><a name="Links"></a>Links</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>My Homepage: <a href="http://www.mvcsys.de">http://www.mvcsys.de</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+Download the archive: <a href="http://www.mvcsys.de/download/casutil.zip">http://www.mvcsys.de/download/casutil.zip</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId345157"></a><a name="BASIC_Comparison_Sheet"></a>BASIC Comparison
+Sheet</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>I've made an attempt to compare the various BASIC dialects of
+different pocket computers in tabular form:&nbsp;<a href="http://www.mvcsys.de/doc/basic-compare.html">[Download
+page]</a>.
+The link points to the online version of the download page, a <a href="basic-compare.html" target="_blank">local
+copy</a> is
+part of this package. The comparison includes Casio, Sharp,
+HP,&nbsp;TI, Canon and Epson
+machines.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId589074"></a>Casio
+Pages</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The following Internet sites&nbsp;have more or less
+influenced my work. More links can be found on these pages.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><a name="Piotr_Piatek"></a>Piotr Piatek has
+inspired much of what you can find here. Some recent bug fixes and
+contributions, e. g. direct floppy access from DOS, are by him. He has
+a deep insight in Casio
+hardware and has even built the interfaces himself. Visit his site at <a href="http://www.pisi.com.pl/piotr433/index.htm">http://www.pisi.com.pl/piotr433/index.htm</a>!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Ledudu's site, dedicated to Casio calculators and pocket
+computers, with many pictures and links: <a href="http://www.ledudu.com/pockets.asp?lg=eng">http://www.ledudu.com/pockets.asp</a>
+(English and&nbsp;French).</p>
+<p><a name="Christophe"></a>Information about
+the PB-700&nbsp;can be&nbsp;found on the pages of Christophe le Glatin, now hosted by Ledudu: <a href="http://casio.ledudu.com/casiopb700/casiopb700.htm">http://casio.ledudu.com/casiopb700/casiopb700.htm</a>.
+Some French required.&nbsp;</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Thom&aacute;s Wrobel has collected technical information
+about the PB-1000:&nbsp;<a href="http://www.itkp.uni-bonn.de/%7Ewichmann/pb1000-wrobel.html">http://www.itkp.uni-bonn.de/~wichmann/pb1000-wrobel.html</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Airbug One reveals some secrets of the PB-1000: <a href="http://perso.wanadoo.fr/airbug.one/index_GB.htm">http://perso.wanadoo.fr/airbug.one/index_GB.htm</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Viktor Toth's rskey.org is a site that deals with many
+programmable calculators, among them several Casio models: <a href="http://www.rskey.org">http://www.rskey.org</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The Pocket Computer Museum has many pictures and technical
+data. It hosts some software for Sharp pocket computers: <a href="http://pocket.free.fr/index.html">http://pocket.free.fr/index.html</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>SilRun Systems ("Silent Runner") hosts many scanned Casio
+manuals: <a href="http://www.silrun.de/">http://www.silrun.de/</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Manfred Becker has created a USB interface and a BASIC program
+editor for the FX-850P and its successors: <a href="http://manib.ma.funpic.de/de/taschenrechner.htm">http://manib.ma.funpic.de/de/taschenrechner.htm</a>
+(German pages only).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><a name="Casio_File_Formats"></a>The various file formats of Casio graphics calculators are the topic of the <span style="font-style: italic;">Casio file format documentation project</span>: <a href="http://casetta.tuxfamily.org/formats">http://casetta.tuxfamily.org/formats</a>.</p>
+
+
+
+
+
+
+
+
+
+<p>Casio's communication software FA-124 can be downloaded here: <a href="http://world.casio.com/edu/resources/fa124/">http://world.casio.com/edu/resources/fa124/</a> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><a class="mozTocH3" name="mozTocId759747"></a>Floppy
+access</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><em>LibDsk</em>, the library used to access the
+floppy to manipulate MD-100 disks is written by John Elliot: <a href="http://www.seasip.demon.co.uk/Unix/LibDsk">http://www.seasip.demon.co.uk/Unix/LibDsk</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The auxiliary Windows driver <em>fdrawcmd</em>
+that <em>LibDsk</em> uses is the work of Simon Owen: <a href="http://simonowen.com/fdrawcmd/">http://simonowen.com/fdrawcmd/</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><a name="fdutils"></a>Linux <em>fdutils-5.5</em>
+can best be found using Google: <a href="http://www.google.com/search?q=fdutils-5.5">http://www.google.com/search?q=fdutils-5.5</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr style="width: 100%; height: 2px;">Contact: Marcus von
+Cube &lt;<a href="mailto:marcus@mvcsys.de">marcus@mvcsys.de</a>&gt;<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page last updated: March 15, 2015<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

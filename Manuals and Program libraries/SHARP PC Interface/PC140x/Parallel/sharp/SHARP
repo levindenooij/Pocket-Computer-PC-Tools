@@ -1,0 +1,14 @@
+#
+# Make-File fÅr SHARP
+#
+# fÅr die Microsoft-Programme
+#
+
+sharplow.obj: sharplow.asm
+    masm /Mx sharplow;
+
+sharp.obj: sharp.c sharp.h sharplow.h
+    cl /AS /Gs /Ox /c sharp.c
+
+sharp.exe: sharp.obj sharplow.obj
+    link sharp+sharplow;

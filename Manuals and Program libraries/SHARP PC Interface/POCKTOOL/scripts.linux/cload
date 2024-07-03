@@ -1,0 +1,224 @@
+#!/bin/bash
+#================================================================================ 
+# HEADER
+#================================================================================ 
+#
+# Sharp Pocket Computer Program Uploader
+# --------------------------------------
+#
+# by B.Lex, 2017-11-22
+#
+#================================================================================ 
+#% SYNOPSIS 
+#+     ${SCRIPT_NAME} [-vh] [-x|k] [-p sharp-model-#] [-c audio-card-#] [-d audio-dev-#] <filename.bas> 
+#%
+#% DESCRIPTION
+#%     Uploading a SHARP Pocket Computer BASIC program from a PC to the SHARP Pocket Computer.
+#%
+#%     This script uses Torsten Mücker's Pocket Tools (http://www.peil-partner.de/ifhe.de/sharp/)
+#%     to upload BASIC programs from many SHARP Pocket Computers.
+#%     
+#%     The program will convert the ASCII Basic program to a audiofile (wav) and play it to 
+#%     the SHARP cassette interface.
+#%     
+#%     Program upload procedure:
+#%     1.  Start CLOAD on your SHARP Pocket Computer. 
+#%         Alternatively CLOAD can also be started on your SHARP after starting the PC script.
+#%     2.  Start the program ${SCRIPT_NAME} on your PC. 
+#%     3.  The program will transfer the BASIC program via it's audio interface and the 
+#%         SHARP cassette interface to the SHARP Pocket Computer.
+#%
+#% REQUIREMENTS
+#%     Hardware: SHARP CE-126P, CE-124 or a compatible cassette interface.
+#%     Software: sox (Sound eXchange); amixer (command-line ALSA mixer)
+#%
+#% OPTIONS
+#%     -h      print this help
+#%     -v      print version information
+#%     -p      set model number of Sharp (without "PC-")
+#%     -s      skip autosensing of CLOAD (start transfer immediately)
+#%     -c      set audio card number (as reported by 'arecord -l')
+#%     -d      set audio device number (as reported by 'arecord -l')            
+#%     -x      don't keep interim files (delete generated img and wav file after uploading) 
+#%     -k      keep all interim files
+#%
+#%     Options can be used to override the settings in the configuration file settings.
+#%
+#================================================================================ 
+#- IMPLEMENTATION
+##     version       0.1
+#-     author        Bernhard Lex
+#-     copyright     2017
+#-     license       GNU General Public License
+#-
+#================================================================================ 
+# END_OF_HEADER
+#================================================================================ 
+
+
+# --- general variables
+
+# program is installed or local
+INSTALLED=1
+
+# name of configuration file
+CONFIGFILE="sharppc.cfg"
+
+# system's standard configuration directory (applies only when program is installed)
+CONFIGDIR="/etc"
+
+# interim files are kept (this setting can be overruled by config file)
+KEEPFILES=1
+
+# interim files are saved in /tmp folder; applies only when deletion of interim files is enabled
+USE_TMPDIR=1
+
+
+# --- display help functions
+
+SCRIPT_HEADSIZE=$(head -200 ${0} |grep -n "^# END_OF_HEADER" | cut -f1 -d:)
+SCRIPT_NAME="$(basename ${0})" # scriptname without path
+
+usage() { printf "Usage: "; head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^#+" | sed -e "s/^#+[ ]*//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g" ; }
+usagefull() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^#[%#+-]" | sed -e "s/^#[%#+-][ ]\?//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g" -e "s/\${APPEND}/${APPEND}/g" ; }
+version() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^##" | sed -e "s/^##[ ]*//g" -e "s/[ ]\+/ /g" ; }
+
+
+
+# if program is installed, config file is found in /etc
+if [ $INSTALLED -eq 1 ]
+then
+	CONFIGFILE="$CONFIGDIR/$CONFIGFILE"
+	PROGDIR=""
+else
+	PROGDIR="./"
+fi
+
+# load config file
+if [ -f $CONFIGFILE ]
+then
+	source $CONFIGFILE
+else
+	echo "Configuration file $CONFIGFILE not found!"
+	exit
+fi
+
+# check if delete-interim-files is set in config
+# convert DEL_INTERFILES to lower case
+DEL_INTERFILES=$(echo "$DEL_INTERFILES" | tr '[:upper:]' '[:lower:]')
+if [[ $DEL_INTERFILES == "yes" ]]
+then
+	KEEPFILES=0
+else	
+	KEEPFILES=1
+fi
+
+# set TMPDIR parameter for mktemp 
+if [ $USE_TMPDIR -eq 1 ]
+then
+	USE_TMPDIR="--tmpdir"
+else
+	USE_TMPDIR=""
+fi
+
+# check if CLOAD autosensing is set in config, then convert CLOAD_AUTOSENSE to lower case
+CLOAD_AUTOSENSE=$(echo "$CLOAD_AUTOSENSE" | tr '[:upper:]' '[:lower:]')
+
+# set flag-arguments
+while getopts :c:d:p:sxkvh option
+do
+	case "${option}"
+	in
+	c) AUDIOCARD=${OPTARG};;
+	d) AUDIODEVICE=${OPTARG};;
+	p) SHARPPC=${OPTARG};;
+	s) CLOAD_AUTOSENSE="no";;
+	x) KEEPFILES=0;;
+	k) KEEPFILES=1;;
+	v)
+		version
+		exit 0
+		;;
+	h)
+		usagefull
+		exit 0
+		;;
+    \?)
+		echo "Invalid option: -$OPTARG" >&2
+		usage
+		exit 1
+		;;
+    :)
+		echo "Option -$OPTARG requires an argument." >&2
+		usage
+		exit 1
+		;;
+	esac
+done
+shift $((OPTIND-1))
+
+# get the filename argument
+if [ -n "$1" ]
+then
+	FILENAME="$1"
+	FILENAME_WO_EXT="${FILENAME%.*}"
+	# check if file is existing
+	if [ ! -e "$FILENAME" ]
+	then
+		echo "File $FILENAME does not exist!"
+		exit 1
+	fi
+else
+	#echo "Please provide a filename!"
+	usagefull
+	exit 1
+fi
+
+# prevent temporary files from overwriting existing files with same name
+if [ $KEEPFILES -eq 0 ]
+then 
+	# temporary files
+	WAV_FILE=$(mktemp $USE_TMPDIR --suffix=.wav "${FILENAME_WO_EXT}_XXXX")
+	IMG_FILE=$(mktemp $USE_TMPDIR --suffix=.img "${FILENAME_WO_EXT}_XXXX")
+else
+	# permanent files
+	WAV_FILE="${FILENAME_WO_EXT}.wav"
+	IMG_FILE="${FILENAME_WO_EXT}.img"
+fi
+
+# Set record-level if scontrol mic-name is defined
+# used only for detecting when CLOAD has been started on SHARP
+if [ ! -z $MICNAME ]
+then
+	amixer -c $AUDIOCARD sset $MICNAME $MICLEVEL
+fi
+
+# Set playback-level if scontrol headphone-name is defined
+if [ ! -z $PLAYNAME ]
+then
+	amixer -c $AUDIOCARD sset $PLAYNAME $PLAYLEVEL
+fi
+
+# convert ASCII Basic to IMG
+${PROGDIR}bas2img -t img -p $SHARPPC "$FILENAME" "$IMG_FILE"
+
+# convert IMG to audio
+${PROGDIR}bin2wav -t img -p $SHARPPC "$IMG_FILE" "$WAV_FILE"
+
+# check if CLOAD autosensing is set
+if [[ $CLOAD_AUTOSENSE == "yes" ]]
+then
+	# waiting until CLOAD has been started on SHARP (no file being created)
+	sox -c 1 -e s -t alsa hw:$AUDIOCARD,$AUDIODEVICE -n silence 1 0.1 5% trim 0 0.1
+fi
+
+# upload file to Sharp
+sox "$WAV_FILE" -t alsa hw:$AUDIOCARD,$AUDIODEVICE
+
+# delete interim files if requested
+if [ $KEEPFILES -eq 0 ]
+then 
+	rm "$IMG_FILE"
+	rm "$WAV_FILE"
+fi
+

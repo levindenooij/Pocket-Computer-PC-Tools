@@ -1,0 +1,21 @@
+PC-2 Math Pak I: (c) 1982 Tandy Corporation. All rights reserved.
+
+"Math Pak I" consists of five programs:
+
+1. TRIANGLE - Solution of triangles.
+2. COMPLEX - Complex arithmetic.
+3. VECTOR - Vector arithmetic.
+4. ADVMATH - Advanced trigonometry and exponentials.
+5. PCALC - Polynomial math and calculus.
+
+The function of these programs are:
+
+TRIANGLE solves for the 3 common unknowns triangles (side-side-side, side-angle-side,angle-side-angle) and can also solve for triangles based on 3 Cartesian coordinates. TRIANGLE solves for all sides and angles in any angular unit (degrees, radians, or grads), calculates area, and tests for equilateral, right, isoceles, obtuse, and scalene properties.
+
+COMPLEX Provides for the most commom complex number arithmetic operations: addition, subtraction, multiplication, division, magnitude calculation, conjugation, natural logarithms, natural antilogs (e raised to complex powers), sines, cosines, arc sines, and arc cosines. Chain operations are allowed.
+
+VECTOR Provides most commom vector operations in 3 dimensions, in both rectangular and spherical coordinates: addition, subtration,dot product, cross product, angle between 2 vectors, and direct conversion of a vector between rectangular and spherical coordinates systems. Chain operations are allowed. The mode may be changed between spherical and rectangular at any point during program execution without adversely affecting intermediate results.
+
+ADVMATH Provides 24 common trigonometric and hyperbolic functions in degree or radian measure. (Hyperbolic functions must be measured in radian units.) It also provides logarithms to any base, as well as an exponentiation function that can rause negative numbers to positive or integral negative numbers. Chain operations are allowed.
+
+PCALC Provides common polynomial functions and calculus solutions for polynomials up to 9th order. Included are evaluation of the polynomial at any point, calculation of an integral between any 2 points, and Newtonian root search.

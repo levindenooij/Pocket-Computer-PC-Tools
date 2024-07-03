@@ -1,0 +1,204 @@
+#!/bin/bash
+#================================================================================ 
+# HEADER
+#================================================================================ 
+#
+# Sharp Pocket Computer Program Saver
+# -----------------------------------
+#
+# by B.Lex, 2017-11-22
+#
+#================================================================================ 
+#% SYNOPSIS 
+#+     ${SCRIPT_NAME} [-vh] [-x|k] [-p sharp-model-#] [-c audio-card-#] [-d audio-dev-#] [-m mic-ctrl-name] [-l mic-rec-level] <filename.bas> 
+#%
+#% DESCRIPTION
+#%     Saving a program from a SHARP Pocket Computer as ASCII Basic on PC.
+#%
+#%     This script uses Torsten Mücker's Pocket Tools (http://www.peil-partner.de/ifhe.de/sharp/)
+#%     to download BASIC programs from many SHARP Pocket Computers.
+#%     
+#%     The program will record the signal from the SHARP cassette interface as audio file (wav) 
+#%     and convert it to a ASCII Basic text file.
+#%     
+#%     Program download procedure:
+#%     1.  Start the program ${SCRIPT_NAME} on your PC. The program will wait 
+#%         until it receives an audio signal.
+#%     2.  Start CSAVE on your SHARP Pocket Computer.
+#%     3.  Conversion to ASCII Basic text will start automatically once transfer 
+#%         from the SHARP has finished.
+#%     
+#% REQUIREMENTS
+#%     Hardware: SHARP CE-126P, CE-124 or a compatible cassette interface.
+#%     Software: sox (Sound eXchange); amixer (command-line ALSA mixer)
+#%
+#% OPTIONS
+#%     -h      print this help
+#%     -v      print version information
+#%     -p      set model number of sharp (without "PC-")
+#%     -c      set audio card number (as reported by 'arecord -l')
+#%     -d      set audio device number (as reported by 'arecord -l')            
+#%     -m      set control-name of the microphone of the audiointerface 
+#%             (as reported by 'amixer -c <device-#> scontrols')
+#%     -l      set microphone level (in %) 
+#%     -x      don't keep interim files (delete generated wav file after converting to ASCII)
+#%     -k      keep all interim files
+#%
+#%     Options can be used to override the settings in the configuration file.
+#%
+#================================================================================ 
+#- IMPLEMENTATION
+##     version       0.1
+#-     author        Bernhard Lex
+#-     copyright     2017
+#-     license       GNU General Public License
+#-
+#================================================================================ 
+# END_OF_HEADER
+#================================================================================ 
+
+
+# --- general variables
+
+# program is installed or local
+INSTALLED=1
+
+# name of configuration file
+CONFIGFILE="sharppc.cfg"
+
+# system's standard configuration directory (applies only when program is installed)
+CONFIGDIR="/etc"
+
+# interim files are kept (this setting can be overruled by config file)
+KEEPFILES=1
+
+# interim files are saved in /tmp folder; applies only when deletion of interim files is enabled
+USE_TMPDIR=1
+
+
+# --- display help functions
+
+SCRIPT_HEADSIZE=$(head -200 ${0} |grep -n "^# END_OF_HEADER" | cut -f1 -d:)
+SCRIPT_NAME="$(basename ${0})" # scriptname without path
+
+usage() { printf "Usage: "; head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^#+" | sed -e "s/^#+[ ]*//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g" ; }
+usagefull() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^#[%#+-]" | sed -e "s/^#[%#+-][ ]\?//g" -e "s/\${SCRIPT_NAME}/${SCRIPT_NAME}/g" -e "s/\${APPEND}/${APPEND}/g" ; }
+version() { head -${SCRIPT_HEADSIZE:-99} ${0} | grep -e "^##" | sed -e "s/^##[ ]*//g" -e "s/[ ]\+/ /g" ; }
+
+
+
+# if program is installed, config file is found in /etc
+if [ $INSTALLED -eq 1 ]
+then
+	CONFIGFILE="$CONFIGDIR/$CONFIGFILE"
+	PROGDIR=""
+else
+	PROGDIR="./"
+fi
+
+# load config file
+if [ -f $CONFIGFILE ]
+then
+	source $CONFIGFILE
+else
+	echo "Configuration file $CONFIGFILE not found!"
+	exit
+fi
+
+# check if delete-interim-files is set in config
+# convert DEL_INTERFILES to lower case
+DEL_INTERFILES=$(echo "$DEL_INTERFILES" | tr '[:upper:]' '[:lower:]')
+if [[ $DEL_INTERFILES == "yes" ]]
+then
+	KEEPFILES=0
+else	
+	KEEPFILES=1
+fi
+
+# set TMPDIR parameter for mktemp 
+if [ $USE_TMPDIR -eq 1 ]
+then
+	USE_TMPDIR="--tmpdir"
+else
+	USE_TMPDIR=""
+fi
+
+# set flag-arguments
+while getopts :c:d:p:m:l:xkvh option
+do
+	case "${option}"
+	in
+	c) AUDIOCARD=${OPTARG};;
+	d) AUDIODEVICE=${OPTARG};;
+	p) SHARPPC=${OPTARG};;
+	m) MICNAME=${OPTARG};;
+	l) MICLEVEL="${OPTARG}%";;
+	x) KEEPFILES=0;;
+	k) KEEPFILES=1;;
+	v)
+		version
+		exit 0
+		;;
+	h)
+		usagefull
+		exit 0
+		;;
+    \?)
+		echo "Invalid option: -$OPTARG" >&2
+		usage
+		exit 1
+		;;
+    :)
+		echo "Option -$OPTARG requires an argument." >&2
+		usage
+		exit 1
+		;;
+	esac
+done
+shift $((OPTIND-1))
+
+# get the filename argument
+if [ -n "$1" ]
+then
+	FILENAME="$1"
+	FILENAME_WO_EXT="${FILENAME%.*}"
+	# check if filename has extension
+	if [[ "$FILENAME" == "$FILENAME_WO_EXT" ]]
+	then
+		# no extension given, add extension
+		FILENAME="$FILENAME.bas"
+	fi
+else
+	#echo "Please provide a filename!"
+	usagefull
+	exit 1
+fi
+
+# prevent temporary files from overwriting existing files with same name
+if [ $KEEPFILES -eq 0 ]
+then 
+	# temporary files
+	WAV_FILE=$(mktemp $USE_TMPDIR --suffix=.wav "${FILENAME_WO_EXT}_XXXX")
+else
+	# permanent files
+	WAV_FILE="${FILENAME_WO_EXT}.wav"
+fi
+
+# Set record-level if scontrol mic-name is defined
+if [ ! -z $MICNAME ]
+then
+	amixer -c $AUDIOCARD sset $MICNAME $MICLEVEL
+fi
+
+# record audio
+sox -r 22050 -b 16 -c 1 -e s -t alsa hw:$AUDIOCARD,$AUDIODEVICE "$WAV_FILE" silence 1 0.1 5% 1 0.5 5%
+
+# convert to ASCII Basic
+${PROGDIR}wav2bin -t bas -p $SHARPPC "$WAV_FILE" "$FILENAME"
+
+# delete interim files if requested
+if [ $KEEPFILES -eq 0 ]
+then 
+	rm "$WAV_FILE"
+fi
+

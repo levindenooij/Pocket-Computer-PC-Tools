@@ -1,0 +1,50 @@
+10 " "LOCK :CLEAR :USING :Z=100:RANDOM :WAIT 90:CLS :CURSOR 8:PRINT "BLACKJACK":PRINT "  Copr. 1982 Tandy Corp."
+20 PRINT "I am Yukon Jacques,":PRINT "famous dealer and ruffian.":GOTO 230
+60 @(U)=RND (13)-1:IF @(U)<9LET K$=STR$ (@(U)+2):@(S)=@(S)+@(U)+2:@$(U+6)=K$:RETURN 
+70 GOTO 62+@(U)
+71 K$="J":GOTO 80
+72 K$="Q":GOTO 80
+73 K$="K":GOTO 80
+74 K$="A":@$(U+6)=K$:IF @(S)<11LET @(S)=@(S)+11:@(S+10)=@(S+10)+1:RETURN 
+75 @(S)=@(S)+1:RETURN 
+80 @(S)=@(S)+10:@$(U+6)=K$:RETURN 
+90 V=0:CLS :INPUT "Place your wager $";V:IF V>0THEN 92
+91 GOTO 90
+92 IF V>ZWAIT 120:PRINT "Hey, you dont have $";STR$ V:GOTO 90
+100 O=0:P=0:E=0:F=0:L=0:WAIT 0:PRINT "Next hand coming up..."
+102 U=1:S=5:GOSUB 60:U=2:GOSUB 60:U=3:S=6:GOSUB 60:U=4:GOSUB 60
+105 WAIT 240:PRINT "You have ";I$;",";K$;"; I show ";H$
+107 M=0:IF F=21PRINT "Your Blackjack!":V=1.5*V:GOTO 220
+110 IF E=21PRINT "My Blackjack!":GOTO 240
+130 WAIT 0:PRINT "(S)tand (H)it or (D)ouble?"
+140 W$=INKEY$ :IF W$="S"THEN 200
+150 IF W$="H"THEN 300
+160 IF W$="D"THEN 400
+170 GOTO 140
+200 B=C+2:IF B>10LET B=10
+201 B=F-B
+202 IF ((B+7>E)AND (E<17))OR (B>E)OR (E<10)LET S=5:U=14:WAIT 60:PRINT "I want a hit. ";:GOTO 204
+203 GOTO 205
+204 GOSUB 60:WAIT 60:PRINT "Its a ";K$:GOTO 202
+205 IF E<22THEN 210
+206 IF O=0WAIT 90:PRINT "Nuts! I busted!":GOTO 220
+207 O=O-1:E=E-10:GOTO 202
+210 WAIT 120:PRINT "My down card is ";G$:PRINT "I stand on";E;". You had";F;".":IF F<ETHEN 240
+215 IF F=EPRINT "Push.":GOTO 90
+220 Z=Z+V:WAIT 120:PRINT "You win $";STR$ V
+230 PRINT "Your bankroll now $";STR$ Z:IF Z>0THEN 90
+235 PRINT "Tsk, tsk. Broke again!"
+236 A$="":INPUT "Play again? (Y/N) ";A$:IF A$="Y"THEN 10
+237 IF A$<>"N"THEN 236
+238 UNLOCK :WAIT :PRINT "Bye.  I enjoyed playing.":END
+240 Z=Z-V:WAIT 120:PRINT "You lose $";STR$ V:GOTO 230
+300 L=1:S=6:U=14:GOSUB 60:WAIT 120:PRINT "Your hit is a ";K$
+305 IF F>21AND P>0LET P=P-1:F=F-10:GOTO 305
+307 PRINT "You now have";F:IF F<22THEN 130
+310 PRINT "You went bust!":GOTO 240
+400 IF LWAIT 120:PRINT "You cant double now.":GOTO 130
+405 IF 2*V>ZWAIT 120:PRINT "You cant afford it.":GOTO 130
+410 V=V+V:WAIT 120:PRINT "Your wager is now $";STR$ V:T=6:GOSUB 60:PRINT "Your hit is a ";K$
+415 IF F>21AND P>0LET P=P-1:F=F-10:GOTO 415
+420 PRINT "Your total is";F:IF F>21THEN 310
+430 GOTO 200

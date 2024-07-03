@@ -1,0 +1,4 @@
+10 FOR C=1 TO 10
+20 PRINT "C=";C
+30 NEXT I
+

@@ -1,0 +1,51 @@
+Casio Utilities - Installation
+
+Linux or Mac OS X
+=================
+
+Under Linux and Mac OS X you can use the provided Makefile to compile and 
+install the utilities:
+
+make
+make clean
+sudo make install
+
+This will compile the programs and copy them to /usr/local/bin. The Linux and 
+osx subdirectories already contain compiled versions so a "sudo make install" 
+might be enough.
+
+Three shell scripts are provided to access MD100 floppies directly. Look at the
+scripts and modify them to your needs. 
+
+fdutil-5.5 is needed for direct MD100 floppy disk access under Linux.
+
+
+DOS
+===
+
+Copy the programs in the DOS subdirectory somewhere in your path. 
+
+COMP-DOS.BAT compiles everything with Borland C 5.0 (16 bit compiler).
+Before comiling, update the BINDIR variable to your needs.
+
+
+Win32
+=====
+
+Copy the programs and libdisk.dll in the win32 subdirectory somewhere
+in your path. For more info see win32\readme.txt.
+
+comp-win.cmd compiles everything with Borland C 5.0 (32 bit compiler).
+Before comiling, update the BINDIR variable to your needs.
+
+
+OS/2 or eComStation
+===================
+
+Copy the programs in the os2 subdirectory somewhere in your path. 
+
+comp-os2.cmd compiles everything with Borland for OS/2.
+Before comiling, update the BINDIR variable to your needs.
+
+
+Marcus von Cube

@@ -1,0 +1,40 @@
+10 " "CLS :CURSOR 5:WAIT 90:PRINT "POLYNOMIAL MATH":PRINT "  Copr. 1982 Tandy Corp.":CLEAR :DIM A$(0)*26
+20 LOCK :USING 
+100 "M"RESTORE :WAIT 0
+110 READ A$(0):IF A$(0)="*"THEN 100
+120 PRINT A$(0):FOR Z=1TO 75:A$=INKEY$ :IF A$<>""LET Z=75
+130 NEXT Z:FOR Z=1TO 7:IF MID$ ("KCFDIRX",Z,1)=A$LET Z=7:NEXT Z:GOTO A$
+140 NEXT Z:GOTO 110
+150 DATA "Select function:","Clear program:  K","Set coefficients:  C"
+160 DATA "Evaluate F(x):  F","Differentiate:  D","Integrate:  I"
+170 DATA "Newtonian root:  R","Exit:  X","*"
+210 M=A:FOR Z=2TO 10:R=1:S=1:IF V<0LET S=-1:IF ((Z-1)/2)<>INT ((Z-1)/2)LET R=-1
+211 M=M+R*(@(Z)*((S*V)^(Z-1))):NEXT Z:RETURN 
+220 N=B:FOR Z=3TO 10:R=1:S=1:IF V<0LET S=-1:IF (Z/2)<>INT (Z/2)LET R=-1
+221 N=N+R*((@(Z)*(Z-1))*(S*V)^(Z-2)):NEXT Z:RETURN 
+300 "K"CLEAR :DIM A$(0)*26:PAUSE "Data cleared":GOTO 100
+400 "C"PAUSE "Coefficient input":PAUSE "Exit w/ null"
+410 CLS :INPUT "Exponent? (0-9) ";Z:GOTO 420
+411 GOTO 100
+420 IF Z<0OR Z>9BEEP 3:GOTO 410
+430 WAIT 0:CLS :PRINT @(Z+1);"X^";STR$ Z;:INPUT " New? ";@(Z+1)
+440 GOTO 410
+500 "F"INPUT "Evaluate F(x) at? ";V
+510 GOSUB 210:BEEP 1:WAIT :PRINT "F(";STR$ V;") =";M:GOTO 100
+600 "D"CLS :INPUT "Differentiate F(x) at? ";V
+610 GOSUB 220:BEEP 1:WAIT :PRINT "d/dx F(";STR$ V;") =";N:GOTO 100
+700 "I"CLS :INPUT "Integrate from? ";W,"To? ";V:GOTO 720
+710 BEEP 1:GOTO 700
+720 O=0:FOR Z=1TO 10:R=1:S=1:IF V>=0THEN 740
+730 S=-1:IF (Z/2)<>INT (Z/2)LET R=-1
+740 P=S*((R*V)^Z):IF W>=0LET R=1:S=1:GOTO 760
+750 R=-1
+760 P=P-S*((R*W)^Z)
+770 P=P*((@(Z))/Z):O=O+P:NEXT Z:BEEP 1:WAIT :PRINT "Integral =";O:GOTO 100
+800 "R"U=0:CLS :INPUT "Search near? ";V
+810 GOSUB 210:IF U=0LET U=1:GOTO 830
+820 BEEP 1:WAIT :PRINT V,M:PRINT "DEF-M if OK, else ENTER"
+830 GOSUB 220:IF N<>0THEN 850
+840 BEEP 3:WAIT :PRINT "MAX or MIN encountered":PRINT "F(";STR$ V;") =";M:GOTO 100
+850 V=V-(M/N):GOTO 810
+999 "X"UNLOCK :END

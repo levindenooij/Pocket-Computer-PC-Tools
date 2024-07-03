@@ -1,0 +1,124 @@
+SHARP Pocket Computer Tools - Linux scripts
+===========================================
+
+
+1. Introduction
+---------------
+
+These scripts provides easy to use command line tools to load and save Basic-programms on SHARP Pocket Computers.
+
+At the moment there are 2 scipts for Linux: One to load a program (cload) and one to save a program from the Pocket Computer (csave).
+
+The whole process of interfacing the Pocket computer and converting files is automated. After the successful configuration of the tool, saving or loading a program from/to the SHARP Pocket Computer is a ONE-STEP process.
+
+The backend of these scripts are the binaries by Torsten Mücker's PocketTools (http://www.peil-partner.de/ifhe.de/sharp/)
+
+
+
+2. Loading and saving programs to the SHARP Pocket Computer
+-----------------------------------------------------------
+
+  +----------+-----------+         +-----------+         +-----------------+
+  |          | Audio-    |_________|  CE-124   |_________|      SHARP      |
+  | Linux-PC | Interface |         | converter |         | Pocket Computer |
+  +----------+-----------+         +-----------+         +-----------------+
+
+
+
+2.1. Saving a program from the SHARP Pocket Computer
+----------------------------------------------------
+
+1.  Start the program "csave <filename.bas>" on your PC. The program will wait until it receives an audio signal from the Pocket Computer.
+2.  Start CSAVE on your SHARP Pocket Computer.
+3.  Conversion to ASCII Basic text will start automatically once transfer from the SHARP has finished.
+
+SYNOPSIS:
+
+	csave [-vh] [-x|k] [-p sharp-model-#] [-c audio-card-#] [-d audio-dev-#] [-m mic-ctrl-name] [-l mic-rec-level] <filename.bas>
+	
+OPTIONS:
+
+	-h            Print help screen
+	-v            Print version information
+	-p <number>   Set model number of Sharp (without "PC-")
+	-c <number>   Set audio card number (as reported by 'arecord -l')
+	-d <number>   Set audio device number (as reported by 'arecord -l')            
+	-m <name>     Set control-name of the microphone of the audiointerface (as reported by 'amixer -c <device-#> scontrols')
+	-l <number>   Set microphone level (in %) 
+	-x            Don't keep interim files (delete temporary generated img and wav file after uploading) 
+	-k            Keep all interim files
+	
+Options can be used to override the configuration file settings.
+
+
+
+2.2. Loading a program to the SHARP Pocket Computer
+---------------------------------------------------
+
+1.  Start CLOAD on your SHARP Pocket Computer. Alternatively CLOAD can also be started on your SHARP after starting the PC script.
+2.  Start the program "cload <filename.bas>" on your PC. 
+3.  The program will transfer the BASIC program via it's audio interface and the SHARP cassette interface to the SHARP Pocket Computer.
+
+SYNOPSIS:
+
+	cload [-vh] [-x|k] [-p sharp-model-#] [-c audio-card-#] [-d audio-dev-#] <filename.bas>
+
+OPTIONS:
+
+	-h            Print help screen
+	-v            Print version information
+	-p <number>   Set model number of Sharp (without "PC-")
+	-s            Skip autosensing of CLOAD (start transfer immediately)
+	-c <number>   Set audio card number (as reported by 'arecord -l')
+	-d <number>   Set audio device number (as reported by 'arecord -l')            
+	-x            Don't keep interim files (delete temporary generated img and wav file after uploading) 
+	-k            Keep all interim files
+
+Options can be used to override the configuration file settings.
+
+
+
+3. Installation
+---------------
+
+3.1. Hardware requirements:
+---------------------------
+
+To connect the SHARP Pocket Computer with the PC, the SHARP CE-126P, CE-124 or a compatible cassette interface and any ALSA compatible audio interface for the PC is required.  
+
+
+3.2. Software requirements:
+---------------------------
+
+The communication of the SHARP Pocket Computer with the PC is through the PC's audio interface. To record and playback the SHARP's cassette signal, a comprehensive command line tool for audio manipulation is utilized:
+
+SoX - Sound eXchange, the Swiss Army knife of audio manipulation
+
+To install SoX on an Ubuntu based Linux system run:
+
+	sudo apt-get install sox
+
+Another tool needed is "amixer" which comes in the alsa-utils package. Very likely this package is already installed on your Linux distribution. In case it's not, install with:
+
+	sudo apt-get install alsa-utils
+
+
+3.3. Installing SHARP Pocket Computer Tools + Linux scripts:
+------------------------------------------------------------
+
+Change to the directory "scripts.linux" inside the PocketTool installation package and run:
+
+	make
+	sudo make install
+
+This compiles the PocketTool binaries, and installs all scripts into the system directories.
+
+
+3.4. Configuring the Linux scripts:
+-----------------------------------
+
+Custom configuration is mandatory for the scripts to work as expected. All configuration is done in "/etc/sharppc.cfg"
+
+Follow the comments inside the configuration file, which will provide you with all information required for a successful configuration.
+
+

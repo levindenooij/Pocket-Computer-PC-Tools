@@ -1,0 +1,36 @@
+10 CLEAR :DIM ME$(0)*26,A(14,2):WAIT 90:CLS :CURSOR 5:PRINT "Budget Management"
+20 PRINT "  Copr. 1982 Tandy Corp."
+21 " "CLS :RESTORE :WAIT 0:FOR P=1TO 7:READ ME$(0):PRINT ME$(0):FOR Q=0TO 75:Z$=INKEY$ :IF Z$<>""LET Q=75
+22 NEXT Q:FOR R=1TO 7:IF MID$ ("IAEDLSX",R,1)=Z$LET R=7:NEXT R:P=7:NEXT P:WAIT :CLS :GOTO Z$
+23 NEXT R:NEXT P:GOTO 21
+24 DATA "Select Function:","Initiate Budget: I","Add Categories: A"
+25 DATA "Edit Budget: E","Display Budget: D","Save Data: S"
+26 DATA "Load Data: L"
+30 "I"S=0:W=0
+40 INPUT "# of Categories ?";U:IF U>0LET U=S+U:IF U<16GOTO 55
+50 GOTO 40
+55 IF W=1GOTO 80
+60 INPUT "# of Months in YTD ?";V:IF (V>=0)*(V<12)GOTO 80
+70 GOTO 60
+80 WAIT 0:USING :FOR P=STO U-1:PRINT "Name of Cat.";P+1;" ";
+90 INPUT "?";@$(P+1):GOTO 110
+100 GOTO 90
+110 CLS :INPUT "Amount Budgeted ?";A(P,0):IF A(P,0)>=0GOTO 130
+120 GOTO 110
+130 INPUT "YTD ?";A(P,1):IF A(P,1)>=0NEXT P:GOTO 21
+140 GOTO 130
+150 "A"S=U:W=1:GOTO 40
+160 "E"USING "######.##":INPUT "Category ?";Z$:GOTO 180
+170 GOTO 160
+180 FOR P=0TO U-1:IF Z$=@$(P+1)LET Q=P:P=U:NEXT P:GOTO 200
+190 NEXT P:PRINT Z$;" Not Found !":GOTO 21
+200 INPUT "New Name ?";@$(Q+1)
+210 PRINT "Old Amount = $";A(Q,0):INPUT "New Amount ?";A(Q,0)
+220 PRINT "Old YTD = $";A(Q,1):INPUT "New YTD ?";A(Q,1)
+230 GOTO 21
+240 "D"IF U=0WAIT 90:PRINT "No Data":GOTO 21
+245 USING "######.##":FOR P=0TO U-1:PRINT @$(P+1):PRINT "Amt Budgeted = $";A(P,0)
+250 PRINT "YTD = $";A(P,1):NEXT P:GOTO 21
+260 "S"PRINT "Load Blank Tape !":PRINT #"BGDATA";@$(*),A(*),U,V:GOTO 21
+270 "L"PRINT "Load Data Tape !":INPUT #"BGDATA";@$(*),A(*),U,V:GOTO 21
+1000 "X"END
