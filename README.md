@@ -19,6 +19,7 @@ Alternatively with modern micro controllers you can simplify the process and con
 For cassette interface breadboard wiring guidance please have a look at: http://www.cavefischer.at/spc/html/PC-1401Key_Arduino.html. Don't use the source code mentioned there as it is not fit for purpose!
 For this cassette interface you only need the upper part of the breadboard with push button, led and resistor.
 
+
 ** SHARP 11-PIN Arduino as Emulator for the CE-26P printer interface **
 
 I have also added a SHARP CE-126P printer emulator that sends LLIST or LPRINT commands to a serial interface for for further processing e.g a serial printer. For the printer emulator breadboard wiring guidance please have look here: http://www.cavefischer.at/spc/html/CE-126P_Emulator.html
