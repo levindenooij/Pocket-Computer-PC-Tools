@@ -1,0 +1,236 @@
+&File
+&Edit
+Search
+Tools
+&?
+New
+Open...
+Save
+Save &as...
+Print...
+Language...
+Quit
+Undo
+Cut
+Copy
+Insert
+Delete
+&Select all
+&Auto completing
+&Break lines
+Insert
+Macros...
+Search...
+&Go on
+Replace...
+&Assemble to...
+&Binary code
+&Decimal code
+&Hexadecimal code
+&Basic installer
+Assemble to &window
+Disassemble
+Disassemble &to window
+Converter
+Hexadecimal <-> Decimal <-> Binary
+Decimal <-> BCD
+ASCII <-> byte
+Convert &files...
+Binary -> Decimal
+Binary -> Hexadecimal
+Decimal -> Binary
+Decimal -> Hexadecimal
+Hexadecimal -> Binary
+Hexadecimal -> Decimal
+&BASIC Renum
+Data &transmission
+Receive to &window
+&Send window
+Send &file
+&Receive file
+Test
+Settings...
+Help
+Info
+Assembler files (*.asm)|*.asm|Pocket Computer Assembler (*.pca)|*.pca|Basic files (*.bas)|*.bas|Program files (*.prg)|*.prg|TransDrive files (*.td)|*.td|Machine language files (*.ml)|*.ml|Language files (*.lng)|*.lng|Macros for PocketASM (*.mak)|*.mak|Text files (*.txt)|*.txt|All files (*.*)|*.*
+Assembler files (*.asm)|*.asm|Pocket Computer Assembler (*.pca)|*.pca|Basic files (*.bas)|*.bas|Program files (*.prg)|*.prg|TransDrive files (*.td)|*.td|Machine language files (*.ml)|*.ml|Language files (*.lng)|*.lng|Macros for PocketASM (*.mak)|*.mak|Text files (*.txt)|*.txt|All files (*.*)|*.*
+Language files (*.lng)|*.lng|Text files (*.txt)|*.txt|All files (*.*)|*.*
+Replace
+Search &for:
+Replace &with:
+&Letter case
+&Whole words
+Search direction
+&Back
+F&orward
+&Search
+&Replace
+Replace &all
+&Cancel
+Search
+Search &for:
+&Go on
+&Cancel
+Modified
+lines generated
+Warning
+The program is not saved yet. Go on with New anyway?
+The program is not saved yet. Throw the old file away?
+Overwrite file?
+The program is not saved yet. Do it now?
+Error
+The mnemonic list was not found. The disassembler is now not available!
+The assembler reports an error. Sorry.
+The language file is incomplete or damaged!
+Done
+Conversion complete!
+Nothing found!
+I replaced
+strings!
+Sending
+File sent!
+Receiving...
+File saved!
+The pocket computer is not ready! Terminate transmission?
+Connection test
+Please open the pocket computer like PC-Trans and enter INPUT #1I$!
+Properties
+COM port
+The port where the pocket computer is connected
+Baud rate
+The baud rate is the speed for the serial transmission: standard is 1200 for PC-1360
+Data bits
+The number of bits for a byte transmitted: standard is 8
+Stop bits
+The number of used stop bits after a serial transmitted byte: standard ist 1
+Line ending code
+After each line there is a ending code transmitted: standard for pocket computers is CR
+&ignore
+Program ending code
+After a pocket computer basic program is transmitted an ending code is sent: standard is 1A
+&Add
+The program ending code is added automatically after the transmission
+CTS &Signal
+The CTS signal from the pocket tells the program if it is ready to receive data
+&OK
+&Cancel
+&Save
+Stop
+The connection test is running...
+BASIC Renum
+New first line:
+Step:
+Macro file not found!
+Macro
+ROM Version
+Version &0
+Version &1
+Compare what
+&Number
+&String
+Data for operation registers
+&Insert data at program start
+&Get data from memory
+Operation register
+Read &X
+Read &Y
+Restore content
+&Restore operation registers
+1. Line: Write macro conditions and descriptions
+3. Line: Describe the result and the action of the code
+5. Line: ID number:
+	0 = Insert in two new lines (7. and 9.) the code for version 0 and 1
+	1 = Insert in four new lines (7,9,11,13) the code for comparison number version 0+1 and the same for string
+New Macro
+Edit
+Delete
+New...
+&Close
+&Insert
+Converter
+Decimal
+Hexadecimal
+Binary
+Converter
+BCD
+bytes
+Converter
+ASCII char
+Byte
+Parity
+&Even
+&Odd
+The parity system allows error recognition in data transfers.
+A parity error has occurred!
+In line
+the programm tries to jump to
+!
+Disassembler
+Please enter the start address:
+Font...
+Disassemble binary TransDrive data?
+Warning! You should save your file in Assembler format first because TransDrive format doesn't store your comments and user data! Continue anyway?
+&Convert to...
+&Hexadecimal
+&Decimal
+&ASCII
+&Byte
+Find Label
+Pocket Computer
+A command file for pocket computer was not found. TransDrive conversion cannot be used!
+Command description
+BASIC mode
+Assembler mode
+Name:
+Enter the name of the macro
+Description:
+Enter a description
+Result:
+Enter the results
+&No comparison
+&Comparison
+Code Version 1
+Enter assembler code for ROM version 1 (Don't leave empty!)
+Code Version 0
+Enter assembler code for ROM Version 0 (Don't leave empty!)
+Code Version 1
+Enter assembler code for ROM Version 1 (Don't leave empty!)
+Code Version 0
+Enter assembler code for ROM Version 0 (Don't leave empty!)
+Macrodesigner
+Not all fields are filled!
+Limited lines
+You can't get more than 80 bytes RAM for a line in a Pocket Computer
+Calculate program size
+Calculates the amount of space your programm needs in a Pocket Computer
+Graphicsdesigner
+Graphics
+&Hex
+&Decimal
+&All on/off
+&Invert
+&Load
+&Save
+Musicdesigner
+Note
+Octave
+Length
+BPM
+&Full
+&Half
+&Quarter
+&Eighth
+&Sixteenth
+&Punctuated
+Too many arguments
+Missing argument(s)
+Number in [0..65535] range expected
+Wrong String argument(s) in DS
+Not valid Constant Definition in EQU
+Invalid opcode
+No code to generate
+Wrong mathematical formula in argument
+Number in [0..255] range expected
+Wrong LP argument value (range [0..63] expected)
+Wrong CAL argument value (range [0..8191] expected)
+Not the right number of arguments

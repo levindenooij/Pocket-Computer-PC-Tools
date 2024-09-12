@@ -1,0 +1,39 @@
+Unnew routine for the PC-140x, PC-126x and PC-1350. 
+
+With this routine you are able to bring back your program after you (unintentionally) deleted it with the NEW command. 
+
+Execute unnew by entering:CALL 17700
+
+adr.  mnemonics		poke values
+---------------------------------------
+17700 LIDP 18145	16, 70, 255
+17703 LP4		132
+17704 MVBD		26
+17705 IX		4
+17706 IX		4
+17707 IXL		36
+17708 LIB 0		3, 0
+17710 LP4		132
+17711 ADB		20
+17712 IXL		36
+17713 CPIA 255		103, 255
+17715 JRNZM 10		41, 10
+17717 LP 4		132
+17718 LIDP 18147	16, 70, 227
+17721 EXBD		27
+17722 LIDP 18145	16, 70, 255
+17725 LP 6		134
+17726 MVBD		26
+17727 LIA 0		2, 0
+17729 IYS		38
+17730 RTN		55
+
+Code is for the PC-140x. Changes for other types:
+Address 17700 and 17722: 
+	PC-126x: 26337 (102,225)
+	PC-1350: 28417 (111,1)
+Address 17718L
+	PC-126x: 26339 (102,227)
+	PC-1350 28419 (111,3)
+
+Code can be entered either as mnemonics via the assembler editor or via directly poke-ing in the poke values

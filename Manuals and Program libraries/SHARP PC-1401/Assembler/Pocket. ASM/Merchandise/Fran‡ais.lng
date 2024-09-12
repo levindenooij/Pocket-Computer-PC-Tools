@@ -1,0 +1,236 @@
+&Fichier
+Edition
+Recherche
+Outils
+?
+Nouveau
+Ouvrir...
+&Enregistrer
+Enregistrer &sous...
+Imprimer...
+Langue...
+Quitter
+Annuler
+Couper
+Copier
+Insérer
+Supprimer
+Sélectionner &tout
+Compléter &automatiquement
+Couper les &lignes
+Ajouter
+Macros
+Chercher...
+&Aller à
+Remplacer...
+Assembler &sous...
+Code &binaire
+Code &décimal
+Code &hexadécimal
+&Installateur basique
+&Assembler dans fenêtre
+Désassembler
+Désassembler dans &fenêtre
+Convertir
+Hexadécimal <-> Décimal <-> Binaire
+Décimal <-> BCD
+ASCII <-> Octet
+Convertir fichiers...
+Binaire -> Décimal
+Binaire -> Hexadécimal
+Décimal -> Binaire
+Décimal -> Hexadécimal
+Hexadécimal -> Binaire
+Hexadécimal -> Décimal
+Renumérotation BASIC
+&Transmission de données
+&Recevoir dans fenêtre
+Envoyer fenêtre
+Envoyer fichier
+Recevoir &fichier
+Test
+Options...
+Aide
+Information
+Fichier Assembleur (*.asm)|*.asm|Assembleur ordinateur de poche (*.pca)|*.pca|Fichier Basic (*.bas)|*.bas|Fichier TransDrive (*.td)|*.td|Fichier langage machine (*.ml)|*.ml|Fichier Texte (*.txt)|*.txt|Tous les fichiers (*.*)|*.*
+Fichier Assembleur (*.asm)|*.asm|Assembleur ordinateur de poche (*.pca)|*.pca|Fichier Basic (*.bas)|*.bas|Fichier TransDrive (*.td)|*.td|Fichier langage machine (*.ml)|*.ml|Fichier Texte (*.txt)|*.txt|Tous les fichiers (*.*)|*.*
+Fichier Langue (*.lng)|*.lng|Fichier Texte (*.txt)|*.txt|Tous les fichiers (*.*)|*.*
+Remplacer
+&Chercher:
+Remplacer a&vec:
+Casse &Lettre
+&Mots complets
+Direction
+Re&tour
+&En avant
+&Rechercher
+Rem&placer
+Remplacer &tout
+&Annuler
+Rechercher
+&Chercher:
+A&ller à
+&Annuler
+Modifié
+lignes générées
+Attention
+Le programme n'a pas été sauvegardé. Exécuter Nouveau quand même?
+Le programme n'a pas été sauvegardé. Supprimer le vieux fichier?
+Ecraser fichier?
+Le programme n'a pas été sauvegardé. Le faire maintenant?
+Erreur
+La liste des mnémoniques n'a pas été trouvée. Le désassembleur n'est pas disponible!
+L'assembleur a trouvé une erreur. Désolé.
+Le fichier langue est incomplet ou abîmé!
+Terminé
+Conversion terminée!
+Rien trouvé!
+J'ai remplacé
+textes!
+En cours d'envoi
+Fichier envoyé!
+Réception en cours...
+Fichier sauvegardé!
+L'ordinateur de poche n'est pas prêt! Arrêter la transmission?
+Test de connection
+Prière d'ouvrir l'ordinateur de poche pour PC-Trans et saisir INPUT #1I$!
+Propriétés
+Port série
+Le port série auquel l'ordinateur de poche est connecté
+Vitesse en baud
+La vitesse en baud est la vitesse de la transmission série : le standard est 1200 pour le PC-1360
+Longueur de mot
+Le nombre de bits transmit par octet: le standard est 8
+Bit d'arrêt
+Le nombre de bits d'arrêt utilisés après transmission série d'un octet: le standard est 1
+Code de fin de ligne
+Après transmission de chaque ligne un code de fin de ligne est transmis: le standard pour les ordinateurs de poche est CR
+ignorer
+Code de fin de texte
+Après que tous les caractères aient été transmis un code de fin de texte est envoyé: le standard est 1A
+Ajoute le code de fin de texte
+Le code de fin de texte est ajouté automatiquement après la transmission
+signal CTS
+Le signal CTS de l'ordinateur de poche indique au programme s'il est prêt à recevoir des données. Avec cette option activée l'ordinateur attendra la transmission du signal par l'ordinateur de poche.
+&OK
+&Annuler
+&Sauver
+Arrêter
+Test...
+Renumérotation BASIC
+Nouvelle première ligne:
+Pas:
+Fichier Macro non trouvé!
+Macro
+Version de ROM
+Version &0
+Version &1
+Comparer quoi
+&Nombres
+&Chaînes de caractères
+Données pour opérations registre
+&Insérer données au début du programme
+&Récupérer données depuis la mémoire
+Opération registre
+Lire &X
+Lire &Y
+Restaurer le contenu
+&Restaurer les opérations registre
+1. Ligne: Ecrire les conditions et descriptions des macros
+3. Line: Décrire le résultat et l'action du code
+5. Ligne: Numéro d'identification:
+	0 = Insérer dans deux nouvelles lignes (7. et 9.) le code pour les versions 0 et 1
+	1 = Insérer dans quatre nouvelles lignes (7,9,11,13) le code pour comparaison du numéro de version 0+1 et le même pour les caractères
+Nouvelle Macro
+Editer
+Supprimer
+Nouveau...
+&Fermer
+&Insérer
+Convertir
+Décimal
+Hexadécimal
+Binaire
+Convertir
+BCD
+octets
+Convertir
+Caractère ASCII
+Octet
+Parité
+&Pair
+&Impair
+Le système de parité permet la reconnaissance des erreurs lors des transferts de données.
+I y a eu une erreur de parité!
+En ligne
+le programme essaye de sauter à
+!
+Désassembleur
+Entrez l'adresse de démarrage:
+Police...
+Désassembler le code binaire TransDrive?
+Attention! Vous devriez auparavant sauver votre fichier au format Assembleur parce que le format TransDrive ne sauvegarde pas les commentaires et les données utilisateurs! Continuer quand même?
+&Convertir...
+&Hexadécimal
+&Décimal
+&ASCII
+&Octet
+Trouver une étiquette
+Ordinateur de poche
+un fichier de commande pour ordinateur de poche n'a pas été trouvé. La conversion TransDrive ne peut pas être utilisée!
+Description de la commande
+Mode BASIC
+Mode Assembleur
+Nom:
+Entrer le nom de la macro
+Description:
+Entrer une description
+Résultat:
+Entrer les résultats
+&pas de comparaison
+&Comparaison
+Code Version 1
+Entrer le code assembleur pour la ROM version 1 (Ne pas laisser vide!)
+Code Version 0
+Entrer le code assembleur pour la ROM version 0 (Ne pas laisser vide!)
+Code Version 1
+Entrer le code assembleur pour la ROM version 1 (Ne pas laisser vide!)
+Code Version 0
+Entrer le code assembleur pour la ROM version 0 (Ne pas laisser vide!)
+Définition de Macro
+Tous les champs n'ont pas été remplis!
+Lignes limitées
+Vous ne pouvez pas mettre plus de 80 bytes de RAM pour une ligne dans un Pocket Computer
+Calculer la taille du programme
+Calcule l'espace dont votre programme a besoin dans un Pocket Computer
+Défintion de Graphique
+Graphique
+&Hexadécimal
+&Décimal
+&Tout allumé/éteint
+&Inverse
+&Charge
+&Sauve
+Défintion de Musique
+Note
+Octave
+Durée
+BPM
+&Pleine
+&Demie
+&Quart
+&Huitième
+&Seizième
+&Ponctuée
+Too many arguments
+Missing argument(s)
+Number in [0..65535] range expected
+Wrong String argument(s) in DS
+Not valid Constant Definition in EQU
+Invalid opcode
+No code to generate
+Wrong mathematical formula in argument
+Number in [0..255] range expected
+Wrong LP argument value (range [0..63] expected)
+Wrong CAL argument value (range [0..8191] expected)
+Not the right number of arguments

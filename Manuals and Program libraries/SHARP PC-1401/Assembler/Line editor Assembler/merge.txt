@@ -1,0 +1,49 @@
+Merge routine for the PC-14xx. 
+
+With this routine you are able to sequentially load multiple BASIC programs into memory without deleting the existing program, merging them into one program. 
+The line numbers of the loaded program should be larger and should not overlap with the line numbers already present in memory.
+There is no error handling and the program just returns to BASIC if it runs out of memory. 
+
+Execute merge by entering:CALL 17600,"program name"
+
+adr.  mnemonics		poke values
+---------------------------------------
+17600 LIDP 18145	16,70,225
+17603 LP 10		138
+17604 MVBD		26
+17605 LP 10		138
+17606 LIDP 17872	16, 69, 208
+17609 MVDM		83
+17610 INCP		80
+17611 LIDP 17873	16, 69, 209
+17614 MVDM		83
+17615 LIDP 18147	16, 70, 227
+17618 LP 20		148
+17619 MVBD		26
+17620 LIB 0		3, 0
+17622 LIA 1		2, 1
+17624 LP 20		148
+17625 SBB		21
+17626 LIDP 18145	16, 70, 225
+17629 LP 20		148
+17630 EXBD		27
+17631 IX		4
+17632 CALL 40460	120, 158, 12
+17645 LIDP 17872	16, 69, 12
+17638 LP 10		138
+17639 MVBD		26
+17640 LIDP 18145	16, 70, 225
+17643 LP 10		138
+17644 EXBD		27
+17645 LIDP 18352	16, 71, 176
+17648 LIA 13		2, 13
+17650 LII 79		0, 79
+17652 FILD		31
+17653 RTN		55
+
+Code is for the PC-1401/1402. Changes for other types:
+Address 17632: PC-1421: 46070
+
+PC-126x and PC-1350 already have MERGE as standard BASIC command on board
+
+Code can be entered either as mnemonics via the assembler editor or via directly poke-ing in the poke values

@@ -1,0 +1,236 @@
+&Datei
+Bearbeiten
+Suchen
+Extras
+&?
+Neu
+Öffnen...
+Speichern
+Speichern &unter...
+Drucken...
+Sprache...
+Ende
+Rückgängig
+Ausschneiden
+Kopieren
+Einfügen
+Löschen
+Alles &markieren
+Auto &Vervollständigen
+Zeilenumbruch
+Einsetzen
+Makros...
+Suchen...
+Weitersuchen
+Ersetzen...
+Assemblieren zu...
+Binärcode
+Dezimalcode
+Hexadezimalcode
+Basicinstaller
+&Ins Fenster assemblieren
+Disassemblieren
+Ins &Fenster disassemblieren
+Umrechner
+Hexadezimal <-> Dezimal <-> Binär
+Dezimal <-> BCD
+ASCII <-> Byte
+Dateien &konvertieren...
+Binär -> Dezimal
+Binär -> Hexadezimal
+Dezimal -> Binär
+Dezimal -> Hexadezimal
+Hexadezimal -> Binär
+Hexadezimal -> Dezimal
+&BASIC Renum
+Datentransfer
+Ins Fenster &empfangen
+Fenster &senden
+Datei senden
+Datei empfangen
+Test
+Einstellungen...
+Hilfe
+Info
+Assembler Dateien (*.asm)|*.asm|Basic Dateien (*.bas)|*.bas|Programmdateien (*.prg)|*.prg|TransDrive Dateien (*.td)|*.td|Maschinencode Dateien (*.ml)|*.ml|Sprachdateien (*.lng)|*.lng|Makros für PocketASM (*.mak)|*.mak|Textdateien (*.txt)|*.txt|Alle Dateien (*.*)|*.*
+Assembler Dateien (*.asm)|*.asm|Basic Dateien (*.bas)|*.bas|Programmdateien (*.prg)|*.prg|TransDrive Dateien (*.td)|*.td|Maschinencode Dateien (*.ml)|*.ml|Sprachdateien (*.lng)|*.lng|Makros für PocketASM (*.mak)|*.mak|Textdateien (*.txt)|*.txt|Alle Dateien (*.*)|*.*
+Sprachdateien (*.lng)|*.lng|Textdateien (*.txt)|*.txt|Alle Dateien (*.*)|*.*
+Ersetzen
+Suchen &nach:
+Ersetzen &durch:
+&Groß-/Kleinschreibung
+Ganzes &Wort
+Suchrichtung
+Au&fwärts
+A&bwärts
+&Suchen
+&Ersetzen
+&Alle ersetzen
+Abb&rechen
+Suchen
+&Suchen nach:
+&Weitersuchen
+&Abbrechen
+Verändert
+Zeilen erzeugt
+Warnung
+Das Programm ist noch nicht gespeichert. Neu trotzdem ausführen?
+Das Programm ist noch nicht gespeichert. Alte Datei verwerfen?
+Datei überschreiben?
+Das Programm ist noch nicht gespeichert. Jetzt sichern?
+Fehler
+Die Mnemonicliste wurde nicht gefunden! Der Disassembler ist nicht verfügbar!
+Der Assembler hat einen Fehler gemeldet. Sorry.
+Die Sprachdatei ist unvollständig oder fehlerhaft!
+Fertig
+Konversion abgeschlossen!
+Keine Fundstelle!
+Es wurden
+Fundstellen ersetzt!
+Sende
+Datei gesendet!
+Empfange...
+Datei gespeichert!
+Der Pocket Computer ist nicht empfangsbereit! Sendevorgang abbrechen?
+Verbindungstest
+Bitte gib am Pocket OPEN mit den gewählten Einstellungen und danach INPUT #1I$ ein!
+Einstellungen
+COM-Port
+Der serielle Anschluss an dem der Pocketcomputer hängt
+Baudrate
+Die Baudrate ist die Geschwindigkeit bei der seriellen Übertragung: Standard ist 1200 beim PC-1360
+Datenbits
+Die Anzahl der Datenbits pro Byte bei der seriellen Übertragung: Standard ist 8
+Stoppbits
+Die Anzahl der bei der seriellen Übertragung verwendeten Stoppbits: Standard ist 1
+Zeilenendcode
+Nach jeder Zeile folgt ein Endcode: Standard ist bei Pocketcomputern CR
+&ignorieren
+Programmendcode
+Der Pocketcomputer verwendet bei der Programmübertragung einen Abschlusscode. Standard ist 1A
+An&hängen
+Der Programmendcode wird bei markiertem Kästchen automatisch nach der Übertragung angehängt
+CTS &Signal
+Das CTS Signal vom Pocketcomputer teilt dem Computer mit, ob er bereit ist, Daten zu empfangen
+&OK
+&Abbrechen
+Ü&bernehmen
+Stopp
+Verbindungstest wird durchgeführt...
+BASIC Renum
+Neue Startzeile:
+Schrittweite:
+Die Makrodatei wurde nicht gefunden!
+Makro
+ROM Version
+Version &0
+Version &1
+Vergleichsart
+&Zahl
+&String
+Daten der Operationsregister
+Daten ins Programm &einbauen
+Daten aus dem Speicher &holen
+Operationsregister
+&X einlesen
+&Y einlesen
+Inhalt wiederherstellen
+Operationsregister &retten
+1. Zeile: Makro- und Betriebsparameterbeschreibungen eingeben
+3. Zeile: Ergebnisauswertung und Auswirkungen des Codes beschreiben
+5. Zeile: ID Nummer:
+	0 = in zwei neuen Zeilen (7. und 9.) den Code jeweils für Version 0 und 1 angeben
+	1 = in vier neuen Zeilen (7,9,11,13) den Code für Vergleichsart Zahl (Version 0 und 1) und dann für String (0 und 1) angeben
+Neues Makro
+Bearbeiten
+Löschen
+Neu...
+&Schließen
+&Einsetzen
+Umrechner
+Dezimal
+Hexadezimal
+Binär
+Umrechner
+BCD Zahl
+Bytes
+Umrechner
+ASCII Zeichen
+Byte
+Parität
+&Gerade
+&Ungerade
+Die Paritätseinstellung erlaubt die Fehlererkennung in einer Übertragung.
+Ein Parity-Fehler ist aufgetreten!
+In Zeile
+versucht das Programm zu
+zu springen!
+Disassembler
+Bitte gib die Startadresse ein:
+Schriftart...
+Binäre TransDrive-Daten disassemblieren?
+Bei dieser Speicherart gehen alle Kommentare und Daten im Programm verloren! Ich empfehle, zuerst die Datei im Assemblerformat zu speichern! Trotzdem weitermachen?
+&Umrechnen in...
+&Hexadezimal
+&Dezimal
+&ASCII
+&Byte
+Marke su&chen
+Pocket &Computer
+Eine Pocket Computer Befehlsdatei wurde nicht gefunden! TransDrive Konvertierung kann nicht benutzt werden!
+Befehlsbeschreibung
+BASIC Modus
+Assembler Modus
+Name:
+Hier den Namen des Makros eingeben
+Beschreibung:
+Hier den Beschreibungstext eingeben
+Ergebnis:
+Hier die Ergebnisbeschreibung eingeben
+&Kein Vergleich
+&Vergleich
+Code Version 1
+Hier den Assemblercode für ROM Version 1 angeben (Immer ausfüllen!)
+Code Version 0
+Hier den Assemblercode für ROM Version 0 angeben (Immer ausfüllen!)
+Code Version 1
+Hier den Assemblercode für ROM Version 1 (bei Vergleich) angeben (Immer ausfüllen!)
+Code Version 0
+Hier den Assemblercode für ROM Version 0 (bei Vergleich) angeben (Immer ausfüllen!)
+Makrodesigner
+Es sind nicht alle benötigten Felder ausgefüllt!
+&Zeilenbeschränkung
+Beim BASIC-Programmieren sind nicht mehr als 80 Bytes im Pocket Computer erlaubt
+&Programmgröße berechnen
+Berechnet den Platzbedarf im Pocket Computer
+Grafikdesigner
+Grafik
+&Hex
+&Dezimal
+&Alle an/aus
+&Invertieren
+&Laden
+&Speichern
+Musikdesigner
+Ton
+Oktave
+Länge
+BPM
+&Ganze
+&Halbe
+&Viertel
+&Achtel
+&Sechzehntel
+&Punktiert
+Zu viele Ausdrücke angegeben
+Ausdruck fehlt oder fehlen
+Zahl [0..65535] erwartet
+Falsche Zeichenkette an DS übergeben
+Ungültige Konstantendeklaration mit EQU
+Unbekannter Opcode
+Kein Code zum Erzeugen
+Ungültige mathematische Formel im Ausdruck
+Zahl [0..255] erwartet
+Falscher Ausdruck für LP ([0..63] erwartet)
+Falscher Ausdruck für CAL ([0..8192] erwartet)
+Anzahl der übergebenen Ausdrücke falsch

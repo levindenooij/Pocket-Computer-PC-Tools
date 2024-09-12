@@ -1,2 +1,0 @@
-SA (Stat 4k) : 4113 bytes
-SA (Stat 8k) : 4113 bytes

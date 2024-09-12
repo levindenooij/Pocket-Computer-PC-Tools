@@ -1,0 +1,261 @@
+0	NOP	1	No operation
+1	RETI	1	Returns from interrupt routine
+2	JP	3	Jumps to mn
+3	JPF	3	Jumps far to lmn
+4	CALL	3	Calls mn
+5	CALLF	3	Calls far lmn
+6	RET	1	Returns from CALL
+7	RETF	1	Returns from CALLF
+8	MVA	2	n -> A
+9	MVIL	2	n -> IL
+10	MVBA	3	m -> B, n -> A
+11	MVl	3	mn -> l
+12	MVX	3	lmn -> X
+13	MVY	3	lmn -> Y
+14	MVU	3	lmn -> U
+15	MVS	3	lmn -> S
+16	JPN	2	JP (n)
+17	JP	1	JP X,Y,U,S
+18	JRP	2	JR +n
+19	JRM	2	JR -n
+20	JPZ	3	Z=1: Jump to mn
+21	JPNZ	3	Z=0: Jump to mn
+22	JPC	3	C=1: Jump to mn
+23	JPNC	3	C=0: Jump to mn
+24	JRZP	2	Z=1: Jump to P+n
+25	JRZM	2	Z=1: Jump to P-n
+26	JRNZP	2	Z=0: Jump to P+n
+27	JRNZM	2	Z=0: Jump to P-n
+28	JRCP	2	C=1: Jump to P+n
+29	JRCM	2	C=1: Jump to P-n
+30	JRNCP	2	C=0: Jump to P+n
+31	JRNCM	2	C=0: Jump to P-n
+32	?32?	1	-
+33	PRE(BP+m)(BP+PY)	2	PRE(BP+m)(BP+PY)
+34	PRE(BP+m)(n)	3	PRE(BP+m)(n)
+35	PRE(BP+m)(PY+n)	3	PRE(BP+m)(PY+n)
+36	PRE(BP+PX)(BP+PY)	1	PRE(BP+PX)(BP+PY)
+37	PRE(BP+PX)(BP+PY)	1	PRE(BP+PX)(BP+PY)
+38	PRE(BP+PX)(n)	2	PRE(BP+PX)(n)
+39	PRE(BP+PX)(PY+n)	2	PRE(BP+PX)(PY+n)
+40	PUSHU,A	1	Push A -> U
+41	PUSHU,IL	1	Push IL -> U
+42	PUSHU,BA	1	Push BA -> U
+43	PUSHU,I	1	Push I -> U
+44	PUSHU,X	1	Push X -> U
+45	PUSHU,Y	1	Push Y -> U
+46	PUSHU,F	1	Push F -> U
+47	PUSHU,IMR	1	Push IMR -> U
+48	PRE(m)(BP+n)	3	PRE(m)(BP+n)
+49	PRE(m)(BP+PY)	2	PRE(m)(BP+PY)
+50	PRE(m)(n)	3	PRE(m)(n)
+51	PRE(m)(PY+n)	3	PRE(m)(PY+n)
+52	PRE(PX+m)(BP+n)	3	PRE(PX+m)(BP+n)
+53	PRE(PX+m)(BP+PY)	2	PRE(PX+m)(BP+PY)
+54	PRE(PX+m)(n)	3	PRE(PX+m)(n)
+55	PRE(PY+m)(PY+n)	3	PRE(PY+m)(PY+n)
+56	POPU,A	1	Pops U -> A
+57	POPU,IL	1	Pops U -> IL
+58	POPU,BA	1	Pops U -> BA
+59	POPU,I	1	Pops U -> I
+60	POPU,X	1	Pops U -> X
+61	POPU,Y	1	Pops U -> Y
+62	POPU,F	1	Pops U -> F
+63	POPU,IMR	1	Pops U -> IMR
+64	ADDA,N	2	A + n -> A
+65	ADD(M),N	3	[m] + n -> [m]
+66	ADDA,(N)	2	A + [n] -> A
+67	ADD(N),A	2	[n] + A -> [n]
+68	ADDr2,r12	1	r2 + r12 -> r2
+69	ADDr3,r	1	r3 + r -> r3
+70	ADDr1,r1	1	r1 + r1 -> r1
+71	PMDF	3	PMDF [m],n
+72	SUBA,N	2	A - n -> A
+73	SUB(M),(N)	3	[m] - n -> [m]
+74	SUBA,(N)	2	A - [n] -> A
+75	SUB(N),A	2	[n] - A -> [n]
+76	SUBr2,r12	1	r2 - r12 -> r2
+77	SUBr3,r	1	r3 - r -> r3
+78	SUBr1,r1	1	r1 - r1 -> r1
+79	PUSHS,F	1	Push F -> S
+80	ADCA,N	2	A + n + C -> A
+81	ADC(M),N	3	[m] + n + C -> [m]
+82	ADCA,(N)	2	[n] + A + C -> [n]
+83	ADC(N),A	2	A + [n] + C -> A
+84	ADCL(M),(N)	3	[m] + [n] + C -> [m] ?
+85	ADCL(N),A	2	[m] + A + C -> A ?
+86	MVL(M),(X+N)	3	MVL(M),(X+N)
+87	PMDF(M),A	2	PMDF(M),A
+88	SBCA,N	2	A - n -> A
+89	SBC(M),(N)	3	[m] - n -> [m]
+90	SBCA,(N)	2	A - [n] -> A
+91	SBC(N),A	2	[n] - A -> [n]
+92	SBCL(M),(N)	3	SBCL(M),(N)
+93	SBCL(N),A	2	SBCL(N),A
+94	MVL(X+N)(M)	3	MVL(X+N)(M)
+95	POPS,F	1	Pops S -> F
+96	CMPA,N	2	Compare A, n
+97	CMP(M),N	3	Compare [m], n
+98	CMP(KLM),N	3	Compare [klm], n
+99	CMP(N),A	2	Compare [n], A
+100	TESTA,N	2	TEST A, n
+101	TEST(M),N	3	TEST [m], n
+102	TEST(KLM),N	3	TEST [klm], n
+103	TEST(N),A	2	TEST [n], A
+104	XORA,N	2	Xor A, n
+105	XOR(M),N	3	Xor [m], n
+106	XOR(KLM),N	3	Xor [klm], n
+107	XOR(N),A	2	Xor [n], A
+108	INCR	1	r + 1 -> r
+109	INC(N)	2	[n] + 1 -> [n]
+110	XOR(M),(N)	3	Xor [m], [n]
+111	XORA,(N)	2	Xor A, [n]
+112	ANDA,N	2	And A, n
+113	AND(M),N	3	And [m], n
+114	AND(KLM),N	3	And [klm], n
+115	AND(N),A	2	And [n], A
+116	MVA,B	1	B -> A
+117	MVB,A	1	A -> B
+118	AND(M),(N)	3	And [m], [n]
+119	ANDA,(N)	2	And A, [n]
+120	ORA,N	2	or A, n
+121	OR(M),N	3	or [m], n
+122	OR(KLM),N	3	or [klm], n
+123	OR(N),A	2	or [n], A
+124	DECR	1	r - 1 -> r
+125	DEC(N)	2	[n] - 1 -> [n]
+126	OR(M),(N)	3	or [m], [n]
+127	ORA,(N)	2	or A, [n]
+128	MVA,(N)	2	[n] -> A
+129	MVIL,(N)	2	[n] -> IL
+130	MVBA,(N)	2	[n] -> A
+131	MVI,(N)	2	[n] -> I
+132	MVX,(N)	2	[n] -> X
+133	MVY,(N)	2	[n] -> Y
+134	MVU,(N)	2	[n] -> U
+135	MVS,(N)	2	[n] -> S
+136	MVA,(LMN)	3	[lmn] -> A
+137	MVIL,(LMN)	3	[lmn] -> IL
+138	MVBA,(LMN)	3	[lmn] -> BA
+139	MVI,(LMN)	3	[lmn] -> I
+140	MVX,(LMN)	3	[lmn] -> X
+141	MVY,(LMN)	3	[lmn] -> Y
+142	MVU,(LMN)	3	[lmn] -> U
+143	MVS,(LMN)	3	[lmn] -> S
+144	MVA,(r3)	1	[r3] -> A
+145	MVIL,(r3)	1	[r3] -> IL
+146	MVBA,(r3)	1	[r3] -> BA
+147	MVI,(r3)	1	[r3] -> I
+148	MVX,(r3)	1	[r3] -> X
+149	MVY,(r3)	1	[r3] -> Y
+150	MVU,(r3)	1	[r3] -> U
+151	SC	1	1 -> C
+152	MVA,((N))	2	[[n]] -> A
+153	MVIL,((N))	2	[[n]] -> IL
+154	MVBA,((N))	2	[[n]] -> BA
+155	MVI,((N))	2	[[n]] -> I
+156	MVX,((N))	2	[[n]] -> X
+157	MVY,((N))	2	[[n]] -> Y
+158	MVU,((N))	2	[[n]] -> U
+159	RC	1	0 -> C
+160	MV(N),A	2	A -> [n]
+161	MV(N),IL	2	IL -> [n]
+162	MV(N),BA	2	BA -> [n]
+163	MV(N),I	2	I -> [n]
+164	MV(N),X	2	X -> [n]
+165	MV(N),Y	2	Y -> [n]
+166	MV(N),U	2	U -> [n]
+167	MV(N),S	2	S -> [n]
+168	MV(LMN),A	3	A -> [lmn]
+169	MV(LMN),IL	3	IL -> [lmn]
+170	MV(LMN),BA	3	BA -> [lmn]
+171	MV(LMN),I	3	I -> [lmn]
+172	MV(LMN),X	3	X -> [lmn]
+173	MV(LMN),Y	3	Y -> [lmn]
+174	MV(LMN),U	3	U -> [lmn]
+175	MV(LMN),S	3	S -> [lmn]
+176	MV(r3),A	1	A -> [r3]
+177	MV(r3),IL	1	IL -> [r3]
+178	MV(r3),BA	1	BA -> [r3]
+179	MV(r3),I	1	I -> [r3]
+180	MV(r3),X	1	X -> [r3]
+181	MV(r3),Y	1	Y -> [r3]
+182	MV(r3),U	1	U -> [r3]
+183	MV(M),(N)	3	[n] -> [m]
+184	MV((N)),A	2	A -> [[n]]
+185	MV((N)),IL	2	IL -> [[n]]
+186	MV((N)),BA	2	BA -> [[n]]
+187	MV((N)),I	2	I -> [[n]]
+188	MV((N)),X	2	X -> [[n]]
+189	MV((N)),Y	2	Y -> [[n]]
+190	MV((N)),U	2	U -> [[n]]
+191	?191?	1	-
+192	EX(M),(N)	3	[n] <-> [m]
+193	EXW(M),(N)	3	W? [n] <-> [m]
+194	EXP(M),(N)	3	P? [n] <-> [m]
+195	EXL(M),(N)	3	L? [n] <-> [m]
+196	DADL(M),(N)	3	DADL [m], [n]
+197	DADL(N),A	3	DADL [n], A
+198	CMPW(M),(N)	3	CMPW [m], [n]
+199	CMPP(M),(N)	3	CMPP [m], [n]
+200	MV(M),(N)	3	[n] -> [m]
+201	MVW(M),(N)	3	MVW [n] -> [m]
+202	MVP(M),(N)	3	MVP [n] -> [m]
+203	MVL(M),(N)	3	MVL [n] -> [m]
+204	MV(M),N	3	n -> [m]
+205	MVW(L),(MN)	3	[l] -> [mn]
+206	TCL	1	TCL
+207	MVLD(M),(N)	3	MVLD [n] -> [m]
+208	MV(K),(LMN)	3	[k] -> [lmn]
+209	MVW(K),(LMN)	3	MVW [k] -> [lmn]
+210	MVP(K),(LMN)	3	MVP [k] -> [lmn]
+211	MVL(K),(LMN)	3	MVL [k] -> [lmn]
+212	DSBL(M),(N)	3	DSBL [m], [n]
+213	DSBL(N),A	2	DSBL [n], A
+214	CMPW(N),(r2)	2	CMPW(N),(r2)
+215	CMPP(N),(r3)	2	CMPP(N),(r3)
+216	MV(LMN),(N)	3	[n] -> [lmn]
+217	MVW(LMN),(N)	3	MVW [n] -> [lmn]
+218	MVP(LMN),(N)	3	MVP [n] -> [lmn]
+219	MVL(LMN),(N)	3	MVL [n] -> [lmn]
+220	MVP(K),LMN	3	lmn -> [k]
+221	EXA,B	1	B <-> A
+222	HALT	1	Halts the CPU (waiting for interrupt/reset)
+223	OFF	1	Switches off (waiting for reset)
+224	MV(M),(r3)	2	[r3] -> [m]
+225	MVW(M),(r3)	2	MVW [r3] -> [m]
+226	MVP(M),(r3)	2	MVP [r3] -> [m]
+227	MVL(M),(r3++)	2	MVL [r3++] -> [m]
+228	RORA	1	Rotate A right through carry
+229	ROR(N)	2	Rotate [n] right through carry
+230	ROLA	1	Rotate A left through carry
+231	ROL(N)	2	Rotate [n] left through carry
+232	MV(r3),(N)	2	[n] -> [r3]
+233	MVW(r3),(N)	2	MVW [n] -> [r3]
+234	MVP(r3),(N)	2	MVP [n] -> [r3]
+235	MVL(r3++),(N)	2	MVL [n] -> [r3++]
+236	DSLL(N)	2	DSLL [n]
+237	EXr2,r3	1	r2,r2 <-> r3,r3
+238	SWAPA	1	A [4 bits] <-> [4 bits]
+239	WAIT	1	Waits
+240	MV(M),((N))	3	[[n]] -> [m]
+241	MVW(M),((N))	3	MVW [[n]] -> [m]
+242	MVP(M),((N))	3	MVP [[n]] -> [m]
+243	MVL(M),((N))	3	MVL [[n]] -> [m]
+244	SHRA	1	Shift A right
+245	SHR(N)	2	Shift [n] right
+246	SHLA	1	Shift A left
+247	SHL(N)	2	Shift [n] left
+248	MV((N)),(N)	2	[n] -> [[n]]
+249	MVW((N)),(N)	2	MVW [n] -> [[n]]
+250	MVP((N)),(N)	2	MVP [n] -> [[n]]
+251	MVL((N)),(N)	2	MVL [n] -> [[n]]
+252	DSRL(N)	2	DSRL [n]
+253	MVr2,r3	1	MV r3,r3 -> r2,r2
+254	IR	1	IR
+255	RESET	1	Resets the CPU
+256	ORG	2	Sets the start address of the program
+257	EQU	2	defines a variable
+258	DB	2	represents a single byte in memory
+259	DW	3	represents a word (2 bytes) in memory
+260	DS	2	represents a string in memory (DS "string")

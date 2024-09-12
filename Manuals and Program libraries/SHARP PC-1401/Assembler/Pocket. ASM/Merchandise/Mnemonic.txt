@@ -1,0 +1,261 @@
+0	LII	2	n -> I
+1	LIJ	2	n -> J
+2	LIA	2	n -> A
+3	LIB	2	n -> B
+4	IX	1	X + 1 -> X; X -> DP
+5	DX	1	X - 1 -> X; X -> DP
+6	IY	1	Y + 1 -> Y; Y -> DP
+7	DY	1	Y - 1 -> Y; Y -> DP
+8	MVW	1	I -> d; repeat; [Q] -> [P]; P + 1 -> P; Q + 1 -> Q; d - 1 -> d; until d=FF
+9	EXW	1	I -> d; repeat; [Q] <-> [P]; P + 1 -> P; Q + 1 -> Q; d - 1 -> d; until d=FF
+10	MVB	1	J -> d; repeat; [Q] -> [P]; P + 1 -> P; Q + 1 -> Q; d - 1 -> d; until d=FF
+11	EXB	1	J -> d; repeat; [P] <-> [Q]; P + 1 -> P; Q + 1 -> Q; d - 1 -> d; until d=FF
+12	ADN	1	I -> d; repeat; [P] + A -> [P] (BCD); P - 1 -> P; d - 1 -> d; until d=FF
+13	SBN	1	I -> d; repeat; [P] - A -> [P] (BCD); P - 1 -> P; d - 1 -> d; until d=FF
+14	ADW	1	I -> d; repeat; [P] + [Q] -> [P] (BCD); P - 1 -> P; Q - 1 -> Q; d - 1 -> d; until d=FF
+15	SBW	1	I -> d; repeat; [P] - [Q] -> [P] (BCD); P - 1 -> P; Q - 1 -> Q; d - 1 -> d; until d=FF
+16	LIDP	3	n -> DPH; m -> DPL
+17	LIDL	2	n -> DPL
+18	LIP	2	n -> P
+19	LIQ	2	n -> Q
+20	ADB	1	[P+1,P] + (B,A) -> [P+1,P]; P + 1 -> P
+21	SBB	1	[P+1,P] - (B,A) -> [P+1,P]; P + 1 -> P
+22	?22?		
+23	?23?		
+24	MVWD	1	I -> d; repeat; [DP] -> [P]; P + 1 -> P; DP + 1 -> DP; d - 1 -> d; until d=FF
+25	EXWD	1	I -> d; repeat; [DP] <-> [P]; P + 1 -> P; DP + 1 -> DP; d - 1 -> d; until d=FF
+26	MVBD	1	J -> d; repeat; [DP] -> [P]; P + 1 -> P; DP + 1 -> DP; d - 1 -> d; until d=FF
+27	EXBD	1	J -> d; repeat; [DP] <-> [P]; P + 1 -> P; Q + 1 -> Q; d - 1 -> d; until d=FF
+28	SRW	1	I -> d; repeat; [P] <- 4 bit shift right; P - 1 -> P; d - 1 -> d; until d=FF
+29	SLW	1	I -> d; repeat; [P] <- 4 bit shift left; P - 1 -> P; d - 1 -> d; until d=FF
+30	FILM	1	I -> d; repeat; A -> [P]; P + 1 -> P; d - 1 -> d; until d=FF
+31	FILD	1	I -> d; repeat; A -> [DP]; DP + 1 -> DP; d - 1 -> d; until d=FF
+32	LDP	1	P -> A 
+33	LDQ	1	Q -> A
+34	LDR	1	R -> A
+35	RA	1	0 -> A
+36	IXL	1	X + 1 -> X; X -> DP; [DP] -> A
+37	DXL	1	X - 1 -> X; X -> DP; [DP] -> A
+38	IYS	1	Y + 1 -> Y; Y -> DP; A -> [DP]
+39	DYS	1	Y - 1 -> Y; Y -> DP; A -> [DP]
+40	JRNZP	2	if Z=0 then PC + 1 + n -> PC else PC + 2 -> PC
+41	JRNZM	2	if Z=0 then PC + 1 - n -> PC else PC + 2 -> PC
+42	JRNCP	2	if C=0 then PC + 1 + n -> PC else PC + 2 -> PC
+43	JRNCM	2	if C=0 then PC + 1 - n -> PC else PC + 2 -> PC
+44	JRP	2	PC + 1 + n -> PC
+45	JRM	2	PC + 1 - n -> PC
+46	?46?		
+47	LOOP	2	[R] - 1 -> [R]; if C=0 then PC + 1 - n -> PC else PC + 2 -> PC
+48	STP	1	A -> P
+49	STQ	1	A -> Q
+50	STR	1	A -> R
+51	STH	1	A -> d
+52	PUSH	1	R - 1 -> R; A -> [R]
+53	DATA	1	I -> d; repeat; (B,A) -> [P]; P + 1 -> P; (B,A) + 1 -> (B,A); d - 1 -> d; until d=FF
+54	?54?		
+55	RTN	1	[R,R+1] -> PC; R + 2 -> R
+56	JRZP	2	if Z=1 then PC + 1 + n -> PC else PC + 2 -> PC
+57	JRZM	2	if Z=1 then PC + 1 - n -> PC else PC + 2 -> PC
+58	JRCP	2	if C=1 then PC + 1 + n -> PC else PC + 2 -> PC
+59	JRCM	2	if C=1 then PC + 1 - n -> PC else PC + 2 -> PC
+60	?60?		
+61	?61?		
+62	?62?		
+63	?63?		
+64	INCI	1	I + 1 -> I
+65	DECI	1	I - 1 -> I
+66	INCA	1	A + 1 -> A
+67	DECA	1	A - 1 -> A
+68	ADM	1	[P] + A -> [P]
+69	SBM	1	[P] - A -> [P]
+70	ANMA	1	[P] and A -> [P]
+71	ORMA	1	[P] or A -> [P]
+72	INCK	1	K + 1 -> K
+73	DECK	1	K - 1 -> K
+74	INCM	1	M + 1 -> M
+75	DECM	1	M - 1 -> M
+76	INA	1	IA-Port -> A
+77	NOPW	1	No Operation 2 cycles
+78	WAIT	2	No Operation n+6 cycles
+79	CUP	1	Test to see if XI is high
+80	INCP	1	P + 1 -> P
+81	DECP	1	P - 1 -> P
+82	STD	1	A -> [DP]
+83	MVDM	1	[P] -> [DP]
+84	READM	1	[PC+1] -> [P]
+85	MVMD	1	[DP] -> [P]
+86	READ	1	[PC+1] -> A
+87	LDD	1	[DP] -> A
+88	SWP	1	A <- swap bits [1-4]<->[5-8]
+89	LDM	1	[P] -> A
+90	SL	1	A <- 1 bit shift left
+91	POP	1	[R] -> A; R + 1 -> R
+92	?92?		
+93	OUTA	1	[5C] -> IA-Port
+94	?94?		
+95	OUTF	1	[5E] -> F0-Port
+96	ANIM	2	[P] and n -> [P]
+97	ORIM	2	[P] or n -> [P]
+98	TSIM	2	[P] and n -> Z
+99	CPIM	2	[P] - n -> C,Z
+100	ANIA	2	A and n -> A
+101	ORIA	2	A or n -> A
+102	TSIA	2	A and n -> Z
+103	CPIA	2	A - n -> C,Z
+104	?104?		
+105	DTJ	1	Do Table Jump
+106	?106?		
+107	TEST	2	n -> TEST
+108	?108?		
+109	?109?		
+110	?110?		
+111	CDN	1	Test to see if XI is low
+112	ADIM	2	[P] + n -> [P]
+113	SBIM	2	[P] - n -> [P]
+114	?114?		
+115	?115?		
+116	ADIA	2	A + n -> A
+117	SBIA	2	A - n -> A
+118	?118?		
+119	RZ	2	d -> I; n -> d
+120	CALL	3	PC + 3 -> [R-1,R-2]; R - 2 -> R; nm -> PC
+121	JP	3	nm -> PC
+122	PTJ	1	Prepare Table Jump: n -> d; nm-> [R-1,R-2]; R-2->R
+123	STOP	1	Stop operation until cycle 1 sec test Reset
+124	JPNZ	3	if Z=0 then nm -> PC else PC + 3 -> PC
+125	JPNC	3	if C=0 then nm -> PC else PC + 3 -> PC
+126	JPZ	3	if Z=1 then nm -> PC else PC + 3 -> PC
+127	JPC	3	if C=1 then nm -> PC else PC + 3 -> PC
+128	LP 0	1	l -> P (l = &00 to &3F)
+129	LP 1	1	1 -> P
+130	LP 2	1	2 -> P
+131	LP 3	1	3 -> P
+132	LP 4	1	4 -> P
+133	LP 5	1	5 -> P
+134	LP 6	1	6 -> P
+135	LP 7	1	7 -> P
+136	LP 8	1	8 -> P
+137	LP 9	1	9 -> P
+138	LP 10	1	10 -> P
+139	LP 11	1	11 -> P
+140	LP 12	1	12 -> P
+141	LP 13	1	13 -> P
+142	LP 14	1	14 -> P
+143	LP 15	1	15 -> P
+144	LP 16	1	16 -> P
+145	LP 17	1	17 -> P
+146	LP 18	1	18 -> P
+147	LP 19	1	19 -> P
+148	LP 20	1	20 -> P
+149	LP 21	1	21 -> P
+150	LP 22	1	22 -> P
+151	LP 23	1	23 -> P
+152	LP 24	1	24 -> P
+153	LP 25	1	25 -> P
+154	LP 26	1	26 -> P
+155	LP 27	1	27 -> P
+156	LP 28	1	28 -> P
+157	LP 29	1	29 -> P
+158	LP 30	1	30 -> P
+159	LP 31	1	31 -> P
+160	LP 32	1	32 -> P
+161	LP 33	1	33 -> P
+162	LP 34	1	34 -> P
+163	LP 35	1	35 -> P
+164	LP 36	1	36 -> P
+165	LP 37	1	37 -> P
+166	LP 38	1	38 -> P
+167	LP 39	1	39 -> P
+168	LP 40	1	40 -> P
+169	LP 41	1	41 -> P
+170	LP 42	1	42 -> P
+171	LP 43	1	43 -> P
+172	LP 44	1	44 -> P
+173	LP 45	1	45 -> P
+174	LP 46	1	46 -> P
+175	LP 47	1	47 -> P
+176	LP 48	1	48 -> P
+177	LP 49	1	49 -> P
+178	LP 50	1	50 -> P
+179	LP 51	1	51 -> P
+180	LP 52	1	52 -> P
+181	LP 53	1	53 -> P
+182	LP 54	1	54 -> P
+183	LP 55	1	55 -> P
+184	LP 56	1	56 -> P
+185	LP 57	1	57 -> P
+186	LP 58	1	58 -> P
+187	LP 59	1	59 -> P
+188	LP 60	1	60 -> P
+189	LP 61	1	61 -> P
+190	LP 62	1	62 -> P
+191	LP 63	1	63 -> P
+192	INCJ	1	J + 1 -> J
+193	DECJ	1	J - 1 -> J
+194	INCB	1	B + 1 -> B
+195	DECB	1	B - 1 -> B
+196	ADCM	1	[P] + A + C -> [P]
+197	SBCM	1	[P] - A - C -> [P]
+198	TSMA	1	[P] and A -> Z
+199	CPMA	1	[P] - A -> C,Z
+200	INCL	1	L + 1 -> L
+201	DECL	1	L - 1 -> L
+202	INCN	1	N + 1 -> N
+203	DECN	1	N - 1 -> N
+204	INB	1	IB-Port -> A
+205	?205?		
+206	NOPT	1	No Operation 3 cycles
+207	?207?		
+208	SC	1	 1 -> C; 1 -> Z
+209	RC	1	0 -> C; 1 -> Z
+210	SR	1	A <- 1 bit shift right
+211	?211?		
+212	ANID	2	[DP] and n -> [DP]
+213	ORID	2	[DP] or n -> [DP]
+214	TSID	2	[DP] and n -> Z
+215	SZ	2	[R-1] used temp
+216	LEAVE	1	0 -> [R]
+217	?217?		
+218	EXAB	1	A <-> B
+219	EXAM	1	A <-> [P]
+220	?220?		
+221	OUTB	1	[5D] -> IB-Port
+222	?222?		
+223	OUTC	1	[5F] -> Control Port 
+224	CAL0	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; ln -> PC
+225	CAL1	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 1*256+n -> PC
+226	CAL2	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 2*256+n -> PC
+227	CAL3	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 3*256+n -> PC
+228	CAL4	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 4*256+n -> PC
+229	CAL5	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 5*256+n -> PC
+230	CAL6	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 6*256+n -> PC
+231	CAL7	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 7*256+n -> PC
+232	CAL8	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 8*256+n -> PC
+233	CAL9	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 9*256+n -> PC
+234	CAL10	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 10*256+n -> PC
+235	CAL11	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 11*256+n -> PC
+236	CAL12	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 12*256+n -> PC
+237	CAL13	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 13*256+n -> PC
+238	CAL14	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 14*256+n -> PC
+239	CAL15	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 15*256+n -> PC
+240	CAL16	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 16*256+n -> PC
+241	CAL17	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 17*256+n -> PC
+242	CAL18	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 18*256+n -> PC
+243	CAL19	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 19*256+n -> PC
+244	CAL20	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 20*256+n -> PC
+245	CAL21	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 21*256+n -> PC
+246	CAL22	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 22*256+n -> PC
+247	CAL23	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 23*256+n -> PC
+248	CAL24	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 24*256+n -> PC
+249	CAL25	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 25*256+n -> PC
+250	CAL26	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 26*256+n -> PC
+251	CAL27	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 27*256+n -> PC
+252	CAL28	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 28*256+n -> PC
+253	CAL29	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 29*256+n -> PC
+254	CAL30	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 30*256+n -> PC
+255	CAL31	2	PC + 2 -> [R-1,R-2]; R - 2 -> R; 31*256+n -> PC
+256	ORG	2	Sets the start address of the program
+257	EQU	2	defines a variable
+258	DB	2	represents a single byte in memory
+259	DW	3	represents a word (2 bytes) in memory
+260	DS	2	represents a string in memory (DS "string")
