@@ -56,17 +56,17 @@ if __name__ == '__main__':
 
   
     
-	with open('resources/Alpha.csv',newline='') as Alpha:
+	with open('res/Alpha.csv',newline='') as Alpha:
 		alphaDict = (csv.DictReader(Alpha, delimiter=',',quotechar='@'))
 		alphaDictList = [row for row in alphaDict]
 		
-	with open('resources/Code.csv', newline='') as Code:		
+	with open('res/Code.csv', newline='') as Code:		
 		codeDict= (csv.DictReader(Code, delimiter=',', quotechar='@'))
 		codeDictList = [row for row in codeDict]
 		
 	with open('bin/'+ argFileName +'.bin', mode='rb') as binFile: 
 		
-		with open('list/' + argFileName+'.txt', mode='w') as listFile:	
+		with open('lst/' + argFileName+'.txt', mode='w') as listFile:	
 		
 			fileBytes=binFile.read();
 

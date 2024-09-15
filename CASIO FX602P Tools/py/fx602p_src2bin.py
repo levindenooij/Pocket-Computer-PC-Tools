@@ -55,19 +55,19 @@ if __name__ == '__main__':
 
 	argFileName=sys.argv[1]
     
-	with open('resources/Alpha.csv',newline='') as Alpha:
+	with open('res/Alpha.csv',newline='') as Alpha:
 		alphaDict = (csv.DictReader(Alpha, delimiter=',',quotechar='@'))
 		alphaDictList = [row for row in alphaDict]
 
 
 	
-	with open('resources/Code.csv', newline='') as Code:		
+	with open('res/Code.csv', newline='') as Code:		
 		codeDict= (csv.DictReader(Code, delimiter=',', quotechar='@'))
 		codeDictList = [row for row in codeDict]
 
 
 	alphaMode=False
-	with open('list/'+argFileName +'.txt', mode='r') as listFile:
+	with open('lst/'+argFileName +'.txt', mode='r') as listFile:
 		
 		with open('bin/'+argFileName +'.bin', mode='wb') as binFile: 
 			
