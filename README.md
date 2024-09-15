@@ -55,7 +55,7 @@ See https://www.mvcsys.de/doc/casioutil.html?fbclid=IwAR3BQInIuff2lOjGMDEnFQwnSZ
 
 ** Alternative circuit for the FA-4 cassette interface **
 
-I own the FA-2 and FA-3 but was missing an interface for the PB-700 (FA-4). After some search on the internet I came accross the following website from Piotr Piatek, http://www.pisi.com.pl/piotr433/index.htm. A great source for knowledge on CASIO machines, data representation, basic program structures as well as alternative self built interfaces. As I was missing an interface for the PB-700 I replicated the circuit http://www.pisi.com.pl/piotr433/pb700tae.htm. It uses an old micro controller and has connections for RS-232 and I2C. A warning is in place the whole exercise is not for the faint-hearted 
+I own the FA-1, FA-2 and FA-3 but was missing an interface for the PB-700 (FA-4). After some search on the internet I came accross the following website from Piotr Piatek, http://www.pisi.com.pl/piotr433/index.htm. A great source for knowledge on CASIO machines, data representation, basic program structures as well as alternative self built interfaces. As I was missing an interface for the PB-700 I replicated the circuit http://www.pisi.com.pl/piotr433/pb700tae.htm. It uses an old micro controller and has connections for RS-232 and I2C. A warning is in place the whole exercise is not for the faint-hearted 
 - you need to program an old controller
 - somewhat more complicated signal path than the SHARP one.
 - the fact that the source code is all in assembler
