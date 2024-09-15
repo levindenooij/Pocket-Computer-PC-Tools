@@ -1,11 +1,13 @@
 ** Introduction **
 
-This repository contains tools and programs for interfacing vintage SHARP Casio and TI pocketcomputers to your PC. If you have a vintage cassette interface compatible with the machine, you can load and store programs on a cassetterecorder using FSK modulation. Basically converting a bit patterns into audio wave patterns e.g 2400 HZ for a 1 and 1200 HZ for a 0.  Instead of a cassette recorder, nowadays, you can also use a PC with a mediaplayer like Audacity. In the latter the programs are stored as WAV files. In the early days of the PC, efforts have been made by several hobbyists or commercial parties to offer programs to generate WAV files from a source file and vice versa. 
+This repository contains tools and programs for interfacing vintage SHARP Casio and TI pocketcomputers to your PC. If you have a vintage cassette interface compatible with the machine, you can load and store programs on a cassetterecorder using FSK modulation. Basically converting a bit patterns into audio wave patterns e.g 2400 HZ for a 1 and 1200 HZ for a 0.  Instead of a cassette recorder, nowadays, you can also use a PC with a mediaplayer like Audacity. In the latter the programs are stored as WAV files. 
+
+In the early days of the PC, efforts have been made by several hobbyists or commercial parties to offer programs to generate WAV files from a source file and vice versa. 
 
 
 ** SHARP Interfacing to a PC ** 
 
-The 80's SHARP Pocketcomputers used FSK Modulation for saving and loading basic programs to a cassette recorder. When you have the proper interface peripherals this is still a good way to archive your programs. Most models can use the CE-126P printer/cassette interface. When connecting the CE-126P to the PC and using e.g. Audacity you can save programs to the PC and load to the pocket computer from the PC. If your PC is not equiped with a soundcards with 3.5 jack sockets or the soundcard performs bad, you might need one of these to usb to audio cables
+The 80's SHARP Pocketcomputers also use FSK Modulation for saving and loading basic programs to a cassette recorder. When you have the proper interface peripherals this is still a good way to archive your programs. Most models can use the CE-126P printer/cassette interface. When connecting the CE-126P to the PC and using e.g. Audacity you can save programs to the PC and load to the pocket computer from the PC. If your PC is not equiped with a soundcards with 3.5 jack sockets or the soundcard performs bad, you might need one of these to usb to audio cables
 https://nl.ugreen.com/products/ugreen-externe-stereo-geluidskaart-usb-audio-adapter-plug?currency=EUR&variant=43580130558151&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=90f9b0511a45&gad_source=1&gclid=Cj0KCQjw_sq2BhCUARIsAIVqmQthwzPWHAI4QXc5N7Y2UEUyvNOM0l37cEibm85EqKGUeDFbKGYBL1saAvqoEALw_wcB
 
 With software on the PC like Pocket Tools for SHARP Pocket Computers offered by Peil & Partners https://www.peil-partner.de/ifhe.de/sharp/, you can convert basic txt files into wav files for loading into to the SHARP pocket computer and vice versa. Troublesome with the CE-126P is to get the right audio levels and sampling rates to get it to work.
@@ -87,8 +89,8 @@ I own a FA-2 cassette interface (compatible for FX602P and FX702P) and was looki
 
 There are four python programs with general usage python3 fx602pxxx2xxx.py arg=filename without extension. It assumes the following subdirectories in you working directory 
 - src: where the four programs are located
-- resources: token translation tables for alpha and code mode
-- list: your keystroke source program
+- res: token translation tables for alpha and code mode
+- lst: your keystroke source program
 - bin: the tokenized programs
 - wav: the wav file generated or recorded.
 
