@@ -1,0 +1,11 @@
+Serial settings
+Baud :9600
+Parity : None
+Stopbit: 1
+
+Each line should have a CR 0D after it
+End of message or file transmit is a OA 
+
+In cool term these can be set with transmit or keyboard
+
+Fo the printer board  Nano is old boot loader!

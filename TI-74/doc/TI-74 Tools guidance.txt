@@ -1,0 +1,31 @@
+Steps
+
+Connect TI-74 to Arduino
+
+Slot 6 on TI-74 -> pin6 on UNO
+Slot 3 on TI_74 -> pin3 on UNO
+Slot 10 on the TI74 -> GND on UNO
+
+Orientation from the back slot 1-10 is left to right 1,2,3,4,5,6,7,8,9,10 
+
+Load TI_74 WAV2BIN.uno in the Arduino
+
+Use a serial terminal 
+Baud :	 500000
+Parity: No
+Stopbits : 1
+All other options : No
+
+
+Connect to Arduino
+Use file capture for storing the bitstream
+
+On the TI-74 have a program available
+
+Enter SAVE "1.filename"
+
+Wait for the end.
+
+On the laptop
+Edit TI_74 bin2Src.py for the right filename
+Run the program.
