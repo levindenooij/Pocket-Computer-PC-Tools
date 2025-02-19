@@ -9,7 +9,7 @@ In the early days of the PC, efforts have been made by several hobbyists or comm
 
 The 80's SHARP Pocketcomputers also use FSK Modulation for saving and loading basic programs to a cassette recorder. When you have the proper interface peripherals this is still a good way to archive your programs. Most models can use the CE-126P printer/cassette interface. When connecting the CE-126P to the PC and using e.g. Audacity you can save programs to the PC and load to the pocket computer from the PC. If your PC is not equiped with a soundcards with 3.5 jack sockets or the soundcard performs bad, you might need one of these to usb to audio cables
 https://nl.ugreen.com/products/ugreen-externe-stereo-geluidskaart-usb-audio-adapter-plug?currency=EUR&variant=43580130558151&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=90f9b0511a45&gad_source=1&gclid=Cj0KCQjw_sq2BhCUARIsAIVqmQthwzPWHAI4QXc5N7Y2UEUyvNOM0l37cEibm85EqKGUeDFbKGYBL1saAvqoEALw_wcB
-
+Be aware: most if these need 3.5 mm trs jacks 3 rings instead of 2, so the original audio cables won't work
 With software on the PC like Pocket Tools for SHARP Pocket Computers offered by Peil & Partners https://www.peil-partner.de/ifhe.de/sharp/, you can convert basic txt files into wav files for loading into to the SHARP pocket computer and vice versa. Troublesome with the CE-126P is to get the right audio levels and sampling rates to get it to work.
 
 
