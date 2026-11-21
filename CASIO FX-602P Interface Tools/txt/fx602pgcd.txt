@@ -1,0 +1,13 @@
+ABab12
+File type: 0x40 0x0E (password-protected
+program file)
+[PROGRAM SEGMENT]
+P0
+  1 AC "INPUT<a" HLT ABS Min01 MinF AC "
+  INPUT<b" HLT ABS Min02 x>=F X<->M01
+  Min02
+  LBL1
+    MR01 / MR02 = INT * MR02 - MR01 =
+    +/- x=0 GOTO2 X<->M02 Min01 GOTO1
+  LBL2
+    MR02 "<c>=#######"

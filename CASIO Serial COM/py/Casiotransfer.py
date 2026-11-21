@@ -62,7 +62,7 @@ def receiveAndSave(ser):
 	root.withdraw()
 	file_path = filedialog.asksaveasfilename()
 	
-	print("Put the SHARP PC in send mode with SAVE COM0:4,N,8,1")
+	print("Put the casio PC in send mode with SAVE COM0:4,N,8,1")
 	
 	data_save = b''
 	byte_save = ser.read()

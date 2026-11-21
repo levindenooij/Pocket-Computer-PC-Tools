@@ -92,7 +92,8 @@ There are four python programs with general usage python3 fx602pxxx2xxx.py arg=f
 - res: token translation tables for alpha and code mode
 - lst: your keystroke source program
 - bin: the tokenized programs
-- wav: the wav file generated or recorded.
+- wav_gen: the wav file generated
+- wav_rec: the wav file recorded with machine.
 
 Known issues:
 x is sometimes duplicated as the letter x and the multiply sign look similar but do have a different binary value in the look up tables. 
@@ -104,7 +105,10 @@ https://www.mvcsys.de/doc/casioutil.html#mozTocId818664 but found it hard to dig
 
 Known issues: Variable names are reissued starting with A. I could't figure out how variable names are dealt with in the bin file. 
 
-Next on the bench maybe a CASIO FX-502P.
+** Casio FX502P ** similar to fx-602p but no alpha
+
+** HP15C **
+Programs to work together with VoyagerCalc 
 
 Enjoy!
 

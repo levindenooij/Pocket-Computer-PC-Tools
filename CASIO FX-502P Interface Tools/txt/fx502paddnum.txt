@@ -1,0 +1,11 @@
+; Casio FX-502P Program Dump
+
+; File ID: 111 | Area: P0
+
+001: FF-FP    ; INV PAUSE
+002: C6-00    ; Min 0
+003: FF-FP    ; INV PAUSE
+004: E3       ; +
+005: C7-00    ; MR 0
+006: E5       ; =
+

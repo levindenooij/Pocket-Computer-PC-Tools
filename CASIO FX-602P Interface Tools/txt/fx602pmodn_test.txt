@@ -1,0 +1,25 @@
+MODNXX
+File type: 0x40 0x0E (password-protected
+program file)
+[PROGRAM SEGMENT]
+P1
+  AC "<10->n>->n?" HLT x=0 GOTO1 Min01
+  Min02 GSBP2
+  LBL1
+    "<n->10>->n?" HLT Min02 Min01 AC
+    GSBP2
+P2
+  LBL1
+    AC "Input<x>" HLT Min03 0 Min00
+    Min04
+  LBL2
+    MR03 / MR01 = INT Min05 x=0 GOTO3
+    MR03 - MR05 GSBP3 MR05 Min03 ISZ
+    GOTO2
+  LBL3
+    MR03 GSBP3 AC x=F "<10->ar01>" PAUSE
+    MR04 HLT GOTO1
+  LBL4
+    "ar02->10>" PAUSE MR04 HLT GOTO1
+P3
+  MR02 MR00 = M+04

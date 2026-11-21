@@ -1,0 +1,29 @@
+Save a program : 
+MODE 3 INV SAV 
+Enter Alhoa Mode
+Enter a file name of max 6 characters or use number
+EXIT ALPHA MODE 
+PRESS EXE
+
+On Audacity record with 11025 and PCM 16 
+Trim the recording
+Export with 9600 8 bit
+
+LOAD A program 
+MODE 3 INV MAC
+INV LOAD
+
+If load and saving in MODE 1 it assumes saving and loading memory files and writes a different header.
+
+Filetypes #
+
+The following file types are currently known.
+
+Byte 1	Byte 2	Content	                        Created with	        Displayed Type
+$40	    $40	    M-Register data file	        Mode 1 SAVE "" EXE	    DF
+$41	    $40	    Display data file (numeric)	    Mode 1 SAVE "" invEXE	DF
+$42	    $40	    Display data file (alpha)	    Mode 1 SAVE "" invEXE	DF
+$04	    $0E	    Program file	                Mode 3 SAVE "" EXE	    PF
+$40	    $0E	    Password protected program file	Mode 3 SAVE "" EXE	    PF
+$44	    $4E($1F)All file (program and data)	    Mode 3 SAVE "" invEXE	AF
+$40	    $4E	    Password protected all file	    Mode 3 SAVE "" infEXE	AF

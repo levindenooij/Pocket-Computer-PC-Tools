@@ -1,0 +1,64 @@
+; Casio FX-502P Program Dump
+
+; File ID: 005 | Area: P0
+
+001: FF-F3    ; INV MAC
+002: E0       ; AC
+003: 05       ; 5
+004: 00       ; 0
+005: C6-0F    ; Min F
+006: C6-02    ; Min 2
+007: FF-EP    ; INV RAN#
+008: FF-EP    ; INV RAN#
+009: E1       ; *
+010: 02       ; 2
+011: FF-F8    ; INV 10^x
+012: E5       ; =
+013: FF-C0    ; INV INT
+014: FF-06    ; INV x>=F
+015: F1-01    ; GOTO 1
+016: F1-02    ; GOTO 2
+017: F0-01    ; LBL 1
+018: E4       ; -
+019: C7-0F    ; MR F
+020: E5       ; =
+021: F0-02    ; LBL 2
+022: C6-08    ; Min 8
+023: F0-03    ; LBL 3
+024: C7-01    ; MR 1
+025: E3       ; +
+026: C7-02    ; MR 2
+027: E2       ; /
+028: 03       ; 3
+029: 06       ; 6
+030: 00       ; 0
+031: 00       ; 0
+032: E5       ; =
+033: C6-06    ; Min 6
+034: F0-04    ; LBL 4
+035: C7-06    ; MR 6
+036: FF-F7    ; INV o'
+037: FF-FP    ; INV PAUSE
+038: C6-0F    ; Min F
+039: FF-C1    ; INV FRAC
+040: FF-01    ; INV ISZ
+041: F1-05    ; GOTO 5
+042: F1-04    ; GOTO 4
+043: F0-05    ; LBL 5
+044: 01       ; 1
+045: C9-09    ; M+ 9
+046: C7-08    ; MR 8
+047: FF-03    ; x=F
+048: F1-07    ; GOTO 7
+049: FF-06    ; INV x>=F
+050: F1-06    ; GOTO 6
+051: C7-0F    ; MR F
+052: C6-02    ; Min 2
+053: F1-03    ; GOTO 3
+054: F0-06    ; LBL 6
+055: C7-0F    ; MR F
+056: C6-01    ; Min 1
+057: F1-03    ; GOTO 3
+058: F0-07    ; LBL 7
+059: C7-09    ; MR 9
+

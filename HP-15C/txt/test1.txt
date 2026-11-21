@@ -1,0 +1,6 @@
+f LBL A
+f RAN#
+1
+-
+STO 6 
+R/S

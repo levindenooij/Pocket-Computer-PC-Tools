@@ -1,0 +1,13 @@
+f LBL A  
+STO 0   
+0
+ENTER 
+1
+STO - 0 
+f LBL 1  
++      
+g LSTx      
+X<>Y   
+f DSE 0  
+GTO 1    
+g RTN     

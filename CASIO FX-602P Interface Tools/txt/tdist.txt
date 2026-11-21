@@ -1,0 +1,24 @@
+
+[PROGRAM SEGMENT]
+P0
+  MODE5 MAC "X" HLT Min01 "v" HLT Min02 1 MinF Min09 Min00
+  MR01 MR02 SQR = arctan Min01 cos x^2 Min06 MR02 / 2
+  FRAC x=0 GOTO2 2 X MR01 / π Min03 MR02 x=F GOTO6
+  LBL8
+    2 M+08 MR08 x=F GOTO9 MR09 * MR08 /
+    MR07 * MR06 = Min09 M+00 2 M+07
+    GOTO8
+  LBL2
+    MR02 MinF 1 Min07
+  LBL3
+    2 M+08 MR08 x=F GOTO4 MR09 * MR07 /
+    MR08 * MR06 = Min09 M+00 2 M+07
+    GOTO3
+  LBL4
+    MR01 sin * MR00 = GOTO0
+  LBL6
+    MR03 GOTO0
+  LBL9
+    2 / Pi * MR01 cos * MR01 sin MR00 + MR03 =
+  LBL0
+    "=#"

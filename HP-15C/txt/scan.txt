@@ -1,0 +1,24 @@
+f LBL B
+g CF 0
+GTO 1
+f LBL E
+g SF 0
+f LBL 1
+STO 1
+1
++
+x≷y
+CHS
+yx
+CHS
+1
++
+RCL ÷ 1
+x
+g F? 0
+g RTN
+RCL 1
+1
++
+x
+g RTN
